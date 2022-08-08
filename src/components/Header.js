@@ -9,7 +9,7 @@ const Header = () => {
           "flex justify-center md:justify-between items-center py-5 md:px-4 lg:px-10 "
         }
       >
-        <img src="./assets/headers-logo-gray.png" alt="headers-logo-gray" />
+        <img className="cursor-pointer" src="./assets/headers-logo-gray.png" alt="headers-logo-gray" />
         <div className="hidden md:flex items-center space-x-5 lg:space-x-10 text-White">
           <div className="hidden lg:flex items-center space-x-5">
             {SocialIcons.map(({ iconName }, index) => (
@@ -43,7 +43,7 @@ const Header = () => {
             <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo">
               Book Now
             </button>
-            <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:border-Medium-Electric-Blue ">
+            <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue ">
               Order Now
             </button>
           </div>
