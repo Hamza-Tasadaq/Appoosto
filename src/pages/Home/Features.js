@@ -38,9 +38,15 @@ const Features = () => {
           {FeaturesData.map(({ iconName, title, description }) => (
             <div className="flex group  flex-col justify-center items-center text-center text-White">
               <div className="w-24 h-24 md:w-40 md:h-40 rounded-full border-4 border-White flex items-center justify-center">
-                <img className="group-hover:scale-110 md:group-hover:scale-125 duration-300" src={`./assets/${iconName}.svg`} alt={iconName} />
+                <img
+                  className="group-hover:scale-110 md:group-hover:scale-125 duration-300"
+                  src={`./assets/${iconName}.svg`}
+                  alt={iconName}
+                />
               </div>
-              <h1 className="font-bold text-xl mt-6 mb-4 md:mt-10 md:mb-4">{title}</h1>
+              <h1 className="font-bold text-xl mt-6 mb-4 md:mt-10 md:mb-4">
+                {title}
+              </h1>
               <p className="max-w-[342px]	text-sm	font-medium">{description}</p>
             </div>
           ))}
