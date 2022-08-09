@@ -1,0 +1,18 @@
+[
+  {
+    "imgSrc": "table",
+    "title": "Dine In"
+  },
+  {
+    "imgSrc": "book",
+    "title": "Book a Table"
+  },
+  {
+    "imgSrc": "takeaway",
+    "title": "Take Away"
+  },
+  {
+    "imgSrc": "delivery",
+    "title": "Delivery"
+  }
+]

@@ -1,5 +1,3 @@
-import { Container } from "../../components";
-
 const ResturantStory = () => {
   return (
     <div className="bg-Pastel-Violet">
