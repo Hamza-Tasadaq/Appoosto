@@ -13,7 +13,7 @@ const Footer = () => {
           />
 
           <div className="md:hidden flex items-center">
-            <img className="" src="./assets/footers-logo-black.png" />
+            <img src="./assets/footers-logo-black.png" alt="footers-logo" />
             <div className="md:hidden ml-3 bg-Spanish-Gray w-px h-4" />
           </div>
           <p className="text-xs md:text-base text-Black md:text-White font-medium opacity-80">
