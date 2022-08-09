@@ -12,11 +12,6 @@ const Home = () => {
       <Header />
       <Features />
       <BestSeller />
-
-      <br />
-      <br />
-      <br />
-      <br />
       <ResturantStory />
       <ChefSelection />
       {/* Book Table for desktop Version */}
