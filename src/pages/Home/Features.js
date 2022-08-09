@@ -35,8 +35,11 @@ const Features = () => {
             "grid grid-cols-1 md:grid-cols-2asas md:grid-cols-3 gap-10 justify-center px-4 md:px-0 py-16"
           }
         >
-          {FeaturesData.map(({ iconName, title, description }) => (
-            <div className="flex group  flex-col justify-center items-center text-center text-White">
+          {FeaturesData.map(({ iconName, title, description }, index) => (
+            <div
+              key={index}
+              className="flex group  flex-col justify-center items-center text-center text-White"
+            >
               <div className="w-24 h-24 md:w-40 md:h-40 rounded-full border-4 border-White flex items-center justify-center">
                 <img
                   className="group-hover:scale-110 md:group-hover:scale-125 duration-300"
