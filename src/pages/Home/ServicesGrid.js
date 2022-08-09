@@ -11,7 +11,7 @@ const ServicesGrid = () => {
           {ServicesData.map(({ title, imgSrc }, index) => (
             <div
               key={index}
-              className="bg-White rounded-lg w-40 h-24 duration-300 border-transparent flex items-center justify-center hover:scale-105 flex-col"
+              className="bg-White rounded-lg w-36 sm:w-40 h-24 duration-300 border-transparent flex items-center justify-center hover:scale-105 flex-col"
             >
               <img src={`./assets/${imgSrc}.png`} alt={imgSrc} />
               <h3 className="font-bold text-sm mt-3">{title}</h3>
