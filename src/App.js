@@ -1,10 +1,9 @@
 import Home from "./pages/Home";
-
-import "./App.css"
+import "./App.css";
 
 function App() {
   return (
-    <div className="font-Montserrat">
+    <div className="font-Montserrat scroll-smooth	 ">
       <Home />
     </div>
   );

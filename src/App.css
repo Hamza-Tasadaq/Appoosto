@@ -2,11 +2,16 @@
   background-image: url("../public/assets/footer-bg.png") !important;
 }
 
-
-
 @media screen and (max-width: 768px) {
-    .footerbg {
-      background-image: none !important;
-    }
+  .footerbg {
+    background-image: none !important;
   }
-  
+}
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+} /* Hide scrollbar for IE, Edge and Firefox */
+.noScrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
