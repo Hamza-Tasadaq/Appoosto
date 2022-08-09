@@ -7,6 +7,7 @@ module.exports = {
         "Vivid-Red-Tangelo": "#D85C27",
         "Medium-Electric-Blue": "#085394",
         "Pastel-Violet": "#C397C5",
+        "Spanish-Gray":"#979797",
         Black: "#000000",
         White: "#FFFFFF",
       },

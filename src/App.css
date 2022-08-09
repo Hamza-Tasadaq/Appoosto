@@ -1,0 +1,12 @@
+.footerbg {
+  background-image: url("../public/assets/footer-bg.png") !important;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .footerbg {
+      background-image: none !important;
+    }
+  }
+  
