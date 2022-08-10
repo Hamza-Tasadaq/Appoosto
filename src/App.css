@@ -1,7 +1,16 @@
+.bannerbg {
+  background-image: url("../public/assets/banner-bg.png") !important;
+}
+
 .footerbg {
   background-image: url("../public/assets/footer-bg.png") !important;
 }
 
+@media screen and (max-width: 640px) {
+  .bg-small {
+    background-image: url("../public/assets/features-bg.png") !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .footerbg {
     background-image: none !important;

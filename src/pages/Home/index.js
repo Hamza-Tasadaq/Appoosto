@@ -1,4 +1,5 @@
 import { Header, Footer } from "../../components";
+import Banner from "./Banner";
 import Features from "./Features";
 import BestSeller from "./BestSeller";
 import ResturantStory from "./ResturantStory";
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <Banner />
       <Features />
       <BestSeller />
       <ResturantStory />
