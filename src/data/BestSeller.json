@@ -3,36 +3,42 @@
     "imgSrc": "mashroom",
     "title": "Mushroom Pasta",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   },
   {
     "imgSrc": "steak",
     "title": "Organic Steak",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   },
   {
     "imgSrc": "mashroom",
     "title": "Mushroom Pasta",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   },
   {
     "imgSrc": "steak",
     "title": "Organic Steak",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   },
   {
     "imgSrc": "mashroom",
     "title": "Mushroom Pasta",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   },
   {
     "imgSrc": "steak",
     "title": "Organic Steak",
     "price": "12",
-    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+    "tagImgSrc": "best-seller-tag"
   }
 ]
