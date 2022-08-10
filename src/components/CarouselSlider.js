@@ -67,12 +67,12 @@ const CarouselSlider = ({ data = "" }) => {
         ))}
       </Container>
 
-      <Container classes=" md:hidden mb-10">
+      <Container classes=" md:hidden mb-10 px-4">
         <Slider {...settings}>
           {data.map(({ imgSrc, title, tagImgSrc, price, desc }, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 mt-5 mb-2 mx-4 max-w-[95%] rounded-lg box-shadow	p-3"
+              className="relative flex-shrink-0 mt-5 mb-2 mx-2  max-w-[95%] sm:max-w-[98%] rounded-lg box-shadow	p-3"
             >
               <img
                 className="absolute top-0 left-0 w-14 md:w-auto md:h-auto"
