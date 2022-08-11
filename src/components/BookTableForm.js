@@ -2,13 +2,13 @@ import Input from "./Input";
 
 const BookTableForm = () => {
   return (
-    <div className="px-10 py-14 flex-1">
-      <h1 className="text-center text-sm font-bold mb-2 md:hidden">
+    <div className="px-3 md:px-10 md:py-14 flex-1">
+      <h1 className="text-center my-3 text-sm font-bold md:hidden">
         Book a Table
       </h1>
       <Input placeholder="Name" />
       <div className="flex space-x-3">
-        <div className="w-full p-5 my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
+        <div className="w-full p-3 md:p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
           <input
             className="bg-transparent w-full outline-none "
             placeholder="Date"
@@ -17,7 +17,7 @@ const BookTableForm = () => {
         </div>
         <Input placeholder="Guests" />
       </div>
-      <div className="w-full p-5 my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
+      <div className="w-full p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
         <input
           className="bg-transparent w-full outline-none "
           placeholder="Time"
@@ -25,7 +25,7 @@ const BookTableForm = () => {
         <img src="./assets/arrow-down.svg" alt="arrow-down" />
       </div>
       <textarea
-        className="w-full p-5 my-2 bg-Platinum outline-none rounded-lg"
+        className="w-full p-5  my-1 md:my-2 bg-Platinum outline-none rounded-lg"
         rows={8}
         placeholder="note"
       />

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import useScroll from "../../hooks/useScroll";
 
 const Card = ({ imgSrc, rating, name, desc, classes }) => {
@@ -33,7 +34,12 @@ const Card = ({ imgSrc, rating, name, desc, classes }) => {
 };
 
 const Banner = () => {
+  let navigate = useNavigate();
   const [currentPosition] = useScroll();
+
+  const handleBookNow = () => {
+    navigate("/booktable");
+  };
   return (
     <div className="bg-Vivid-Red-Tangelo bg-small">
       <div className="sm:bg-Black-Leather-Jacket relative bannerbg bg-no-repeat h-[296px] bg-cover sm:bg-cover lg:bg-contain bg-top lg:h-[770px] text-White ">
@@ -126,6 +132,7 @@ const Banner = () => {
         {/* Buttons for mobile screen */}
         <div className="md:hidden pb-16 flex flex-col items-center justify-center">
           <div
+            onClick={handleBookNow}
             className={`${currentPosition > 100 && " hidden"} space-x-5 my-10`}
           >
             <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo">

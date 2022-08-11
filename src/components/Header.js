@@ -1,10 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import SocialIcons from "../data/SocialIcons.json";
 import useScroll from "../hooks/useScroll";
 import Container from "./Container";
 
 const Header = () => {
+  let navigate = useNavigate();
   const [currentPosition] = useScroll();
 
+  const handleBookNow = () => {
+    if (currentPosition > 100) {
+      navigate("/booktable");
+    }
+  };
   return (
     <header className="bg-[#1C2D23] sticky top-0 left-0 z-50">
       <div className=" bg-black rounded-b-md md:rounded-none ">
@@ -14,7 +21,9 @@ const Header = () => {
           }  md:justify-between items-center py-5 px-2 duration-500 md:px-4 lg:px-10 `}
         >
           <img
-            className={`${currentPosition > 100 && "w-28 md:w-auto"} cursor-pointer`}
+            className={`${
+              currentPosition > 100 && "w-28 md:w-auto"
+            } cursor-pointer`}
             src="./assets/headers-logo-gray.png"
             alt="headers-logo-gray"
           />
@@ -52,7 +61,10 @@ const Header = () => {
                 currentPosition <= 100 ? " hidden md:flex" : " flex"
               }  items-center space-x-2 md:space-x-5`}
             >
-              <button className="rounded-md text-xs	font-semibold px-4 py-2 md:px-6 md:py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo">
+              <button
+                onClick={handleBookNow}
+                className="rounded-md text-xs	font-semibold px-4 py-2 md:px-6 md:py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo"
+              >
                 Book Now
               </button>
               <button className="rounded-md text-xs	font-semibold px-4 py-2 md:px-6 md:py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue ">
