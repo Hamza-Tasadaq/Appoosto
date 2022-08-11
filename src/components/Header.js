@@ -8,7 +8,7 @@ const Header = () => {
   const [currentPosition] = useScroll();
 
   const handleBookNow = () => {
-    if (currentPosition > 100) {
+    if (currentPosition > 100 && window.innerWidth < 768) {
       navigate("/booktable");
     }
   };
