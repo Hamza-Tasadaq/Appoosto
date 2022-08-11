@@ -40,6 +40,9 @@ const Banner = () => {
   const handleBookNow = () => {
     navigate("/booktable");
   };
+  const handleOrderNow = () => {
+    window.location.replace("/#services");
+  };
   return (
     <div className="bg-Vivid-Red-Tangelo bg-small">
       <div className="sm:bg-Black-Leather-Jacket relative bannerbg bg-no-repeat h-[296px] bg-cover sm:bg-cover lg:bg-contain bg-top lg:h-[770px] text-White ">
@@ -140,7 +143,10 @@ const Banner = () => {
             >
               Book Now
             </button>
-            <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue ">
+            <button
+              onClick={handleOrderNow}
+              className="rounded-md text-xs	font-semibold px-6 py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue "
+            >
               Order Now
             </button>
           </div>

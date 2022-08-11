@@ -11,7 +11,15 @@ const Header = () => {
     if (currentPosition > 100 && window.innerWidth < 768) {
       navigate("/booktable");
     } else if (window.innerWidth > 768) {
-      window.location.replace("/#booktable")
+      window.location.replace("/#booktable");
+    }
+  };
+
+  const handleOrderNow = () => {
+    if (currentPosition > 100 && window.innerWidth < 768) {
+      window.location.replace("/#services");
+    } else {
+      navigate("/dashboard");
     }
   };
   return (
@@ -69,7 +77,10 @@ const Header = () => {
               >
                 Book Now
               </button>
-              <button className="rounded-md text-xs	font-semibold px-4 py-2 md:px-6 md:py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue ">
+              <button
+                onClick={handleOrderNow}
+                className="rounded-md text-xs	font-semibold px-4 py-2 md:px-6 md:py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue "
+              >
                 Order Now
               </button>
             </div>
