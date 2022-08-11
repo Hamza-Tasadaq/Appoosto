@@ -9,8 +9,10 @@ function PinScreen() {
 
   // Click handler to set Otp Text and to set Number of entered Otp
   const handleClick = (num) => {
-    setOtp(`${otp}${num}`);
-    setEnteredOtp(eneteredOtp + 1);
+    if (eneteredOtp < 4) {
+      setOtp(`${otp}${num}`);
+      setEnteredOtp(eneteredOtp + 1);
+    }
   };
   return (
     <>
