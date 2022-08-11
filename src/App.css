@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .bannerbg {
   background-image: url("../public/assets/banner-bg.png") !important;
 }

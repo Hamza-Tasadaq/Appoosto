@@ -2,7 +2,7 @@ import { BookTableForm } from "../../components";
 
 const BookTable = () => {
   return (
-    <div className="hidden md:block relative h-[980px]">
+    <div id="booktable" className="hidden md:block relative h-[980px]">
       <div
         className="pt-10 pb-32 font-semibold text-center text-White text-3xl"
         style={{

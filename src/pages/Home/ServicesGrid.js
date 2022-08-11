@@ -3,7 +3,7 @@ import ServicesData from "../../data/Services.json";
 
 const ServicesGrid = () => {
   return (
-    <div className="pt-5">
+    <div id="services" className="pt-5">
       <div
         className="bg-cover bg-no-repeat flex items-center justify-center	 md:hidden py-16 bg-center"
         style={{ backgroundImage: "url('./assets/services-bg.png')" }}

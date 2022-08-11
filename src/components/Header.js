@@ -10,6 +10,8 @@ const Header = () => {
   const handleBookNow = () => {
     if (currentPosition > 100 && window.innerWidth < 768) {
       navigate("/booktable");
+    } else if (window.innerWidth > 768) {
+      window.location.replace("/#booktable")
     }
   };
   return (
