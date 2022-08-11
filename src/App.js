@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import BookTable from "./pages/BookTable/index.js";
 import Dashboard from "./pages/DashBoard";
+import PinScreen from "./pages/PinScreen";
 
 import "./App.css";
 
@@ -14,12 +15,13 @@ function App() {
     <div className="font-Montserrat">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
           {/* Route for Desktop */}
+          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
 
-          {/* Route for mobile phone */}
+          {/* Routes for mobile phone */}
           <Route path="/booktable" element={<BookTable />} />
+          <Route path="/pinscreen" element={<PinScreen />} />
         </Routes>
       </BrowserRouter>
     </div>

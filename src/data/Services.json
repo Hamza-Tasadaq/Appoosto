@@ -1,12 +1,13 @@
 [
   {
     "imgSrc": "table",
-    "title": "Dine In"
+    "title": "Dine In",
+    "href": "/pinscreen"
   },
   {
     "imgSrc": "book",
     "title": "Book a Table",
-    "href":"/booktable"
+    "href": "/booktable"
   },
   {
     "imgSrc": "takeaway",

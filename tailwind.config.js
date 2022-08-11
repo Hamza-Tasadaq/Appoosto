@@ -11,11 +11,12 @@ module.exports = {
         "Spanish-Gray": "#979797",
         "Electric-Brown": "#B56362",
         "Yale-Blue": "#115F95",
+        "Bright-Gray": "#E9E9E9",
         Apple: "#4CAF50",
         Platinum: "#E6E6E6",
         Black: "#000000",
         White: "#FFFFFF",
-        Saffron:"#F7C531"
+        Saffron: "#F7C531",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
