@@ -132,10 +132,12 @@ const Banner = () => {
         {/* Buttons for mobile screen */}
         <div className="md:hidden pb-16 flex flex-col items-center justify-center">
           <div
-            onClick={handleBookNow}
             className={`${currentPosition > 100 && " hidden"} space-x-5 my-10`}
           >
-            <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo">
+            <button
+              onClick={handleBookNow}
+              className="rounded-md text-xs	font-semibold px-6 py-3 bg-Vivid-Red-Tangelo duration-300 border border-transparent hover:bg-transparent hover:border-Vivid-Red-Tangelo"
+            >
               Book Now
             </button>
             <button className="rounded-md text-xs	font-semibold px-6 py-3 bg-Medium-Electric-Blue  duration-300 border border-transparent hover:bg-transparent hover:border-Medium-Electric-Blue ">

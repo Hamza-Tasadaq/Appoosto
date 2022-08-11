@@ -1,6 +1,6 @@
 import Input from "./Input";
 
-const BookTableForm = () => {
+const BookTableForm = () => { 
   return (
     <div className="px-3 md:px-10 md:py-14 flex-1">
       <h1 className="text-center my-3 text-sm font-bold md:hidden">
@@ -25,8 +25,8 @@ const BookTableForm = () => {
         <img src="./assets/arrow-down.svg" alt="arrow-down" />
       </div>
       <textarea
-        className="w-full p-5  my-1 md:my-2 bg-Platinum outline-none rounded-lg"
-        rows={8}
+        className="w-full p-5 my-1 md:my-2 h-40 md:h-[232px] bg-Platinum outline-none rounded-lg"
+        rows={5}
         placeholder="note"
       />
       <p className="text-xs text-Pastel-Violet font-semibold bg-Pastel-Violet bg-opacity-20 p-3 rounded-lg md:text-sm md:font-medium">
