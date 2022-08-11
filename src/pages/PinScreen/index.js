@@ -14,6 +14,13 @@ function PinScreen() {
       setEnteredOtp(eneteredOtp + 1);
     }
   };
+
+  const handleClickBack = () => {
+    if (eneteredOtp >= 1 && otp.length >= 1) {
+      setOtp(otp.slice(0, -1));
+      setEnteredOtp(eneteredOtp - 1);
+    }
+  };
   return (
     <>
       <div className="sticky top-0 left-0 right-0 z-50 bg-White rounded-b-lg shadow-lg p-4 flex items-center justify-between">
@@ -63,7 +70,10 @@ function PinScreen() {
               {i + 1}
             </h1>
           ))}
-          <div className="w-[100px] flex items-center justify-center my-3">
+          <div
+            onClick={handleClickBack}
+            className="w-[100px] flex items-center justify-center my-3"
+          >
             <div className="bg-White h-12 w-12 rounded-full flex items-center justify-center shadow-2xl	">
               <img src="./assets/arrow-backward.svg" alt="arrow-backward" />
             </div>
