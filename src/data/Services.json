@@ -5,7 +5,8 @@
   },
   {
     "imgSrc": "book",
-    "title": "Book a Table"
+    "title": "Book a Table",
+    "href":"/booktable"
   },
   {
     "imgSrc": "takeaway",
