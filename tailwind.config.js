@@ -12,6 +12,8 @@ module.exports = {
         "Electric-Brown": "#B56362",
         "Yale-Blue": "#115F95",
         "Bright-Gray": "#E9E9E9",
+        "Flash-White": "#F3F3F3",
+        "Chinese-Silver":"#CDCDCD",
         Apple: "#4CAF50",
         Platinum: "#E6E6E6",
         Black: "#000000",

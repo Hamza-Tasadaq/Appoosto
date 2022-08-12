@@ -9,6 +9,7 @@ import "./App.css";
 // React Slick CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           {/* Routes for mobile phone */}
           <Route path="/booktable" element={<BookTable />} />
           <Route path="/pinscreen" element={<PinScreen />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>
