@@ -50,12 +50,20 @@ function PinScreen() {
         </div>
         {/* Display when Otp is correct */}
         {eneteredOtp === 4 && (
-          <div className="flex items-center justify-center my-4">
-            <img src="./assets/tick-success.svg" alt="tick-success" />
-            <p className="font-medium text-xs text-Black ml-2">
-              Your entered pin is correct.
-            </p>
-          </div>
+          <>
+            {otp === "0000" ? (
+              <div className="flex items-center justify-center my-4">
+                <img src="./assets/tick-success.svg" alt="tick-success" />
+                <p className="font-medium text-xs text-Black ml-2">
+                  Your entered pin is correct.
+                </p>
+              </div>
+            ) : (
+              <div className="my-4 text-Rlovers-Red">
+                <p>Your entered pin is wrong.</p>
+              </div>
+            )}
+          </>
         )}
       </div>
 
