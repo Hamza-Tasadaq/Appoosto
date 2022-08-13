@@ -1,6 +1,11 @@
-import { Cart as ProductCart } from "../../components";
+import { Cart as ProductCart, Payment } from "../../components";
 const Cart = () => {
-  return <ProductCart />;
+  return (
+    <>
+      <ProductCart />
+      <Payment />
+    </>
+  );
 };
 
 export default Cart;

@@ -1,4 +1,5 @@
 import Input from "./Input";
+import WhatsAppBtn from "./WhatsAppBtn";
 
 const BookTableForm = () => { 
   return (
@@ -33,10 +34,7 @@ const BookTableForm = () => {
         Your booking will be sent to(restaurant name) with WhatsApp and you will
         receive status notifications in chat.
       </p>
-      <button className="flex items-center justify-center bg-Yale-Blue w-full py-3 md:py-4 rounded-lg text-White font-medium text-xs md:text-base my-5 md:my-7 duration-500 hover:scale-x-100">
-        <img className="mr-3" src="./assets/whatsapp.svg" alt="whatsapp" />
-        Send Booking with Whatsapp
-      </button>
+      <WhatsAppBtn text="Send Booking with Whatsapp" />
     </div>
   );
 };
