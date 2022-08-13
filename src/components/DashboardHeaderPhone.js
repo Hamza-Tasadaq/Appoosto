@@ -1,12 +1,16 @@
-const DashboardHeaderPhone = ({ heading }) => {
+import { Link } from "react-router-dom";
+
+const DashboardHeaderPhone = ({ prevHref = "", heading = "" }) => {
   return (
     <div className="bg-White md:bg-Flash-White sticky z-50 md:static left-0 right-0 top-0 shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
       <div className="flex p-5 md:p-0 md:m-0 md:mb-5 items-center md:justify-center">
-        <img
-          className="block md:hidden"
-          src="./assets/arrowback-black.svg"
-          alt="arrowback"
-        />
+        <Link to={prevHref}>
+          <img
+            className="block md:hidden"
+            src="./assets/arrowback-black.svg"
+            alt="arrowback"
+          />
+        </Link>
         <h1 className="font-semibold ml-5">{heading}</h1>
       </div>
 

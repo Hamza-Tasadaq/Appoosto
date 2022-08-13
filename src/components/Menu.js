@@ -4,7 +4,7 @@ import DashboardHeaderPhone from "./DashboardHeaderPhone";
 const Menu = () => {
   return (
     <div>
-      <DashboardHeaderPhone heading={"Pan Asian Resturant"} />
+      <DashboardHeaderPhone prevHref="/" heading={"Pan Asian Resturant"} />
       <div>
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
