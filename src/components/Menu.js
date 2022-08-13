@@ -9,7 +9,7 @@ const Menu = () => {
             <h1 className="font-bold ml-1 bg-White z-50 sticky top-0 left-0">
               {key}
             </h1>
-            <div className="mx-2 grid grid-cols-2 gap-5">
+            <div className="mx-2 grid grid-cols-1 lg:grid-cols-2 gap-5">
               {value.map(
                 (
                   {

@@ -26,13 +26,13 @@ const Cart = () => {
       <div className="px-4 md:px-0 my-4">
         <div className="bg-White my-2 shadow-xl rounded-lg py-2 px-3 flex">
           <div className="flex-1 mr-4">
-            <div className="pb-5 mb-5 flex  border-opacity-20	 border-b border-Spanish-Gray">
+            <div className="pb-5 mb-5 flex flex-row md:flex-col lg:flex-row  border-opacity-20	 border-b border-Spanish-Gray">
               <img
                 className="rounded-lg object-cover w-[76px] h-[76px]"
                 src={`./assets/steak.png`}
                 alt="mashroom"
               />
-              <div className="ml-3">
+              <div className="ml-3 md:ml-0 lg:ml-3">
                 <div className="font-bold text-sm md:text-base">
                   <h2>Organic Steak</h2>
                 </div>
