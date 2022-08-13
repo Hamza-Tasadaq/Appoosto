@@ -3,7 +3,7 @@ export { default as Container } from "./Container";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as BookTableForm } from "./BookTableForm";
 export { default as CarouselSlider } from "./CarouselSlider";
-export { default as DashboardNavbar } from "./DashboardNavbar";
+export { default as DashboardHeaderDesktop } from "./DashboardHeaderDesktop";
 export { default as Cart } from "./Cart";
 export { default as Checkout } from "./Checkout";
 export { default as Category } from "./Category";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function DashboardNavbar() {
+function DashboardHeaderDesktop() {
   const [activeButton, setActiveButton] = useState({
     takeaway: true,
     delivery: false,
@@ -74,4 +74,4 @@ function DashboardNavbar() {
   );
 }
 
-export default DashboardNavbar;
+export default DashboardHeaderDesktop;

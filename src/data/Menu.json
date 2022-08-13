@@ -18,6 +18,13 @@
       "imgSrc": "mashroom",
       "title": "Mushroom Pasta",
       "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "chef-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
       "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
     },
     {
@@ -31,7 +38,8 @@
       "imgSrc": "mashroom",
       "title": "Mushroom Pasta",
       "price": "€12",
-      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "chef-tag"
     },
     {
       "imgSrc": "steak",
@@ -52,7 +60,8 @@
       "imgSrc": "mashroom",
       "title": "Mushroom Pasta",
       "price": "€12",
-      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "chef-tag"
     },
     {
       "imgSrc": "steak",

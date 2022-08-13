@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function PinScreen() {
+  const navigate = useNavigate();
   // Otp input text
   const [otp, setOtp] = useState("");
   // Number of entered text for otp
@@ -15,12 +16,33 @@ function PinScreen() {
     }
   };
 
+  const [isValidOtp, setIsValidOtp] = useState(false);
+
+  const checkIsValidOtp = () => {
+    if (otp === "0000") {
+      setIsValidOtp(true);
+      setTimeout(() => {
+        navigate("/menu");
+      }, [1000]);
+    } else {
+      setIsValidOtp(false);
+    }
+  };
+
   const handleClickBack = () => {
     if (eneteredOtp >= 1 && otp.length >= 1) {
       setOtp(otp.slice(0, -1));
       setEnteredOtp(eneteredOtp - 1);
     }
   };
+
+  const handleValidation = () => {
+    if (eneteredOtp === 4) {
+      setEnteredOtp(eneteredOtp + 1);
+      checkIsValidOtp();
+    }
+  };
+
   return (
     <>
       <div className="sticky top-0 left-0 right-0 z-50 bg-White rounded-b-lg shadow-lg p-4 flex items-center justify-between">
@@ -49,16 +71,16 @@ function PinScreen() {
           ))}
         </div>
         {/* Display when Otp is correct */}
-        {eneteredOtp === 4 && (
+        {isValidOtp ? (
+          <div className="flex items-center justify-center my-4">
+            <img src="./assets/tick-success.svg" alt="tick-success" />
+            <p className="font-medium text-xs text-Black ml-2">
+              Your entered pin is correct.
+            </p>
+          </div>
+        ) : (
           <>
-            {otp === "0000" ? (
-              <div className="flex items-center justify-center my-4">
-                <img src="./assets/tick-success.svg" alt="tick-success" />
-                <p className="font-medium text-xs text-Black ml-2">
-                  Your entered pin is correct.
-                </p>
-              </div>
-            ) : (
+            {eneteredOtp === 5 && (
               <div className="my-4 text-Rlovers-Red">
                 <p>Your entered pin is wrong.</p>
               </div>
@@ -93,7 +115,10 @@ function PinScreen() {
             0
           </h1>
 
-          <div className="w-[100px] flex items-center justify-center my-3">
+          <div
+            onClick={handleValidation}
+            className="w-[100px] flex items-center justify-center my-3"
+          >
             <div className="bg-White h-12 w-12 rounded-full flex items-center justify-center shadow-2xl	">
               <img
                 className=""

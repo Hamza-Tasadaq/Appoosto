@@ -1,12 +1,14 @@
 import MenuData from "../data/Menu.json";
+import DashboardHeaderPhone from "./DashboardHeaderPhone";
 
 const Menu = () => {
   return (
     <div>
+      <DashboardHeaderPhone heading={"Pan Asian Resturant"} />
       <div>
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
-            <h1 className="font-bold ml-1 bg-White z-50 sticky top-0 left-0">
+            <h1 className="font-bold ml-1 bg-White z-40 sticky top-0 left-0">
               {key}
             </h1>
             <div className="mx-2 grid grid-cols-1 lg:grid-cols-2 gap-5">

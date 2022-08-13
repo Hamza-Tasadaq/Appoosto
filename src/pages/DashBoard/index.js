@@ -2,14 +2,14 @@ import {
   Cart,
   Category,
   Checkout,
-  DashboardNavbar,
+  DashboardHeaderDesktop,
   Menu,
 } from "../../components";
 
 const Dashboard = () => {
   return (
     <div className="bg-Flash-White h-screen ">
-      <DashboardNavbar />
+      <DashboardHeaderDesktop />
       <div className="mt-3 px-2 flex max-h-dashboard">
         <div className="w-4/12 lg:w-1/4 h-full overflow-auto  noScrollBar mx-2">
           <Cart />
