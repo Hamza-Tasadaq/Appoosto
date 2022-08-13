@@ -1,0 +1,43 @@
+[
+  {
+    "iconSrc": "pizza",
+    "name": "Pizza",
+    "background": "#B56362"
+  },
+
+  {
+    "iconSrc": "drinks",
+    "name": "Drinks",
+    "background": "#175E95"
+  },
+  {
+    "iconSrc": "hotdog",
+    "name": "Hot Dogs",
+    "background": "#C397C5"
+  },
+  {
+    "iconSrc": "fries",
+    "name": "Fries",
+    "background": "#266D29"
+  },
+  {
+    "iconSrc": "muffins",
+    "name": "Muffins",
+    "background": "#32C5FF"
+  },
+  {
+    "iconSrc": "breads",
+    "name": "Breads",
+    "background": "#C73FCD"
+  },
+  {
+    "iconSrc": "icecream",
+    "name": "Ice Cream",
+    "background": "#EB8A89"
+  },
+  {
+    "iconSrc": "cupcake",
+    "name": "Cupcakes",
+    "background": "#4F94CA"
+  }
+]
