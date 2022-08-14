@@ -1,13 +1,10 @@
-import { useState } from "react";
 import {
   Cart,
   Category,
   Checkout,
   DashboardHeaderDesktop,
   Menu,
-  ProductDetails,
 } from "../../components";
-import ModalWrapper from "../../components/ModalWrapper";
 
 const Dashboard = () => {
   return (

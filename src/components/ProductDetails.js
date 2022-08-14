@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const CartButtons = () => {
   return (
-    <div className="flex justify-between space-x-2 mt-4">
+    <div className="flex bg-White md:bg-transparent fixed md:static bottom-0 left-0 right-0 z-50  p-3 justify-between space-x-2 ">
       <div className="bg-Platinum flex items-center rounded-lg px-3 space-x-3 py-2 font-semibold text-lg w-auto">
         <div className="opacity-50">-</div>
         <h2>2</h2>
@@ -60,25 +60,30 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
     });
   };
   return (
-    <div className="bg-White w-full md:max-w-[902px] mx-5 rounded-lg overflow-hidden">
+    <div className="bg-White w-full md:max-w-[902px] md:mx-5 rounded-lg overflow-hidden">
       <div className="hidden md:flex items-center justify-between bg-Vivid-Red-Tangelo p-2  bg-opacity-20">
         <div></div>
         <h1 className="text-Vivid-Red-Tangelo font-bold text-base">
           Food Details
         </h1>
 
-        <img onClick={closeHandler} className="cursor-pointer" src="./assets/close.svg" alt="close" />
+        <img
+          onClick={closeHandler}
+          className="cursor-pointer"
+          src="./assets/close.svg"
+          alt="close"
+        />
       </div>
 
-      <div className="md:px-8 md:py-4 flex">
-        <div className="flex-1 mx-1">
+      <div className="md:px-8 md:py-4 md:flex">
+        <div className="flex-1 md:mx-1">
           <img
-            className="mb-2"
+            className="mb-2 w-full"
             src="./assets/steak-full.png"
             alt="steak-full"
           />
 
-          <div className="rounded-lg shadow-md md:px-5 md:py-[30px]">
+          <div className="rounded-lg mx-3 my-4 md:my-3 md:mx-0 p-3 box-shadow md:px-5 md:py-[30px]">
             <div className="font-semibold mb-2 text-lg flex items-center justify-between pb-3 border-opacity-20 border-b border-Spanish-Gray">
               <h1>Organic Steak</h1>
               <h2 className="text-Vivid-Red-Tangelo">€12</h2>
@@ -90,7 +95,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </p>
           </div>
 
-          <div className="rounded-lg shadow-md md:px-5 md:py-[30px]">
+          <div className="rounded-lg mx-3 my-4 md:my-3 md:mx-0 p-3 box-shadow md:px-5 md:py-[30px]">
             <div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
@@ -135,12 +140,12 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </div>
           </div>
 
-          <div className="hiddenas md:block">
+          <div className="hidden md:block">
             <CartButtons />
           </div>
         </div>
-        <div className="flex-1 mx-1">
-          <div className="shadow-md rounded-sm md:px-5 md:py-[20px]">
+        <div className="flex-1 mb-20 md:mb-0 md:mx-1">
+          <div className="box-shadow  mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
               Ingredients
             </h1>
@@ -193,7 +198,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </div>
           </div>
 
-          <div className="shadow-md rounded-sm md:px-5 md:py-[20px]">
+          <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
               Extras
             </h1>
@@ -246,7 +251,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </div>
           </div>
 
-          <div className="shadow-md rounded-sm md:px-5 md:py-[20px]">
+          <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
               Variant 1
             </h1>
@@ -306,7 +311,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               </div>
             </div>
           </div>
-          <div className="shadow-md rounded-sm md:px-5 md:py-[20px]">
+          <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h2 className="font-semibold border-b border-Spanish-Gray border-opacity-20 pb-2">
               Notes
             </h2>
@@ -315,6 +320,9 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               placeholder="Write here"
             />
           </div>
+        </div>
+        <div className="md:hidden">
+          <CartButtons />
         </div>
       </div>
     </div>

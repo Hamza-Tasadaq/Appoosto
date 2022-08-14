@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cart from "./pages/Cart";
 import Menu from "./pages/Menu";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/pinscreen" element={<PinScreen />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/productdetails" element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
