@@ -5,18 +5,20 @@ import ModalWrapper from "./ModalWrapper";
 import ProductDetails from "./ProductDetails";
 
 const Menu = () => {
-  const [showProductDetails, setShowProductDetails] = useState(true);
+  const [showProductDetails, setShowProductDetails] = useState(false);
 
   const modalHandler = () => {
     setShowProductDetails(!showProductDetails);
   };
   return (
     <div>
-      {showProductDetails && (
-        <ModalWrapper>
-          <ProductDetails closeHandler={modalHandler} />
-        </ModalWrapper>
-      )}
+      <div className="hidden md:block">
+        {showProductDetails && (
+          <ModalWrapper>
+            <ProductDetails closeHandler={modalHandler} />
+          </ModalWrapper>
+        )}
+      </div>
       <div className="md:hidden">
         <DashboardHeaderPhone prevHref="/" heading={"Pan Asian Resturant"} />
       </div>
