@@ -1,10 +1,25 @@
+import { useState } from "react";
 import MenuData from "../data/Menu.json";
 import DashboardHeaderPhone from "./DashboardHeaderPhone";
+import ModalWrapper from "./ModalWrapper";
+import ProductDetails from "./ProductDetails";
 
 const Menu = () => {
+  const [showProductDetails, setShowProductDetails] = useState(true);
+
+  const modalHandler = () => {
+    setShowProductDetails(!showProductDetails);
+  };
   return (
     <div>
-      <DashboardHeaderPhone prevHref="/" heading={"Pan Asian Resturant"} />
+      {showProductDetails && (
+        <ModalWrapper>
+          <ProductDetails closeHandler={modalHandler} />
+        </ModalWrapper>
+      )}
+      <div className="md:hidden">
+        <DashboardHeaderPhone prevHref="/" heading={"Pan Asian Resturant"} />
+      </div>
       <div>
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
@@ -24,8 +39,9 @@ const Menu = () => {
                   index
                 ) => (
                   <div
+                    onClick={modalHandler}
                     key={index}
-                    className="bg-White my-2 relative shadow-md rounded-lg py-2 px-3 flex"
+                    className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex"
                   >
                     <img
                       className="absolute top-0 left-0 w-10"

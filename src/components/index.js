@@ -9,5 +9,6 @@ export { default as Checkout } from "./Checkout";
 export { default as Category } from "./Category";
 export { default as Menu } from "./Menu";
 export { default as Payment } from "./Payment";
+export { default as ProductDetails } from "./ProductDetails";
 export { default as WhatsAppBtn } from "./WhatsAppBtn";
 export { default as Footer } from "./Footer";

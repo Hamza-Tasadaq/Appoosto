@@ -1,14 +1,17 @@
+import { useState } from "react";
 import {
   Cart,
   Category,
   Checkout,
   DashboardHeaderDesktop,
   Menu,
+  ProductDetails,
 } from "../../components";
+import ModalWrapper from "../../components/ModalWrapper";
 
 const Dashboard = () => {
   return (
-    <div className="bg-Flash-White h-screen ">
+    <div className="relative bg-Flash-White h-screen ">
       <DashboardHeaderDesktop />
       <div className="mt-3 px-2 flex max-h-dashboard">
         <div className="w-4/12 lg:w-1/4 h-full overflow-auto  noScrollBar mx-2">
