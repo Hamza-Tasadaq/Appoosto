@@ -6,7 +6,7 @@ import {
 const ProductDetails = () => {
   return (
     <div>
-      <DashboardHeaderPhone heading="Details" prevHref="menu" isSamll={true} />
+      <DashboardHeaderPhone heading="Details" prevHref="/menu" isSamll={true} />
       <ProductDetail />
     </div>
   );

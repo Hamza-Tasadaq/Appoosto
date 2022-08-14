@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
 import DashboardHeaderPhone from "./DashboardHeaderPhone";
 import ModalWrapper from "./ModalWrapper";
 import ProductDetails from "./ProductDetails";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [showProductDetails, setShowProductDetails] = useState(false);
 
   const modalHandler = () => {
     setShowProductDetails(!showProductDetails);
+  };
+
+  const productClickHandler = () => {
+    if (window.innerWidth < 768) {
+      navigate("/productdetails");
+    } else {
+      setShowProductDetails(!showProductDetails);
+    }
   };
   return (
     <div>
@@ -41,7 +51,7 @@ const Menu = () => {
                   index
                 ) => (
                   <div
-                    onClick={modalHandler}
+                    onClick={productClickHandler}
                     key={index}
                     className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex"
                   >

@@ -34,7 +34,7 @@ const Card = ({ imgSrc, rating, name, desc, classes }) => {
 };
 
 const Banner = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [currentPosition] = useScroll();
 
   const handleBookNow = () => {

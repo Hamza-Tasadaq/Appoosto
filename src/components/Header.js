@@ -4,7 +4,7 @@ import useScroll from "../hooks/useScroll";
 import Container from "./Container";
 
 const Header = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [currentPosition] = useScroll();
 
   const handleBookNow = () => {
