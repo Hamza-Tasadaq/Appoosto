@@ -6,9 +6,9 @@ const Category = () => {
   const firstHalf = MenuData.slice(0, half);
   const secondHalf = MenuData.slice(half);
   return (
-    <div className="relative">
-      <div className="flex flex-col overflow-x-auto noScrollBar">
-        <div className="flex items-center my-1 space-x-3">
+    <div className="relative px-4 my-4 md:my-0 md:px-0">
+      <div className="flex md:flex-col md:overflow-x-auto md:noScrollBar">
+        <div className="flex flex-col mr-2 md:mr-0  md:flex-row items-center my-1 space-y-3  md:space-x-3">
           {firstHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard
               key={index}
@@ -18,7 +18,7 @@ const Category = () => {
             />
           ))}
         </div>
-        <div className="flex items-center my-2 space-x-3">
+        <div className="flex flex-col ml-2 md:ml-0 md:flex-row items-center my-1 space-y-3  md:space-x-3">
           {secondHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard
               key={index}
@@ -29,7 +29,7 @@ const Category = () => {
           ))}
         </div>
       </div>
-      <div className="bg-Spanish-Gray  h-px max-w-[60%] mx-auto opacity-25" />
+      <div className="hidden md:block bg-Spanish-Gray  h-px max-w-[60%] mx-auto opacity-25" />
     </div>
   );
 };

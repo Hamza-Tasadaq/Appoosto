@@ -1,11 +1,12 @@
-import { Menu as PhoneMenu } from "../../components"
+import { Menu as PhoneMenu, PhoneFooter } from "../../components";
 
 const Menu = () => {
   return (
-    <div>
-        <PhoneMenu />
+    <div className="relative">
+      <PhoneMenu />
+      <PhoneFooter />
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cart from "./pages/Cart";
 import Menu from "./pages/Menu";
+import Category from "./pages/Category";
 import ProductDetails from "./pages/ProductDetails";
 import Filters from "./pages/Filters";
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/pinscreen" element={<PinScreen />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/category" element={<Category />} />
           <Route path="/productdetails" element={<ProductDetails />} />
           <Route path="/filters" element={<Filters />} />
         </Routes>
