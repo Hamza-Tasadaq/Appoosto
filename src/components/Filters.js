@@ -865,7 +865,7 @@ const ItemsData = [
 
 const Filters = ({ closeHandler = () => {} }) => {
   return (
-    <div className="bg-White w-full md:max-w-[902px] md:mx-5 rounded-lg overflow-hidden">
+    <div className="bg-White w-full md:max-w-[902px] px-4 md:px-0 md:mx-5 rounded-lg overflow-hidden">
       <div className="hidden md:flex items-center justify-between bg-Vivid-Red-Tangelo p-2  bg-opacity-20">
         <div></div>
         <h1 className="text-Vivid-Red-Tangelo font-bold text-base">
@@ -879,8 +879,11 @@ const Filters = ({ closeHandler = () => {} }) => {
           alt="close"
         />
       </div>
-
-      <div className="md:px-8 md:py-4 md:flex items-center md:space-x-5 justify-sd">
+      <div className="md:px-8 md:py-4 md:flex my-5 items-center md:space-x-5 space-y-4 md:space-y-0">
+        <div className=" md:hidden">
+          <Type />
+        </div>
+        <h3 className="text-center font-semibold text-xs md:hidden">Allergens</h3>
         <div className="grid grid-cols-2 gap-1.5 flex-1">
           {ItemsData.map(({ text, Icon, SelectedIcon }, index) => (
             <Item
@@ -891,7 +894,7 @@ const Filters = ({ closeHandler = () => {} }) => {
             />
           ))}
         </div>
-        <div className="w-px h-72	bg-Spanish-Gray opacity-20" />
+        <div className="hidden md:block w-px h-72	bg-Spanish-Gray opacity-20" />
         <div className="space-y-3 flex-1">
           <div className="hidden md:block">
             <Type />
