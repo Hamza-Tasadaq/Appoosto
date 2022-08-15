@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Cart from "./pages/Cart";
 import Menu from "./pages/Menu";
 import ProductDetails from "./pages/ProductDetails";
+import Filters from "./pages/Filters";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/productdetails" element={<ProductDetails />} />
+          <Route path="/filters" element={<Filters />} />
         </Routes>
       </BrowserRouter>
     </div>
