@@ -70,7 +70,7 @@ const PhoneFooter = () => {
             </svg>
           </Link>
         </div>
-        <div className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow">
+        <Link to={"/"} className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow">
           <svg
             width="22"
             height="20"
@@ -87,7 +87,7 @@ const PhoneFooter = () => {
               fill="white"
             />
           </svg>
-        </div>
+        </Link>
 
         <div className="flex items-center">
           <Link to={"/"} className="mx-7">

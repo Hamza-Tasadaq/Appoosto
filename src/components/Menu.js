@@ -35,7 +35,7 @@ const Menu = () => {
       <div>
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
-            <h1 className="font-bold ml-1 bg-White z-40 sticky top-0 left-0">
+            <h1 className="font-bold pl-3 md:pl-0 md:ml-1 bg-White z-40 sticky top-0 left-0">
               {key}
             </h1>
             <div className="mx-2 grid grid-cols-1 lg:grid-cols-2 gap-5">
