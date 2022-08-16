@@ -36,6 +36,7 @@ function PinScreen() {
     if (eneteredOtp < 4) {
       setOtp(`${otp}${num}`);
       setEnteredOtp(eneteredOtp + 1);
+      setIsWrongOtp(false);
     }
   };
 
