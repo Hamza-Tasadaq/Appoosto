@@ -10,7 +10,7 @@ const KeyboardButton = ({ clickHandle = () => {}, number }) => {
 
     setTimeout(() => {
       setIsClicked(false);
-    }, 500);
+    }, 200);
   };
   return (
     <h1
