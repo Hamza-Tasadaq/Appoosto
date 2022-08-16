@@ -864,6 +864,19 @@ const ItemsData = [
 ];
 
 const Filters = ({ closeHandler = () => {} }) => {
+  const [spice, setSpice] = useState(2);
+
+  const handleSpiceChange = (type) => {
+    if (type === "-") {
+      if (spice > 1) {
+        setSpice(spice - 1);
+      }
+    } else if (type === "+") {
+      if (spice < 3) {
+        setSpice(spice + 1);
+      }
+    }
+  };
   return (
     <div className="bg-White w-full md:max-w-[902px] px-4 md:px-0 md:mx-5 rounded-lg overflow-hidden">
       <div className="hidden md:flex items-center justify-between bg-Vivid-Red-Tangelo p-2  bg-opacity-20">
@@ -883,7 +896,9 @@ const Filters = ({ closeHandler = () => {} }) => {
         <div className=" md:hidden">
           <Type />
         </div>
-        <h3 className="text-center font-semibold text-xs md:hidden">Allergens</h3>
+        <h3 className="text-center font-semibold text-xs md:hidden">
+          Allergens
+        </h3>
         <div className="grid grid-cols-2 gap-1.5 flex-1">
           {ItemsData.map(({ text, Icon, SelectedIcon }, index) => (
             <Item
@@ -902,19 +917,30 @@ const Filters = ({ closeHandler = () => {} }) => {
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
 
           <div className="rounded-lg p-2 box-shadow flex justify-center items-center">
-            <div className="bg-Vivid-Red-Tangelo cursor-pointer rounded-lg text-White text-4xl flex items-center justify-center w-10 h-10">
+            <div
+              onClick={() => {
+                handleSpiceChange("-");
+              }}
+              className="bg-Vivid-Red-Tangelo cursor-pointer rounded-lg text-White text-4xl flex items-center justify-center w-10 h-10"
+            >
               -
             </div>
             <div className="mx-10 space-x-3 flex items-center">
-              <img src="./assets/chilli-pepper.svg" alt="chilli-pepper" />
-              <img src="./assets/chilli-pepper.svg" alt="chilli-pepper" />
-              <img
-                className="opacity-50"
-                src="./assets/chilli-pepper.svg"
-                alt="chilli-pepper"
-              />
+              {Array.from({ length: 3 }, (_, i) => (
+                <img
+                  key={i}
+                  className={`${i+1 <= spice ? " opacity-100 ": " opacity-50 "} duration-150`}
+                  src="./assets/chilli-pepper.svg"
+                  alt="chilli-pepper"
+                />
+              ))}
             </div>
-            <div className="bg-Vivid-Red-Tangelo rounded-lg cursor-pointer text-White text-2xl flex items-center justify-center w-10 h-10">
+            <div
+              onClick={() => {
+                handleSpiceChange("+");
+              }}
+              className="bg-Vivid-Red-Tangelo rounded-lg cursor-pointer text-White text-2xl flex items-center justify-center w-10 h-10"
+            >
               +
             </div>
           </div>
@@ -936,12 +962,12 @@ const Filters = ({ closeHandler = () => {} }) => {
 
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
 
-          <div className="p-3 bg-Electric-Brown cursor-pointer box-shadow rounded-lg flex items-center justify-start">
+          {/* <div className="p-3 bg-Electric-Brown cursor-pointer box-shadow rounded-lg flex items-center justify-start">
             <img src="./assets/chilli-pepper.svg" alt="chilli-pepper" />
             <h2 className="ml-5 px-5 font-semibold text-sm border-l border-White text-White border-opacity-30">
               Filters
             </h2>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
