@@ -28,6 +28,7 @@ const BookTableForm = () => {
             selected={date}
             onChange={(date) => setDate(date)}
             placeholderText="Date"
+            dateFormat="dd/MM/yyyy"
           />
 
           <img src="./assets/calendar.svg" alt="calendar" />
@@ -39,7 +40,7 @@ const BookTableForm = () => {
           onClick={() => {
             handleTimeDropDownOpen(null);
           }}
-          className="w-full p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg"
+          className="w-full p-3 md:p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg"
         >
           <p className="text-Black opacity-50">{time ? time : "Time"}</p>
           <img src="./assets/arrow-down.svg" alt="arrow-down" />
