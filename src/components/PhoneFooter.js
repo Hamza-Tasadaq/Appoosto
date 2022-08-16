@@ -70,7 +70,7 @@ const PhoneFooter = () => {
             </svg>
           </Link>
         </div>
-        <Link to={"/"} className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow">
+        <Link to={"/orderStatus"} className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow">
           <svg
             width="22"
             height="20"
