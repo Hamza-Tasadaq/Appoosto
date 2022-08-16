@@ -112,9 +112,13 @@ const Payment = () => {
           Your booking will be sent to restaurant name with whatsapp and you
           will receive status notifications in chat.
         </p>
-        <button className="bg-Vivid-Red-Tangelo rounded-lg text-White font-semibold px-8 md:hidden text-sm">Order Now</button>
+        <button className="bg-Vivid-Red-Tangelo rounded-lg text-White font-semibold px-8 md:hidden text-sm">
+          Order Now
+        </button>
       </div>
-      <WhatsAppBtn text="Order Now" />
+      <div className="hidden md:block">
+        <WhatsAppBtn text="Order Now" />
+      </div>
     </div>
   );
 };
