@@ -34,7 +34,7 @@ const BookTableForm = () => {
 
           <img src="./assets/calendar.svg" alt="calendar" />
         </div>
-        <Input placeholder="Guests" />
+        <Input type="number" placeholder="Guests" />
       </div>
       <div className="relative">
         <div
