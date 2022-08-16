@@ -16,7 +16,7 @@ const Payment = () => {
   };
   return (
     <div>
-      <div className="mx-4 p-4 md:p-0 md-p-0 md:mx-0 mb-4 md:my-4 bg-White md:bg-transparent rounded-lg shadow-lg md:shadow-none">
+      <div className="mx-4  p-4 md:p-0 md-p-0 md:mx-0 mb-24 md:mb-4 md:my-4 bg-White md:bg-transparent rounded-lg shadow-lg md:shadow-none">
         <div className="md:hidden">
           <h2 className="opacity-30 py-2 border-b border-Spanish-Gray">
             Payment
@@ -103,7 +103,7 @@ const Payment = () => {
         <div className="hidden md:block bg-Spanish-Gray h-px max-w-[242px] mx-auto opacity-20 my-4" />
       </div>
 
-      <div className="mx-4 p-4 md:p-0 md-p-0 md:mx-0 mb-4 md:my-4 bg-White md:bg-transparent rounded-lg shadow-lg justify-between md:shadow-none flex flex-row md:flex-col">
+      <div className="fixed bottom-0 left-0 right-0 md:static  p-4 md:p-0 md-p-0 md:mx-0 z-50 md:mb-4 md:my-4 bg-White md:bg-transparent rounded-lg shadow-lg justify-between md:shadow-none flex flex-row md:flex-col">
         <div className="font-semibold text-xs flex md:flex-row flex-col md:items-center md:my-4 justify-between">
           <h2>TOTAL</h2>
           <h1 className="font-bold text-lg mt-2 md:mt-0">23.00€</h1>
