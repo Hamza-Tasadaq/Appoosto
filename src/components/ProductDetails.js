@@ -21,7 +21,7 @@ const CartButtons = ({ price = "", closeHandler = () => {} }) => {
   const addCartHandler = () => {
     dispatch(
       addItem({
-        id: 1,
+        id: uuidv4(),
         imgSrc: "steak",
         title: "Organic Steak",
         desc: "Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus leo sapien…",
