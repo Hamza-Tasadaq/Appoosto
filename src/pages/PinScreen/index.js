@@ -40,15 +40,20 @@ function PinScreen() {
   };
 
   const [isValidOtp, setIsValidOtp] = useState(false);
+  const [isWrongOtp, setIsWrongOtp] = useState(false);
 
   const checkIsValidOtp = () => {
-    if (otp === "0000") {
+    if (otp === "0000" && eneteredOtp >= 4) {
       setIsValidOtp(true);
       setTimeout(() => {
         navigate("/menu");
       }, [1000]);
     } else {
       setIsValidOtp(false);
+
+      setIsWrongOtp(true);
+      setOtp("");
+      setEnteredOtp(0);
     }
   };
 
@@ -102,7 +107,7 @@ function PinScreen() {
           </div>
         ) : (
           <>
-            {eneteredOtp === 5 && (
+            {isWrongOtp && (
               <div className="my-4 text-Rlovers-Red">
                 <p>Your entered pin is wrong.</p>
               </div>
