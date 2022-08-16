@@ -109,7 +109,7 @@ const PhoneFooter = () => {
             </svg>
           </Link>
 
-          <Link to={""} className="mx-7">
+          <Link to={"/cart"} className="mx-7">
             <svg
               width="18"
               height="20"
