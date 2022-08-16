@@ -1,20 +1,45 @@
 import { useState } from "react";
 
 const CartButtons = () => {
+  const [noOfItems, setNoOfItems] = useState(1);
+  const HandleItemsChange = (type) => {
+    if (type === "-") {
+      if (noOfItems > 1) {
+        setNoOfItems(noOfItems - 1);
+      }
+    } else if (type === "+") {
+      setNoOfItems(noOfItems + 1);
+    }
+  };
+
   return (
     <div className="flex bg-White md:bg-transparent fixed md:static bottom-0 left-0 right-0 z-50  p-3 justify-between space-x-2 ">
-      <div className="bg-Platinum flex items-center rounded-lg px-3 space-x-3 py-2 font-semibold text-lg w-auto">
-        <div className="opacity-50">-</div>
-        <h2>2</h2>
-        <div className="opacity-50">+</div>
+      <div className="bg-Platinum w-2/6 flex items-center rounded-lg px-3 space-x-3 py-2 font-semibold text-lg justify-around md:w-auto">
+        <div
+          onClick={() => {
+            HandleItemsChange("-");
+          }}
+          className="opacity-50"
+        >
+          -
+        </div>
+        <h2>{noOfItems}</h2>
+        <div
+          onClick={() => {
+            HandleItemsChange("+");
+          }}
+          className="opacity-50"
+        >
+          +
+        </div>
       </div>
       <div className="bg-Vivid-Red-Tangelo bg-opacity-20 font-semibold hidden rounded-lg md:flex items-center p-2 text-Vivid-Red-Tangelo">
-        €12
+        €12,00
       </div>
       <div className="bg-Vivid-Red-Tangelo text-White font-semibold rounded-lg items-center flex flex-1 justify-center">
         Add to cart
         <span className="md:hidden ml-2 pl-2 border-l border-White border-opacity-30">
-          €12
+          €12,00
         </span>
       </div>
     </div>
@@ -272,7 +297,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                 className="flex items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                <div
+                  <div
                     className={`border-2 flex items-center justify-center ${
                       selectedVarient.small
                         ? " border-Medium-Electric-Blue "
@@ -298,7 +323,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                 className="flex items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                <div
+                  <div
                     className={`border-2 flex items-center justify-center ${
                       selectedVarient.medium
                         ? " border-Medium-Electric-Blue "
