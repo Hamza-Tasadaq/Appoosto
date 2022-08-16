@@ -29,9 +29,8 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const handleIngredientsSelect = (method) => {
     setIngredients({
-      tomato: false,
-      mozzarella: false,
-      [method]: true,
+      ...ingredients,
+      [method]: !ingredients[method],
     });
   };
   const [selectedExtras, setSelectedExtras] = useState({
@@ -41,9 +40,8 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const handleExtraSelect = (method) => {
     setSelectedExtras({
-      doubletomato: false,
-      doublemozzarella: false,
-      [method]: true,
+      ...selectedExtras,
+      [method]: !selectedExtras[method],
     });
   };
 
@@ -54,9 +52,8 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const handleVariantSelect = (method) => {
     setSelectedVarient({
-      small: false,
-      medium: false,
-      [method]: true,
+      ...selectedVarient,
+      [method]: !selectedVarient[method],
     });
   };
   return (
@@ -265,17 +262,13 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                   <div
                     className={`${
                       selectedVarient.small
-                        ? "  border-Medium-Electric-Blue"
+                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
                         : " border-Spanish-Gray"
-                    } rounded-full border-2 w-5 h-5 flex items-center justify-center`}
+                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
                   >
-                    <div
-                      className={`${
-                        selectedVarient.small
-                          ? " w-3 h-3 bg-Medium-Electric-Blue "
-                          : " bg-transparent"
-                      } rounded-full`}
-                    />
+                    {selectedVarient.small && (
+                      <img src="./assets/tick.svg" alt="tick" />
+                    )}
                   </div>
                   <h3 className="font-semibold ml-2">Small</h3>
                 </div>
@@ -291,17 +284,13 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                   <div
                     className={`${
                       selectedVarient.medium
-                        ? "  border-Medium-Electric-Blue"
+                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
                         : " border-Spanish-Gray"
-                    } rounded-full border-2 w-5 h-5 flex items-center justify-center`}
+                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
                   >
-                    <div
-                      className={`${
-                        selectedVarient.medium
-                          ? " w-3 h-3 bg-Medium-Electric-Blue "
-                          : " bg-transparent"
-                      } rounded-full`}
-                    />
+                    {selectedVarient.medium && (
+                      <img src="./assets/tick.svg" alt="tick" />
+                    )}
                   </div>
                   <h3 className="font-semibold ml-2">Medium</h3>
                 </div>
