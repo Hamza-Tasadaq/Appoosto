@@ -8,7 +8,7 @@ function DashboardHeaderDesktop() {
     delivery: false,
   });
 
-  const [showFiltersModal, setShowFiltersModal] = useState(true);
+  const [showFiltersModal, setShowFiltersModal] = useState(false);
 
   const closeHandler = () => {
     setShowFiltersModal(!showFiltersModal);
