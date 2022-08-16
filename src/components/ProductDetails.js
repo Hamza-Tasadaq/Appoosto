@@ -84,11 +84,11 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           />
 
           <div className="rounded-lg mx-3 my-4 md:my-3 md:mx-0 p-3 box-shadow md:px-5 md:py-[30px]">
-            <div className="font-semibold mb-2 text-lg flex items-center justify-between pb-3 border-opacity-20 border-b border-Spanish-Gray">
+            <div className="font-semibold mb-2 text-base md:text-lg flex items-center justify-between pb-3 border-opacity-20 border-b border-Spanish-Gray">
               <h1>Organic Steak</h1>
               <h2 className="text-Vivid-Red-Tangelo">€12</h2>
             </div>
-            <p className="font-medium text-sm text-Black">
+            <p className="font-medium text-xs md:text-sm text-Black">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               leo sapien, gravida scelerisque lacus in, malesuada ultrices
               purus.
@@ -100,7 +100,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <img src="./assets/coca-leaves.svg" alt="coca-leaves" />
-                  <span className="ml-2 font-semibold text-xs">
+                  <span className="ml-2 font-semibold text-xs md:text-sm">
                     Vegetarian, Vegan
                   </span>
                 </div>
@@ -124,7 +124,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               </div>
             </div>
 
-            <div className="text-Black font-semibold text-xs space-y-2">
+            <div className="text-Black font-semibold text-xs md:text-sm space-y-2">
               <div className="flex items-center">
                 <img
                   className="mr-2"
