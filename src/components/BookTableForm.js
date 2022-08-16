@@ -29,6 +29,7 @@ const BookTableForm = () => {
             onChange={(date) => setDate(date)}
             placeholderText="Date"
             dateFormat="dd/MM/yyyy"
+            onFocus={e => e.target.blur()} 
           />
 
           <img src="./assets/calendar.svg" alt="calendar" />
