@@ -7,6 +7,7 @@ const Cart = () => {
 
   const dispatch = useDispatch();
 
+  const updateCount = () => {};
   const removeHandler = (id = "1") => {
     dispatch(removeItem(id));
   };
@@ -15,7 +16,7 @@ const Cart = () => {
       <DashboardHeaderPhone prevHref="/menu" heading={"Cart"} />
       <div className="px-4 md:px-0 my-4">
         {cart.length > 0 ? (
-          cart.map(({ id, imgSrc, title, desc, price }, index) => (
+          cart.map(({ id, imgSrc, title, desc, price, count }, index) => (
             <div
               key={index}
               className="bg-White my-2 shadow-xl rounded-lg py-2 px-3 flex"
@@ -102,12 +103,12 @@ const Cart = () => {
 
                 <div className="bg-Vivid-Red-Tangelo flex flex-col text-White w-10 items-center text-base rounded-lg py-3 h-24 justify-between">
                   <img
+                    onClick={updateCount}
                     className="cursor-pointer"
                     src="./assets/plus.svg"
                     alt="plus"
                   />
-                  <span>2</span>
-
+                  <span>{count}</span>
                   <img
                     className="cursor-pointer"
                     src="./assets/minus.svg"
@@ -118,7 +119,9 @@ const Cart = () => {
             </div>
           ))
         ) : (
-          <div className="text-center font-semibold text-lg ">Your Cart Is Empty</div>
+          <div className="text-center font-semibold text-lg ">
+            Your Cart Is Empty
+          </div>
         )}
       </div>
     </div>

@@ -4,10 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addItem } from "../app/Slices/Cart";
 
-const CartButtons = ({
-  price = "",
-  closeHandler = () => {},
-}) => {
+const CartButtons = ({ price = "", closeHandler = () => {} }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [noOfItems, setNoOfItems] = useState(1);
@@ -24,11 +21,12 @@ const CartButtons = ({
   const addCartHandler = () => {
     dispatch(
       addItem({
-        id: uuidv4(),
+        id: 1,
         imgSrc: "steak",
         title: "Organic Steak",
         desc: "Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus leo sapien…",
         price: 12,
+        count: 1,
       })
     );
 
