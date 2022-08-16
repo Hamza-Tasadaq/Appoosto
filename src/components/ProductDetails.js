@@ -52,8 +52,9 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const handleVariantSelect = (method) => {
     setSelectedVarient({
-      ...selectedVarient,
-      [method]: !selectedVarient[method],
+      small: false,
+      medium: false,
+      [method]: true,
     });
   };
   const [selectedVarient2, setSelectedVarient2] = useState({
@@ -63,8 +64,9 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const handleVariantSelect2 = (method) => {
     setSelectedVarient2({
-      ...selectedVarient,
-      [method]: !selectedVarient[method],
+      small: false,
+      medium: false,
+      [method]: true,
     });
   };
   return (
@@ -270,16 +272,20 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                 className="flex items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                  <div
-                    className={`${
+                <div
+                    className={`border-2 flex items-center justify-center ${
                       selectedVarient.small
-                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
-                        : " border-Spanish-Gray"
-                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
                   >
-                    {selectedVarient.small && (
-                      <img src="./assets/tick.svg" alt="tick" />
-                    )}
+                    <div
+                      className={`${
+                        selectedVarient.small
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
                   <h3 className="font-semibold ml-2">Small</h3>
                 </div>
@@ -292,16 +298,20 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                 className="flex items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                  <div
-                    className={`${
+                <div
+                    className={`border-2 flex items-center justify-center ${
                       selectedVarient.medium
-                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
-                        : " border-Spanish-Gray"
-                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
                   >
-                    {selectedVarient.medium && (
-                      <img src="./assets/tick.svg" alt="tick" />
-                    )}
+                    <div
+                      className={`${
+                        selectedVarient.medium
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
                   <h3 className="font-semibold ml-2">Medium</h3>
                 </div>
@@ -310,7 +320,6 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </div>
           </div>
 
-          
           <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
               Variant 2
@@ -325,15 +334,19 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               >
                 <div className="flex items-center">
                   <div
-                    className={`${
+                    className={`border-2 flex items-center justify-center ${
                       selectedVarient2.small
-                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
-                        : " border-Spanish-Gray"
-                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
                   >
-                    {selectedVarient2.small && (
-                      <img src="./assets/tick.svg" alt="tick" />
-                    )}
+                    <div
+                      className={`${
+                        selectedVarient2.small
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
                   <h3 className="font-semibold ml-2">Small</h3>
                 </div>
@@ -347,15 +360,19 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               >
                 <div className="flex items-center">
                   <div
-                    className={`${
+                    className={`border-2 flex items-center justify-center ${
                       selectedVarient2.medium
-                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
-                        : " border-Spanish-Gray"
-                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
                   >
-                    {selectedVarient2.medium && (
-                      <img src="./assets/tick.svg" alt="tick" />
-                    )}
+                    <div
+                      className={`${
+                        selectedVarient2.medium
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
                   <h3 className="font-semibold ml-2">Medium</h3>
                 </div>
