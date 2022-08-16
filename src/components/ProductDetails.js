@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addItem } from "../app/Slices/Cart";
 
-const CartButtons = ({ price = "", setPrice = () => {} }) => {
+const CartButtons = ({
+  price = "",
+  closeHandler = () => {},
+}) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [noOfItems, setNoOfItems] = useState(1);
   const HandleItemsChange = (type) => {
     if (type === "-") {
@@ -26,6 +31,12 @@ const CartButtons = ({ price = "", setPrice = () => {} }) => {
         price: 12,
       })
     );
+
+    if (window.innerWidth < 768) {
+      navigate("/menu");
+    } else {
+      closeHandler();
+    }
   };
 
   return (
@@ -457,7 +468,11 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
         </div>
         <div className="md:hidden">
-          <CartButtons price={price} setPrice={setPrice} />
+          <CartButtons
+            closeHandler={closeHandler}
+            price={price}
+            setPrice={setPrice}
+          />
         </div>
       </div>
     </div>

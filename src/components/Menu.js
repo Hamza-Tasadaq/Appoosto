@@ -24,7 +24,7 @@ const Menu = () => {
       <div className="hidden md:block">
         {showProductDetails && (
           <ModalWrapper>
-            <ProductDetails  closeHandler={modalHandler} />
+            <ProductDetails closeHandler={modalHandler} />
           </ModalWrapper>
         )}
       </div>
