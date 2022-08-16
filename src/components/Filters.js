@@ -863,6 +863,8 @@ const ItemsData = [
 ];
 
 const Filters = ({ closeHandler = () => {} }) => {
+  const [isChefSelected, setIsChefSelected] = useState(false);
+  const [isBestSellerSelected, setIsBestSellerSelected] = useState(true);
   const [spice, setSpice] = useState(2);
 
   const handleSpiceChange = (type) => {
@@ -947,16 +949,41 @@ const Filters = ({ closeHandler = () => {} }) => {
           </div>
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
 
-          <div className="p-3 box-shadow rounded-lg cursor-pointer flex items-center justify-start">
+          <div
+            onClick={() => {
+              setIsChefSelected(!isChefSelected);
+            }}
+            className={`p-3 box-shadow rounded-lg ${
+              isChefSelected && "bg-Pastel-Violet"
+            } cursor-pointer flex items-center justify-start`}
+          >
             <img src="./assets/chef.svg" alt="chef" />
-            <h2 className="ml-5 px-5 font-semibold text-sm border-l border-Black border-opacity-30">
+            <h2
+              className={`ml-5 px-5 font-semibold text-sm border-l ${
+                isChefSelected
+                  ? " border-White text-White "
+                  : " border-Black border-opacity-30 "
+              } `}
+            >
               Chef Selection
             </h2>
           </div>
-
-          <div className="p-3 bg-Pastel-Violet cursor-pointer box-shadow rounded-lg flex items-center justify-start">
+          <div
+            onClick={() => {
+              setIsBestSellerSelected(!isBestSellerSelected);
+            }}
+            className={`p-3 box-shadow rounded-lg ${
+              isBestSellerSelected && "bg-Pastel-Violet"
+            } cursor-pointer flex items-center justify-start`}
+          >
             <img src="./assets/certificate.svg" alt="certificate" />
-            <h2 className="ml-5 px-5 font-semibold text-sm border-l border-White text-White border-opacity-30">
+            <h2
+              className={`ml-5 px-5 font-semibold text-sm border-l ${
+                isBestSellerSelected
+                  ? " border-White text-White "
+                  : " border-Black border-opacity-30 "
+              } `}
+            >
               Best Seller
             </h2>
           </div>
