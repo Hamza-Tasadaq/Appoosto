@@ -1,5 +1,4 @@
 const Input = ({ placeholder = "", type = "" }) => {
-  console.log(min, max);
   return (
     <input
       type={type}
