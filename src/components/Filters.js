@@ -8,9 +8,8 @@ const Type = () => {
 
   const selectTypeHandler = (type) => {
     setSelectedType({
-      vegeterian: false,
-      vegan: false,
-      [type]: true,
+      ...selectedType,
+      [type]: !selectedType[type],
     });
   };
   return (
@@ -868,7 +867,7 @@ const Filters = ({ closeHandler = () => {} }) => {
 
   const handleSpiceChange = (type) => {
     if (type === "-") {
-      if (spice > 1) {
+      if (spice > 0) {
         setSpice(spice - 1);
       }
     } else if (type === "+") {
@@ -929,7 +928,9 @@ const Filters = ({ closeHandler = () => {} }) => {
               {Array.from({ length: 3 }, (_, i) => (
                 <img
                   key={i}
-                  className={`${i+1 <= spice ? " opacity-100 ": " opacity-50 "} duration-150`}
+                  className={`${
+                    i + 1 <= spice ? " opacity-100 " : " opacity-50 "
+                  } duration-150`}
                   src="./assets/chilli-pepper.svg"
                   alt="chilli-pepper"
                 />
