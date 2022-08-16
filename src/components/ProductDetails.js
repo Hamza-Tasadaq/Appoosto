@@ -146,11 +146,11 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
         </div>
         <div className="flex-1 mb-20 md:mb-0 md:mx-1">
           <div className="box-shadow  mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-            <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
+            <h1 className="opacity-40 my-2  text-xs md:text-base pb-2 border-b border-Spanish-Gray border-opacity-50">
               Ingredients
             </h1>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-xs md:text-base">
               <div
                 onClick={() => {
                   handleIngredientsSelect("tomato");
@@ -171,7 +171,6 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                   </div>
                   <h3 className="font-semibold ml-2">Tomato</h3>
                 </div>
-                <h3 className="font-semibold">+ €2</h3>
               </div>
               <div
                 onClick={() => {
@@ -193,17 +192,16 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                   </div>
                   <h3 className="font-semibold ml-2">Mozzarella</h3>
                 </div>
-                <h3 className="font-semibold">+ €3</h3>
               </div>
             </div>
           </div>
 
           <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-            <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
+            <h1 className="opacity-40 text-xs md:text-base  my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
               Extras
             </h1>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-xs md:text-base">
               <div
                 onClick={() => {
                   handleExtraSelect("doubletomato");
@@ -252,11 +250,11 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
 
           <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-            <h1 className="opacity-40 my-2 pb-2 border-b border-Spanish-Gray border-opacity-50">
+            <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
               Variant 1
             </h1>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-xs md:text-base">
               <div
                 onClick={() => {
                   handleVariantSelect("small");
@@ -312,7 +310,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             </div>
           </div>
           <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-            <h2 className="font-semibold border-b border-Spanish-Gray border-opacity-20 pb-2">
+            <h2 className="font-semibold  text-xs md:text-base  border-b border-Spanish-Gray border-opacity-20 pb-2">
               Notes
             </h2>
             <input
