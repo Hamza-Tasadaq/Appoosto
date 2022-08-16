@@ -22,7 +22,7 @@ const Dashboard = () => {
             <Menu />
           </div>
         </div>
-        <div className="w-1/5	 lg:w-1/4 mx-2">
+        <div className="w-1/5 overflow-auto  noScrollBar	 lg:w-1/4 mx-2">
           <Checkout />
         </div>
       </div>

@@ -30,13 +30,13 @@ const Checkout = () => {
             onClick={dropDownClickHandle}
             className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-Chinese-Silver"
           >
-            1
+            11:00 - 12:30
           </h3>
           <h3
             onClick={dropDownClickHandle}
             className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-Chinese-Silver"
           >
-            2
+            12:0 - 14:00
           </h3>
         </div>
       </div>
