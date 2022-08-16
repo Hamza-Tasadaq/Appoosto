@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import MenuData from "../data/Menu.json";
 import DashboardHeaderPhone from "./DashboardHeaderPhone";
 import ModalWrapper from "./ModalWrapper";
@@ -29,10 +29,32 @@ const Menu = () => {
           </ModalWrapper>
         )}
       </div>
-      <div className="md:hidden">
-        <DashboardHeaderPhone prevHref="/" heading={"Pan Asian Resturant"} />
+      <div className="md:hidden sticky top-0 left-0 right-0 z-50">
+        <div className="bg-White md:bg-Flash-White  md:static  shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
+          <div className="flex px-5 pt-3 items-center justify-between">
+            <Link to={"/"} className=" flex items-center ">
+              <img
+                src="./assets/headers-logo-gray.png"
+                alt="headers-logo-gray"
+              />
+            </Link>
+            <img src="./assets/flag.png" alt="flag" />
+          </div>
+
+          <div className="bg-White flex flex-col-reverse md:flex-col font-semibold text-xs rounded-lg py-4 px-6">
+            <div className="flex font-semibold my-1 justify-between items-center">
+              <p className="opacity-50">Your menu is:</p>
+              <h3 className=" ">ComboBox</h3>
+            </div>
+
+            <div className="flex font-semibold justify-between items-center">
+              <p>Pax: 6</p>
+              <h3>PIN: 1234</h3>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
+      <div className="my-5 md:my-0">
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
             {/* <h1 className="font-bold pl-3 md:pl-0 md:ml-1 bg-White z-40 sticky top-0 left-0">
