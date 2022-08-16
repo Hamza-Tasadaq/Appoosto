@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CartButtons = () => {
+const CartButtons = ({ price = "", setPrice = () => {} }) => {
   const [noOfItems, setNoOfItems] = useState(1);
   const HandleItemsChange = (type) => {
     if (type === "-") {
@@ -34,12 +34,12 @@ const CartButtons = () => {
         </div>
       </div>
       <div className="bg-Vivid-Red-Tangelo bg-opacity-20 font-semibold hidden rounded-lg md:flex items-center p-2 text-Vivid-Red-Tangelo">
-        €12,00
+        €{price}
       </div>
       <div className="bg-Vivid-Red-Tangelo text-White font-semibold rounded-lg items-center flex flex-1 justify-center">
         Add to cart
         <span className="md:hidden ml-2 pl-2 border-l border-White border-opacity-30">
-          €12,00
+          €{price}
         </span>
       </div>
     </div>
@@ -47,6 +47,8 @@ const CartButtons = () => {
 };
 
 const ProductDetails = ({ closeHandler = () => {} }) => {
+  const [price, setPrice] = useState(12);
+
   const [ingredients, setIngredients] = useState({
     tomato: true,
     mozzarella: false,
@@ -59,7 +61,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
     });
   };
   const [selectedExtras, setSelectedExtras] = useState({
-    doubletomato: true,
+    doubletomato: false,
     doublemozzarella: false,
   });
 
@@ -68,13 +70,26 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
       ...selectedExtras,
       [method]: !selectedExtras[method],
     });
+
+    if (method === "doubletomato") {
+      if (selectedExtras[method]) {
+        updatePrice(price - 2);
+      } else if (!selectedExtras[method]) {
+        updatePrice(price + 2);
+      }
+    } else if (method === "doublemozzarella") {
+      if (selectedExtras[method]) {
+        updatePrice(price - 3);
+      } else if (!selectedExtras[method]) {
+        updatePrice(price + 3);
+      }
+    }
   };
 
   const [selectedVarient, setSelectedVarient] = useState({
-    small: true,
+    small: false,
     medium: false,
   });
-
   const handleVariantSelect = (method) => {
     setSelectedVarient({
       small: false,
@@ -82,8 +97,9 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
       [method]: true,
     });
   };
+
   const [selectedVarient2, setSelectedVarient2] = useState({
-    small: true,
+    small: false,
     medium: false,
   });
 
@@ -93,6 +109,10 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
       medium: false,
       [method]: true,
     });
+  };
+
+  const updatePrice = (newPrice) => {
+    setPrice(newPrice);
   };
   return (
     <div className="bg-White w-full md:max-w-[902px] md:mx-5 rounded-lg overflow-hidden">
@@ -176,7 +196,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
 
           <div className="hidden md:block">
-            <CartButtons />
+            <CartButtons price={price} setPrice={setPrice} />
           </div>
         </div>
         <div className="flex-1 mb-20 md:mb-0 md:mx-1">
@@ -416,7 +436,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
         </div>
         <div className="md:hidden">
-          <CartButtons />
+          <CartButtons price={price} setPrice={setPrice} />
         </div>
       </div>
     </div>
