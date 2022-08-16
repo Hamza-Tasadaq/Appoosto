@@ -50,7 +50,6 @@ function PinScreen() {
       }, [1000]);
     } else {
       setIsValidOtp(false);
-
       setIsWrongOtp(true);
       setOtp("");
       setEnteredOtp(0);
