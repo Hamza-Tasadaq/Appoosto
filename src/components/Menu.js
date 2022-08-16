@@ -21,7 +21,7 @@ const Menu = () => {
     }
   };
   return (
-    <div>
+    <div className="mb-20 md:mb-0">
       <div className="hidden md:block">
         {showProductDetails && (
           <ModalWrapper>
