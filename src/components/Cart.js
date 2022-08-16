@@ -3,7 +3,7 @@ import DashboardHeaderPhone from "./DashboardHeaderPhone";
 import { removeItem } from "../app/Slices/Cart";
 
 const Cart = () => {
-  const {cart} = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
@@ -12,9 +12,9 @@ const Cart = () => {
   };
   return (
     <div>
-      <DashboardHeaderPhone heading={"Cart"} />
+      <DashboardHeaderPhone prevHref="/menu" heading={"Cart"} />
       <div className="px-4 md:px-0 my-4">
-        {cart &&
+        {cart.length > 0 ? (
           cart.map(({ id, imgSrc, title, desc, price }, index) => (
             <div
               key={index}
@@ -116,7 +116,10 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="text-center font-semibold text-lg ">Your Cart Is Empty</div>
+        )}
       </div>
     </div>
   );

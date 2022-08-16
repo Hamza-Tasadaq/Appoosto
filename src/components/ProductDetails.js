@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
+import { addItem } from "../app/Slices/Cart";
 
 const CartButtons = ({ price = "", setPrice = () => {} }) => {
+  const dispatch = useDispatch();
   const [noOfItems, setNoOfItems] = useState(1);
   const HandleItemsChange = (type) => {
     if (type === "-") {
@@ -10,6 +14,18 @@ const CartButtons = ({ price = "", setPrice = () => {} }) => {
     } else if (type === "+") {
       setNoOfItems(noOfItems + 1);
     }
+  };
+
+  const addCartHandler = () => {
+    dispatch(
+      addItem({
+        id: uuidv4(),
+        imgSrc: "steak",
+        title: "Organic Steak",
+        desc: "Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus leo sapien…",
+        price: 12,
+      })
+    );
   };
 
   return (
@@ -36,7 +52,12 @@ const CartButtons = ({ price = "", setPrice = () => {} }) => {
       <div className="bg-Vivid-Red-Tangelo bg-opacity-20 font-semibold hidden rounded-lg md:flex items-center p-2 text-Vivid-Red-Tangelo">
         €{price}
       </div>
-      <div className="bg-Vivid-Red-Tangelo text-White font-semibold rounded-lg items-center flex flex-1 justify-center">
+      <div
+        onClick={() => {
+          addCartHandler();
+        }}
+        className="bg-Vivid-Red-Tangelo text-White font-semibold rounded-lg items-center flex flex-1 justify-center"
+      >
         Add to cart
         <span className="md:hidden ml-2 pl-2 border-l border-White border-opacity-30">
           €{price}

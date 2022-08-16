@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import WhatsAppBtn from "./WhatsAppBtn";
 
 const Payment = () => {
+  const { cart } = useSelector((state) => state.cart);
   const [selectedMethod, setSelectedMethod] = useState({
     cash: true,
     card: false,
@@ -23,7 +25,7 @@ const Payment = () => {
           </h2>
         </div>
 
-        <div className="pt-4 md:py-0 space-y-1 ">
+        <div className="pt-4 md:py-0 space-y-1 text-xs md:text-base ">
           <div
             onClick={() => {
               handlePaymentSelect("cash");
@@ -106,7 +108,12 @@ const Payment = () => {
       <div className="fixed bottom-0 left-0 right-0 md:static  p-4 md:p-0 md-p-0 md:mx-0 z-50 md:mb-4 md:my-4 bg-White md:bg-transparent rounded-lg shadow-lg justify-between md:shadow-none flex flex-row md:flex-col">
         <div className="font-semibold text-xs flex md:flex-row flex-col md:items-center md:my-4 justify-between">
           <h2>TOTAL</h2>
-          <h1 className="font-bold text-lg mt-2 md:mt-0">23.00€</h1>
+          <h1 className="font-bold text-lg mt-2 md:mt-0">
+            {cart
+              .map((cartItem) => cartItem.price)
+              .reduce((partialSum, a) => partialSum + a, 0)}
+            €
+          </h1>
         </div>
         <p className="hidden md:block bg-Pastel-Violet text-Pastel-Violet font-semibold p-4 text-xs bg-opacity-20 rounded-lg">
           Your booking will be sent to restaurant name with whatsapp and you
