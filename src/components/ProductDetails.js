@@ -56,6 +56,17 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
       [method]: !selectedVarient[method],
     });
   };
+  const [selectedVarient2, setSelectedVarient2] = useState({
+    small: true,
+    medium: false,
+  });
+
+  const handleVariantSelect2 = (method) => {
+    setSelectedVarient2({
+      ...selectedVarient,
+      [method]: !selectedVarient[method],
+    });
+  };
   return (
     <div className="bg-White w-full md:max-w-[902px] md:mx-5 rounded-lg overflow-hidden">
       <div className="hidden md:flex items-center justify-between bg-Vivid-Red-Tangelo p-2  bg-opacity-20">
@@ -289,6 +300,60 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
                     } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
                   >
                     {selectedVarient.medium && (
+                      <img src="./assets/tick.svg" alt="tick" />
+                    )}
+                  </div>
+                  <h3 className="font-semibold ml-2">Medium</h3>
+                </div>
+                <h3 className="font-semibold">+ €6</h3>
+              </div>
+            </div>
+          </div>
+
+          
+          <div className="box-shadow mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
+            <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
+              Variant 2
+            </h1>
+
+            <div className="space-y-2 text-xs md:text-base">
+              <div
+                onClick={() => {
+                  handleVariantSelect2("small");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`${
+                      selectedVarient2.small
+                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
+                        : " border-Spanish-Gray"
+                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                  >
+                    {selectedVarient2.small && (
+                      <img src="./assets/tick.svg" alt="tick" />
+                    )}
+                  </div>
+                  <h3 className="font-semibold ml-2">Small</h3>
+                </div>
+                <h3 className="font-semibold">+ €4</h3>
+              </div>
+              <div
+                onClick={() => {
+                  handleVariantSelect2("medium");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`${
+                      selectedVarient2.medium
+                        ? " bg-Medium-Electric-Blue border-Medium-Electric-Blue"
+                        : " border-Spanish-Gray"
+                    } overflow-hidden rounded-sm border-2 w-5 h-5 flex items-center justify-center`}
+                  >
+                    {selectedVarient2.medium && (
                       <img src="./assets/tick.svg" alt="tick" />
                     )}
                   </div>
