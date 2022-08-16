@@ -1,12 +1,19 @@
 import { useState } from "react";
+import DatePicker from "react-datepicker";
 import Input from "./Input";
 import WhatsAppBtn from "./WhatsAppBtn";
 
-const BookTableForm = () => {
-  const [isTimeDropDownOpen, setIsTimeDropDownOpen] = useState(true);
+import "react-datepicker/dist/react-datepicker.css";
 
-  const handleTimeDropDownOpen = () => {
+const BookTableForm = () => {
+  const [date, setDate] = useState(null);
+  const [time, setTime] = useState(null);
+
+  const [isTimeDropDownOpen, setIsTimeDropDownOpen] = useState(false);
+
+  const handleTimeDropDownOpen = (time = "") => {
     setIsTimeDropDownOpen(!isTimeDropDownOpen);
+    setTime(time);
   };
   return (
     <div className="px-3 md:px-10 md:py-14 flex-1">
@@ -15,36 +22,41 @@ const BookTableForm = () => {
       </h1>
       <Input placeholder="Name" />
       <div className="flex space-x-3">
-        <div className="w-full p-3 md:p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
-          <input
-            className="bg-transparent w-full outline-none "
-            placeholder="Date"
+        <div className="w-full p-3 md:p-5 z-50  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
+          <DatePicker
+            wrapperClassName="datePicker"
+            selected={date}
+            onChange={(date) => setDate(date)}
+            placeholderText="Date"
           />
+
           <img src="./assets/calendar.svg" alt="calendar" />
         </div>
         <Input placeholder="Guests" />
       </div>
       <div className="relative">
         <div
-          onClick={handleTimeDropDownOpen}
+          onClick={() => {
+            handleTimeDropDownOpen(null);
+          }}
           className="w-full p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg"
         >
-          <p className="text-Black opacity-50">Time</p>
+          <p className="text-Black opacity-50">{time ? time : "Time"}</p>
           <img src="./assets/arrow-down.svg" alt="arrow-down" />
         </div>
         <div
-          className={`px-5 py-4 shadow-lg	 bg-Platinum space-y-2 transition-all overflow-hidden rounded-lg absolute top-16	left-0 right-0 z-50 duration-500 ${
+          className={`px-5 py-4 shadow-lg	 bg-Platinum space-y-2 transition-all overflow-hidden rounded-lg absolute top-16	left-0 right-0 z-40 duration-500 ${
             isTimeDropDownOpen ? " block	" : " hidden"
           } `}
         >
           <h3
-            onClick={handleTimeDropDownOpen}
+            onClick={() => handleTimeDropDownOpen("11:00 - 12:30")}
             className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-White"
           >
             11:00 - 12:30
           </h3>
           <h3
-            onClick={handleTimeDropDownOpen}
+            onClick={() => handleTimeDropDownOpen("12:0 - 14:00")}
             className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-White"
           >
             12:0 - 14:00
