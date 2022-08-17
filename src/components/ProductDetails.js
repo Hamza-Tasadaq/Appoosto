@@ -4,17 +4,23 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addItem } from "../app/Slices/Cart";
 
-const CartButtons = ({ price = "", closeHandler = () => {} }) => {
+const CartButtons = ({
+  price = "",
+  closeHandler = () => {},
+  noOfItems = 1,
+  handleSetNoOfItems = () => {},
+}) => {
+  console.log(price);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [noOfItems, setNoOfItems] = useState(1);
+
   const HandleItemsChange = (type) => {
     if (type === "-") {
       if (noOfItems > 1) {
-        setNoOfItems(noOfItems - 1);
+        handleSetNoOfItems("-");
       }
     } else if (type === "+") {
-      setNoOfItems(noOfItems + 1);
+      handleSetNoOfItems("+");
     }
   };
 
@@ -25,8 +31,8 @@ const CartButtons = ({ price = "", closeHandler = () => {} }) => {
         imgSrc: "steak",
         title: "Organic Steak",
         desc: "Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus leo sapien…",
-        price: 12,
-        count: 1,
+        price: noOfItems * price,
+        count: noOfItems,
       })
     );
 
@@ -78,6 +84,15 @@ const CartButtons = ({ price = "", closeHandler = () => {} }) => {
 
 const ProductDetails = ({ closeHandler = () => {} }) => {
   const [price, setPrice] = useState(12);
+  const [noOfItems, setNoOfItems] = useState(1);
+
+  const handleSetNoOfItems = (type) => {
+    if (type === "-") {
+      setNoOfItems(noOfItems - 1);
+    } else if (type === "+") {
+      setNoOfItems(noOfItems + 1);
+    }
+  };
 
   const [ingredients, setIngredients] = useState({
     tomato: true,
@@ -121,6 +136,31 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
     medium: false,
   });
   const handleVariantSelect = (method) => {
+    if (method === "small") {
+      // Small Button Clicked
+      if (!selectedVarient.small) {
+        // Small Button Not selected Already
+        if (selectedVarient.medium) {
+          // Medium Already Selected
+          updatePrice(price - 2);
+        } else {
+          // Medium Not Selected
+          updatePrice(price + 4);
+        }
+      }
+    } else if (method === "medium") {
+      // Medium Button Clicked
+      if (!selectedVarient.medium) {
+        // Medium Button Not selected Already
+        if (selectedVarient.small) {
+          // Small Already Selected
+          updatePrice(price + 2);
+        } else {
+          // Small Not Selected
+          updatePrice(price + 6);
+        }
+      }
+    }
     setSelectedVarient({
       small: false,
       medium: false,
@@ -134,6 +174,31 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
   });
 
   const handleVariantSelect2 = (method) => {
+    if (method === "small") {
+      // Small Button Clicked
+      if (!selectedVarient2.small) {
+        // Small Button Not selected Already
+        if (selectedVarient2.medium) {
+          // Medium Already Selected
+          updatePrice(price - 2);
+        } else {
+          // Medium Not Selected
+          updatePrice(price + 4);
+        }
+      }
+    } else if (method === "medium") {
+      // Medium Button Clicked
+      if (!selectedVarient2.medium) {
+        // Medium Button Not selected Already
+        if (selectedVarient2.small) {
+          // Small Already Selected
+          updatePrice(price + 2);
+        } else {
+          // Small Not Selected
+          updatePrice(price + 6);
+        }
+      }
+    }
     setSelectedVarient2({
       small: false,
       medium: false,
@@ -226,7 +291,11 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
 
           <div className="hidden md:block">
-            <CartButtons closeHandler={closeHandler} price={price} setPrice={setPrice} />
+            <CartButtons
+              closeHandler={closeHandler}
+              price={price}
+              setPrice={setPrice}
+            />
           </div>
         </div>
         <div className="flex-1 mb-20 md:mb-0 md:mx-1">
@@ -469,7 +538,8 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           <CartButtons
             closeHandler={closeHandler}
             price={price}
-            setPrice={setPrice}
+            noOfItems={noOfItems}
+            handleSetNoOfItems={handleSetNoOfItems}
           />
         </div>
       </div>
