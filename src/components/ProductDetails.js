@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
@@ -85,12 +85,16 @@ const CartButtons = ({
 const ProductDetails = ({ closeHandler = () => {} }) => {
   const [price, setPrice] = useState(12);
   const [noOfItems, setNoOfItems] = useState(1);
+  const [basePrice, setBasePrice] = useState(price);
 
   const handleSetNoOfItems = (type) => {
     if (type === "-") {
       setNoOfItems(noOfItems - 1);
+
+      setPrice((noOfItems - 1) * basePrice);
     } else if (type === "+") {
       setNoOfItems(noOfItems + 1);
+      setPrice((noOfItems + 1) * basePrice);
     }
   };
 
@@ -208,7 +212,9 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
 
   const updatePrice = (newPrice) => {
     setPrice(newPrice);
+    setBasePrice(newPrice);
   };
+
   return (
     <div className="bg-White w-full md:max-w-[902px] md:mx-5 rounded-lg overflow-hidden">
       <div className="hidden md:flex items-center justify-between bg-Vivid-Red-Tangelo p-2  bg-opacity-20">
