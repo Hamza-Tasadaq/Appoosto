@@ -31,7 +31,7 @@ const CartButtons = ({
         imgSrc: "steak",
         title: "Organic Steak",
         desc: "Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus leo sapien…",
-        price: noOfItems * price,
+        price: price,
         count: noOfItems,
       })
     );
