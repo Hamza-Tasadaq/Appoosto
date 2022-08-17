@@ -1,13 +1,25 @@
 import { useSelector, useDispatch } from "react-redux";
 import DashboardHeaderPhone from "./DashboardHeaderPhone";
-import { removeItem } from "../app/Slices/Cart";
+import { removeItem, updateCount } from "../app/Slices/Cart";
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
-  const updateCount = () => {};
+  const updateCounter = (type = "", id = "1", count = "", price = "") => {
+    if (type === "+") {
+      const newPrice = price + price / count;
+      const newCount = count + 1;
+      dispatch(updateCount({ id, newCount, newPrice }));
+    } else if (type === "-") {
+      if (count > 1) {
+        const newPrice = price - price / count;
+        const newCount = count - 1;
+        dispatch(updateCount({ id, newCount, newPrice }));
+      }
+    }
+  };
   const removeHandler = (id = "1") => {
     dispatch(removeItem(id));
   };
@@ -103,13 +115,18 @@ const Cart = () => {
 
                 <div className="bg-Vivid-Red-Tangelo flex flex-col text-White w-10 items-center text-base rounded-lg py-3 h-24 justify-between">
                   <img
-                    onClick={updateCount}
+                    onClick={() => {
+                      updateCounter("+", id, count, price);
+                    }}
                     className="cursor-pointer"
                     src="./assets/plus.svg"
                     alt="plus"
                   />
                   <span>{count}</span>
                   <img
+                    onClick={() => {
+                      updateCounter("-", id, count, price);
+                    }}
                     className="cursor-pointer"
                     src="./assets/minus.svg"
                     alt="minus"

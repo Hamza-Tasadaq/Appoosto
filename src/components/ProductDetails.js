@@ -10,7 +10,6 @@ const CartButtons = ({
   noOfItems = 1,
   handleSetNoOfItems = () => {},
 }) => {
-  console.log(price);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
