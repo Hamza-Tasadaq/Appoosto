@@ -226,7 +226,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
           </div>
 
           <div className="hidden md:block">
-            <CartButtons price={price} setPrice={setPrice} />
+            <CartButtons closeHandler={closeHandler} price={price} setPrice={setPrice} />
           </div>
         </div>
         <div className="flex-1 mb-20 md:mb-0 md:mx-1">

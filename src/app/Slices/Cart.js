@@ -9,8 +9,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      console.log(action.payload.id);
-      console.log(state.cart.indexOf(action.payload.id));
       state.cart = [...state.cart, action.payload];
     },
     removeItem: (state, action) => {

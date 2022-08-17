@@ -19,7 +19,6 @@ const OrderStatus = () => {
     });
   };
 
-  console.log(selectedTab);
   return (
     <>
       <div className="bg-White md:bg-Flash-White sticky z-50 md:static left-0 right-0 top-0 shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
