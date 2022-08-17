@@ -304,7 +304,7 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
             />
           </div>
         </div>
-        <div className="flex-1 mb-20 md:mb-0 md:mx-1">
+        <div className="md:h-[614px] noScrollBar md:overflow-auto flex-1 mb-20 md:mb-0 md:mx-1">
           <div className="box-shadow  mx-3 my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
             <h1 className="opacity-40 my-2  text-xs md:text-base pb-2 border-b border-Spanish-Gray border-opacity-50">
               Ingredients
@@ -408,126 +408,124 @@ const ProductDetails = ({ closeHandler = () => {} }) => {
               </div>
             </div>
           </div>
-          <div className="md:flex flex-col md:flex-row md:items-center md:space-x-2">
-            <div className="box-shadow mx-3 flex-1   my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-              <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
-                Variant 1
-              </h1>
+          <div className="box-shadow mx-3 flex-1   my-4 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
+            <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
+              Variant 1
+            </h1>
 
-              <div className="space-y-2 text-xs md:text-base">
-                <div
-                  onClick={() => {
-                    handleVariantSelect("small");
-                  }}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center">
+            <div className="space-y-2 text-xs md:text-base">
+              <div
+                onClick={() => {
+                  handleVariantSelect("small");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`border-2 flex items-center justify-center ${
+                      selectedVarient.small
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
+                  >
                     <div
-                      className={`border-2 flex items-center justify-center ${
+                      className={`${
                         selectedVarient.small
-                          ? " border-Medium-Electric-Blue "
-                          : " border-Bright-Gray"
-                      }  rounded-full w-5 h-5`}
-                    >
-                      <div
-                        className={`${
-                          selectedVarient.small
-                            ? " bg-Medium-Electric-Blue"
-                            : " bg-transparent"
-                        } w-3 h-3 rounded-full`}
-                      ></div>
-                    </div>
-                    <h3 className="font-semibold ml-2">Small</h3>
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
-                  <h3 className="font-semibold">+ €4</h3>
+                  <h3 className="font-semibold ml-2">Small</h3>
                 </div>
-                <div
-                  onClick={() => {
-                    handleVariantSelect("medium");
-                  }}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center">
+                <h3 className="font-semibold">+ €4</h3>
+              </div>
+              <div
+                onClick={() => {
+                  handleVariantSelect("medium");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`border-2 flex items-center justify-center ${
+                      selectedVarient.medium
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
+                  >
                     <div
-                      className={`border-2 flex items-center justify-center ${
+                      className={`${
                         selectedVarient.medium
-                          ? " border-Medium-Electric-Blue "
-                          : " border-Bright-Gray"
-                      }  rounded-full w-5 h-5`}
-                    >
-                      <div
-                        className={`${
-                          selectedVarient.medium
-                            ? " bg-Medium-Electric-Blue"
-                            : " bg-transparent"
-                        } w-3 h-3 rounded-full`}
-                      ></div>
-                    </div>
-                    <h3 className="font-semibold ml-2">Medium</h3>
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
-                  <h3 className="font-semibold">+ €6</h3>
+                  <h3 className="font-semibold ml-2">Medium</h3>
                 </div>
+                <h3 className="font-semibold">+ €6</h3>
               </div>
             </div>
+          </div>
 
-            <div className="box-shadow mx-3 my-4 flex-1 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
-              <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
-                Variant 2
-              </h1>
+          <div className="box-shadow mx-3 my-4 flex-1 md:my-2 md:mx-0 p-3 rounded-lg md:px-5 md:py-[20px]">
+            <h1 className="opacity-40 my-2  text-xs md:text-base  pb-2 border-b border-Spanish-Gray border-opacity-50">
+              Variant 2
+            </h1>
 
-              <div className="space-y-2 text-xs md:text-base">
-                <div
-                  onClick={() => {
-                    handleVariantSelect2("small");
-                  }}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center">
+            <div className="space-y-2 text-xs md:text-base">
+              <div
+                onClick={() => {
+                  handleVariantSelect2("small");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`border-2 flex items-center justify-center ${
+                      selectedVarient2.small
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
+                  >
                     <div
-                      className={`border-2 flex items-center justify-center ${
+                      className={`${
                         selectedVarient2.small
-                          ? " border-Medium-Electric-Blue "
-                          : " border-Bright-Gray"
-                      }  rounded-full w-5 h-5`}
-                    >
-                      <div
-                        className={`${
-                          selectedVarient2.small
-                            ? " bg-Medium-Electric-Blue"
-                            : " bg-transparent"
-                        } w-3 h-3 rounded-full`}
-                      ></div>
-                    </div>
-                    <h3 className="font-semibold ml-2">Small</h3>
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
-                  <h3 className="font-semibold">+ €4</h3>
+                  <h3 className="font-semibold ml-2">Small</h3>
                 </div>
-                <div
-                  onClick={() => {
-                    handleVariantSelect2("medium");
-                  }}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center">
+                <h3 className="font-semibold">+ €4</h3>
+              </div>
+              <div
+                onClick={() => {
+                  handleVariantSelect2("medium");
+                }}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center">
+                  <div
+                    className={`border-2 flex items-center justify-center ${
+                      selectedVarient2.medium
+                        ? " border-Medium-Electric-Blue "
+                        : " border-Bright-Gray"
+                    }  rounded-full w-5 h-5`}
+                  >
                     <div
-                      className={`border-2 flex items-center justify-center ${
+                      className={`${
                         selectedVarient2.medium
-                          ? " border-Medium-Electric-Blue "
-                          : " border-Bright-Gray"
-                      }  rounded-full w-5 h-5`}
-                    >
-                      <div
-                        className={`${
-                          selectedVarient2.medium
-                            ? " bg-Medium-Electric-Blue"
-                            : " bg-transparent"
-                        } w-3 h-3 rounded-full`}
-                      ></div>
-                    </div>
-                    <h3 className="font-semibold ml-2">Medium</h3>
+                          ? " bg-Medium-Electric-Blue"
+                          : " bg-transparent"
+                      } w-3 h-3 rounded-full`}
+                    ></div>
                   </div>
-                  <h3 className="font-semibold">+ €6</h3>
+                  <h3 className="font-semibold ml-2">Medium</h3>
                 </div>
+                <h3 className="font-semibold">+ €6</h3>
               </div>
             </div>
           </div>
