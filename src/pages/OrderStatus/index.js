@@ -32,12 +32,12 @@ const OrderStatus = () => {
           </Link>
           <h1 className="font-semibold ml-5">Order Status</h1>
         </div>
-        <div className="noScrollBar space-x-4 flex px-5 py-3">
+        <div className="flex  overflow-x-auto items-center noScrollBar space-x-4  px-5 py-3">
           <h1
             onClick={() => {
               tabClickHandler("total");
             }}
-            className={` px-4 rounded-md text-sm duration-300 font-medium py-1 ${
+            className={` px-5 rounded-md text-sm duration-300 font-medium py-2 w-auto flex items-center justify-center  text-center ${
               selectedTab.total
                 ? "text-White bg-Vivid-Red-Tangelo"
                 : " bg-transparent text-black "
@@ -49,19 +49,19 @@ const OrderStatus = () => {
             onClick={() => {
               tabClickHandler("notDelivered");
             }}
-            className={` px-4 rounded-md text-sm duration-300 font-medium py-1 ${
+            className={` px-2 rounded-md min-w-[120px] text-sm duration-300 font-medium py-2 w-36 flex items-center justify-center ${
               selectedTab.notDelivered
                 ? "text-White bg-Vivid-Red-Tangelo"
                 : " bg-transparent text-black "
             } `}
           >
-            Not delivered
+            Not Delivered
           </h1>
           <h1
             onClick={() => {
               tabClickHandler("delivered");
             }}
-            className={` px-4 rounded-md text-sm duration-300 font-medium py-1 ${
+            className={` px-5 rounded-md text-sm duration-300 font-medium py-2 w-auto flex items-center justify-center ${
               selectedTab.delivered
                 ? "text-White bg-Vivid-Red-Tangelo"
                 : " bg-transparent text-black "
