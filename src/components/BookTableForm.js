@@ -6,35 +6,76 @@ import WhatsAppBtn from "./WhatsAppBtn";
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookTableForm = () => {
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
+  const [formData, setFormData] = useState({
+    name: undefined,
+    date: undefined,
+    guests: undefined,
+    time: undefined,
+    note: undefined,
+  });
 
+  const [whatsAppMsg, setWhatsAppMsg] = useState(undefined);
   const [isTimeDropDownOpen, setIsTimeDropDownOpen] = useState(false);
 
   const handleTimeDropDownOpen = (time = "") => {
+    setFormData({
+      ...formData,
+      time,
+    });
     setIsTimeDropDownOpen(!isTimeDropDownOpen);
-    setTime(time);
   };
+
+  const changeHandler = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    setWhatsAppMsg(
+      `I am mr ${
+        formData.name
+      } and would like to book a table on ${formData?.date?.toLocaleDateString()} at ${
+        formData.time
+      }. We will be ${formData.guests} persons. ${formData.note}`
+    );
+  };
+  
   return (
     <div className="px-3 md:px-10 md:py-14 flex-1">
       <h1 className="text-center my-3 text-sm font-bold md:hidden">
         Book a Table
       </h1>
-      <Input placeholder="Name" />
+      <Input
+        changeHandler={(e) => {
+          changeHandler(e);
+        }}
+        name={"name"}
+        value={formData.name}
+        placeholder="Name"
+      />
       <div className="flex space-x-3">
-        <div className="w-full p-3 md:p-5 z-50  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
+        <div className="w-full p-3 md:p-5 z-40  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg">
           <DatePicker
             wrapperClassName="datePicker"
-            selected={date}
-            onChange={(date) => setDate(date)}
+            selected={formData.date}
+            onChange={(date) => setFormData({ ...formData, date })}
             placeholderText="Date"
             dateFormat="dd/MM/yyyy"
-            onFocus={e => e.target.blur()} 
+            onFocus={(e) => e.target.blur()}
           />
 
           <img src="./assets/calendar.svg" alt="calendar" />
         </div>
-        <Input type="number" placeholder="Guests" />
+        <Input
+          changeHandler={(e) => {
+            changeHandler(e);
+          }}
+          name={"guests"}
+          value={formData.guests}
+          type="number"
+          placeholder="Guests"
+        />
       </div>
       <div className="relative">
         <div
@@ -43,7 +84,9 @@ const BookTableForm = () => {
           }}
           className="w-full p-3 md:p-5  my-1 md:my-2 flex items-center flex-1 justify-between  bg-Platinum outline-none rounded-lg"
         >
-          <p className="text-Black opacity-50">{time ? time : "Time"}</p>
+          <p className="text-Black opacity-50">
+            {formData.time ? formData.time : "Time"}
+          </p>
           <img src="./assets/arrow-down.svg" alt="arrow-down" />
         </div>
         <div
@@ -66,6 +109,11 @@ const BookTableForm = () => {
         </div>
       </div>
       <textarea
+        value={formData.note}
+        onChange={(e) => {
+          changeHandler(e);
+        }}
+        name="note"
         className="w-full p-5 my-1 md:my-2 h-40 md:h-[232px] bg-Platinum outline-none rounded-lg"
         rows={5}
         placeholder="note"
@@ -74,7 +122,11 @@ const BookTableForm = () => {
         Your booking will be sent to(restaurant name) with WhatsApp and you will
         receive status notifications in chat.
       </p>
-      <WhatsAppBtn text="Send Booking with Whatsapp" />
+      <WhatsAppBtn
+        whatsAppMsg={whatsAppMsg}
+        type="submit"
+        text="Send Booking with Whatsapp"
+      />
     </div>
   );
 };
