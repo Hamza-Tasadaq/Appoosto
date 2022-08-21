@@ -6,6 +6,7 @@ import ResturantStory from "./ResturantStory";
 import ChefSelection from "./ChefSelection";
 import BookTable from "./BookTable";
 import ServicesGrid from "./ServicesGrid";
+import MeetTeam from "./MeetTeam";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <ChefSelection />
       {/* Book Table for desktop Version */}
       <BookTable />
+      <MeetTeam />
       {/* ServicesGrid for mobile Version */}
       <ServicesGrid />
       <Footer />
