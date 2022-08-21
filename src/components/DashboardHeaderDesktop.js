@@ -23,55 +23,6 @@ function DashboardHeaderDesktop() {
           </h2>
         </div>
         <div className="flex items-center space-x-4">
-          <div
-            onClick={() => {
-              setActiveButton({
-                takeaway: true,
-                delivery: false,
-              });
-            }}
-            className="flex items-center bg-Pastel-Violet font-semibold text-sm px-4 py-3 rounded-lg space-x-2 text-White cursor-pointer"
-          >
-            <div
-              className={`border-2 flex items-center justify-center ${
-                activeButton.takeaway ? " border-White" : " border-Bright-Gray"
-              }  rounded-full w-5 h-5`}
-            >
-              <div
-                className={`${
-                  activeButton.takeaway ? " bg-White" : " bg-transparent"
-                } w-3 h-3 rounded-full`}
-              ></div>
-            </div>
-            <img src="./assets/takeaway-white.svg" alt="takeaway-white" />
-            <span>Take Away</span>
-          </div>
-
-          <div
-            onClick={() => {
-              setActiveButton({
-                takeaway: false,
-                delivery: true,
-              });
-            }}
-            className="flex items-center bg-Pastel-Violet font-semibold text-sm px-4 py-3 rounded-lg space-x-2 text-White cursor-pointer"
-          >
-            <div
-              className={`border-2 flex items-center justify-center ${
-                activeButton.delivery ? " border-White" : " border-Bright-Gray"
-              }  rounded-full w-5 h-5`}
-            >
-              <div
-                className={`${
-                  activeButton.delivery ? " bg-White" : " bg-transparent"
-                } w-3 h-3 rounded-full`}
-              ></div>
-            </div>
-
-            <img src="./assets/motorbike-white.svg" alt="motorbike-white" />
-            <span>Delivery</span>
-          </div>
-          <div className="bg-Spanish-Gray w-px h-6 opacity-25" />
 
           <div
             onClick={() => {
