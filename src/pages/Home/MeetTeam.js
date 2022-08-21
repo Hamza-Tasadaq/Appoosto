@@ -21,7 +21,7 @@ const MeetTeam = () => {
       <SectionHeading text="MEET OUR TEAM" />
 
       <div className="flex items-center justify-center my-5 flex-wrap">
-        <div className="flex flex-col justify-center items-center rounded-lg shadow-lg m-5 max-w-[345px] px-5 py-8">
+        <div className="flex flex-col justify-center items-center rounded-lg box-shadow  m-5 max-w-[345px] px-5 py-8">
           <img src="./assets/richard.png" alt="richard" />
           <h1 className="font-semibold text-Black text-2xl mt-4">Richard Miller</h1>
           <p className="font-semibold text-Black text-base opacity-50 mt-1">
@@ -41,7 +41,7 @@ const MeetTeam = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center rounded-lg shadow-lg m-5 max-w-[345px] px-5 py-8">
+        <div className="flex flex-col justify-center items-center rounded-lg box-shadow  m-5 max-w-[345px] px-5 py-8">
           <img src="./assets/Ashley.png" alt="Ashley" />
           <h1 className="font-semibold text-Black text-2xl mt-4">Ashley Wills</h1>
           <p className="font-semibold text-Black text-base opacity-50 mt-1">
@@ -61,7 +61,7 @@ const MeetTeam = () => {
             ))}
           </div>
         </div>{" "}
-        <div className="flex flex-col justify-center items-center rounded-lg shadow-lg m-5 max-w-[345px] px-5 py-8">
+        <div className="flex flex-col justify-center items-center rounded-lg box-shadow  m-5 max-w-[345px] px-5 py-8">
           <img src="./assets/Dan.png" alt="Dan" />
           <h1 className="font-semibold text-Black text-2xl mt-4">Mark Dan</h1>
           <p className="font-semibold text-Black text-base opacity-50 mt-1">
