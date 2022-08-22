@@ -36,7 +36,6 @@ const PinModal = ({ setShowPinModal = () => {} }) => {
     }
   };
 
-
   const changeHandler = (e) => {
     const { value } = e.target;
     const newOtp = [...otpInput];
@@ -83,7 +82,7 @@ const PinModal = ({ setShowPinModal = () => {} }) => {
                   to={href}
                   key={index}
                   onClick={() => {
-                    setShowGrids(!showGrid);
+                    href ? setShowGrids(!showGrid) : setShowPinModal(false);
                   }}
                   className="bg-White rounded-lg cursor-pointer w-36 sm:w-40 h-24 duration-300 border-transparent flex items-center justify-center hover:scale-105 flex-col"
                 >
@@ -94,7 +93,7 @@ const PinModal = ({ setShowPinModal = () => {} }) => {
             </div>
           </div>
         ) : (
-          <div className="">
+          <div>
             <div className="flex flex-col items-center">
               <img src="./assets/lock.svg" alt="lock" />
               <p className="font-semibold text-White text-base my-6">
