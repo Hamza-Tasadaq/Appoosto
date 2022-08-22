@@ -7,7 +7,7 @@ const Category = () => {
   const secondHalf = MenuData.slice(half);
   return (
     <div className="relative px-4 my-4 md:my-0 md:px-0">
-      <div className="flex justify-center md:flex-col md:overflow-x-auto noScrollBar">
+      <div className="flex justify-center md:flex-col md:overflow-x-auto scrollBarHorizontal">
         <div className="flex justify-center md:justify-start flex-col mr-2 md:mr-0  md:flex-row items-center my-1 space-y-3 md:space-y-0  md:space-x-3">
           {firstHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard

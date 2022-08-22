@@ -3,13 +3,7 @@ import Filters from "./Filters";
 import ModalWrapper from "./ModalWrapper";
 
 function DashboardHeaderDesktop() {
-  const [activeButton, setActiveButton] = useState({
-    takeaway: true,
-    delivery: false,
-  });
-
   const [showFiltersModal, setShowFiltersModal] = useState(false);
-
   const closeHandler = () => {
     setShowFiltersModal(!showFiltersModal);
   };
@@ -23,7 +17,6 @@ function DashboardHeaderDesktop() {
           </h2>
         </div>
         <div className="flex items-center space-x-4">
-
           <div
             onClick={() => {
               setShowFiltersModal(!showFiltersModal);

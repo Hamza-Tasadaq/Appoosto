@@ -15,3 +15,5 @@ export { default as WhatsAppBtn } from "./WhatsAppBtn";
 export { default as Filters } from "./Filters";
 export { default as PhoneFooter } from "./PhoneFooter";
 export { default as Footer } from "./Footer";
+
+export { default as PinModal } from "./PinModal";

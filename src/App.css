@@ -76,6 +76,44 @@ li.slick-active {
   display: none;
 }
 
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.scrollBar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #175E9566;
+}
+
+/* Handle on hover */
+.scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
+  background: #175E9566;
+}
+
+.scrollBarHorizontal::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+.scrollBarHorizontal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scrollBarHorizontal::-webkit-scrollbar-thumb {
+  background: #175E9566;
+}
+
+/* Handle on hover */
+.scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
+  background: #175E9566;
+}
 @media screen and (max-width: 640px) {
   .bg-small {
     background-image: url("../public/assets/features-bg.png") !important;
