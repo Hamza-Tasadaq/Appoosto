@@ -894,9 +894,6 @@ const Filters = ({ closeHandler = () => {} }) => {
         />
       </div>
       <div className="md:px-8 md:py-2 md:flex my-5 md:space-x-5 space-y-4 md:space-y-0">
-        <div className=" md:hidden">
-          <Type />
-        </div>
         <div className=" flex-1">
           <div className="mb-4">
             <h3 className="text-center font-semibold text-xs">Allergens</h3>
@@ -960,11 +957,10 @@ const Filters = ({ closeHandler = () => {} }) => {
             finally select more food experiences
           </p>
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
-
           <div className="hidden md:block">
             <Type />
           </div>
-          <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
+          <div className="hidden md:block max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
 
           <div
             onClick={() => {
@@ -1006,7 +1002,9 @@ const Filters = ({ closeHandler = () => {} }) => {
           </div>
 
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
-
+          <div className=" md:hidden">
+            <Type />
+          </div>
           {/* <div className="p-3 bg-Electric-Brown cursor-pointer box-shadow rounded-lg flex items-center justify-start">
             <img src="./assets/chilli-pepper.svg" alt="chilli-pepper" />
             <h2 className="ml-5 px-5 font-semibold text-sm border-l border-White text-White border-opacity-30">
