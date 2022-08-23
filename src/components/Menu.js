@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
 import BackModal from "./BackModal";
@@ -15,10 +16,7 @@ const Menu = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showBackModal, setShowBackModal] = useState(false);
 
-  const [selectedLanguage, setSelectedLanguage] = useState({
-    flagSrc: "italian",
-    text: "Italian",
-  });
+  const { selectedLanguage } = useSelector((state) => state.language);
 
   const modalHandler = () => {
     setShowProductDetails(!showProductDetails);
@@ -38,7 +36,6 @@ const Menu = () => {
           <LanguageModal
             setShowLanguageModal={setShowLanguageModal}
             selectedLanguage={selectedLanguage}
-            setSelectedLanguage={setSelectedLanguage}
           />
         </ModalWrapper>
       )}

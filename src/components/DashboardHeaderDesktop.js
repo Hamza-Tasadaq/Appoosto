@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import BackModal from "./BackModal";
 import Filters from "./Filters";
 import LanguageModal from "./LanguageModal";
@@ -6,17 +7,14 @@ import ModalWrapper from "./ModalWrapper";
 import NotificationModal from "./NotificationModal";
 
 function DashboardHeaderDesktop() {
+  const { selectedLanguage } = useSelector((state) => state.language);
+
   const [showFiltersModal, setShowFiltersModal] = useState(false);
 
   const [showNotificationModal, setShowNotificationModal] = useState(false);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
 
   const [showBackModal, setShowBackModal] = useState(false);
-
-  const [selectedLanguage, setSelectedLanguage] = useState({
-    flagSrc: "italian",
-    text: "Italian",
-  });
 
   const closeHandler = () => {
     setShowFiltersModal(!showFiltersModal);
@@ -85,7 +83,6 @@ function DashboardHeaderDesktop() {
           <LanguageModal
             setShowLanguageModal={setShowLanguageModal}
             selectedLanguage={selectedLanguage}
-            setSelectedLanguage={setSelectedLanguage}
           />
         </ModalWrapper>
       )}

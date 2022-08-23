@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { changeLanguage } from "../app/Slices/SelectedLanguage";
+
 const Languages = [
   {
     flagSrc: "italian",
@@ -28,8 +31,8 @@ const Languages = [
 const LanguageModal = ({
   selectedLanguage = "",
   setShowLanguageModal = () => {},
-  setSelectedLanguage = () => {},
 }) => {
+  const dispatch = useDispatch();
   return (
     <div
       onClick={() => {
@@ -46,10 +49,12 @@ const LanguageModal = ({
           <div
             key={text}
             onClick={() => {
-              setSelectedLanguage({
-                flagSrc,
-                text,
-              });
+              dispatch(
+                changeLanguage({
+                  flagSrc,
+                  text,
+                })
+              );
               setShowLanguageModal(false);
             }}
             className="flex flex-col m-5 items-center justify-center cursor-pointer relative"
