@@ -15,6 +15,7 @@ import Category from "./pages/Category";
 import ProductDetails from "./pages/ProductDetails";
 import Filters from "./pages/Filters";
 import OrderStatus from "./pages/OrderStatus";
+import NotForYou from "./pages/NotForYou";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/productdetails" element={<ProductDetails />} />
           <Route path="/filters" element={<Filters />} />
           <Route path="/orderStatus" element={<OrderStatus />} />
+          <Route path="*" element={<NotForYou />} />
         </Routes>
       </BrowserRouter>
     </div>
