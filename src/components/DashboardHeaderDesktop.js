@@ -27,7 +27,15 @@ function DashboardHeaderDesktop() {
             <span>Filters</span>
           </div>
         </div>
-        <img src="./assets/flag.png" alt="flag" />
+
+        <div className="flex items-center space-x-3">
+          <div className="bg-Vivid-Red-Tangelo rounded-full  w-10 h-10 flex items-center justify-center">
+            <img src="./assets/bell.svg" alt="bell" />
+          </div>
+          <div >
+            <img className="w-10 h-10" src="./assets/flag.png" alt="flag" />
+          </div>
+        </div>
       </div>
       {showFiltersModal && (
         <ModalWrapper>
