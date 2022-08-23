@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { emptyCart } from "../app/Slices/Cart";
 import Filters from "./Filters";
 import LanguageModal from "./LanguageModal";
 import ModalWrapper from "./ModalWrapper";
 
 function DashboardHeaderDesktop() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [showFiltersModal, setShowFiltersModal] = useState(false);
 
   const [showLanguageModal, setShowLanguageModal] = useState(false);
+
+  const [showBackModal, setShowBackModal] = useState(false);
 
   const [selectedLanguage, setSelectedLanguage] = useState({
     flagSrc: "italian",
@@ -16,10 +24,16 @@ function DashboardHeaderDesktop() {
   const closeHandler = () => {
     setShowFiltersModal(!showFiltersModal);
   };
+
   return (
     <div>
       <div className="shadow-lg bg-White py-3 px-16 flex items-center justify-between">
-        <div className="flex items-center">
+        <div
+          onClick={() => {
+            setShowBackModal(true);
+          }}
+          className="flex items-center cursor-pointer"
+        >
           <img src="./assets/pan.png" alt="pan" />
           <h2 className="ml-2 text-Vivid-Red-Tangelo font-semibold text-sm">
             Pan Asian Restaurant
@@ -55,6 +69,49 @@ function DashboardHeaderDesktop() {
           </div>
         </div>
       </div>
+
+      {showBackModal && (
+        <ModalWrapper>
+          <div className="bg-White border border-Medium-Electric-Blue rounded-lg p-5 relative">
+            <div
+              onClick={() => {
+                setShowBackModal(false);
+              }}
+              className="bg-Vivid-Red-Tangelo p-2 rounded-lg inline-block absolute top-4 right-4 cursor-pointer"
+            >
+              <img src="./assets/close-white.svg" alt="close-white" />
+            </div>
+            <div className="text-center my-8">
+              <h1 className="text-Vivid-Red-Tangelo font-bold text-lg">
+                Are you sure?
+              </h1>
+              <p className="font-light text-sm mt-2">
+                If you go back your cart will be reset!
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-3 mt-5">
+              <button
+                onClick={() => {
+                  navigate("/");
+                  dispatch(emptyCart());
+                }}
+                className="rounded-lg border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+              >
+                Yes, go back
+              </button>
+              <button
+                onClick={() => {
+                  setShowBackModal(false);
+                }}
+                className="rounded-lg bg-Vivid-Red-Tangelo text-White border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+              >
+                No, stay here
+              </button>
+            </div>
+          </div>
+        </ModalWrapper>
+      )}
 
       {showLanguageModal && (
         <ModalWrapper>
