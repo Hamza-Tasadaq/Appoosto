@@ -27,6 +27,7 @@ const Menu = () => {
     if (state) {
       document.getElementById(state).scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
     }
   }, [showNotificationModal, showLanguageModal, showBackModal, state]);
