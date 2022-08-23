@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
@@ -22,6 +22,20 @@ const Menu = () => {
     setShowProductDetails(!showProductDetails);
   };
 
+  useEffect(() => {
+    if (showNotificationModal || showLanguageModal || showBackModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showNotificationModal, showLanguageModal, showBackModal]);
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const productClickHandler = () => {
     if (window.innerWidth < 768) {
       navigate("/productdetails");
@@ -30,7 +44,7 @@ const Menu = () => {
     }
   };
   return (
-    <div className="mb-20 md:mb-0">
+    <div className="mb-20 md:mb-0 relative">
       {showLanguageModal && (
         <ModalWrapper>
           <LanguageModal
@@ -59,6 +73,7 @@ const Menu = () => {
           <div className="flex px-5 pt-3 items-center justify-between">
             <div
               onClick={() => {
+                scrollTop();
                 setShowBackModal(true);
               }}
               className=" flex items-center "
@@ -74,6 +89,7 @@ const Menu = () => {
               </div>
               <div
                 onClick={() => {
+                  scrollTop();
                   setShowNotificationModal(true);
                 }}
                 className="bg-Vivid-Red-Tangelo cursor-pointer rounded-full  w-8 h-8 flex items-center justify-center"
@@ -82,6 +98,7 @@ const Menu = () => {
               </div>
               <div
                 onClick={() => {
+                  scrollTop();
                   setShowLanguageModal(true);
                 }}
                 className="cursor-pointer"
