@@ -66,9 +66,9 @@ const Menu = () => {
                 onClick={() => {
                   setShowNotificationModal(true);
                 }}
-                className="bg-Vivid-Red-Tangelo cursor-pointer rounded-full  w-10 h-10 flex items-center justify-center"
+                className="bg-Vivid-Red-Tangelo cursor-pointer rounded-full  w-8 h-8 flex items-center justify-center"
               >
-                <img src="./assets/bell.svg" alt="bell" />
+                <img className="w-5 h-5" src="./assets/bell.svg" alt="bell" />
               </div>
               <div
                 onClick={() => {
@@ -77,7 +77,7 @@ const Menu = () => {
                 className="cursor-pointer"
               >
                 <img
-                  className="w-10 h-10"
+                  className="w-8 h-8"
                   src={`./assets/${selectedLanguage.flagSrc}.png`}
                   alt="flag"
                 />
