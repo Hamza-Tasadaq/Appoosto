@@ -29,7 +29,7 @@ const Menu = () => {
         )}
       </div>
       <div className="md:hidden sticky top-0 left-0 right-0 z-50">
-        <div className="bg-White md:bg-Flash-White  md:static  shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
+        <div className="bg-White md:bg-Flash-White  md:static shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
           <div className="flex px-5 pt-3 items-center justify-between">
             <Link to={"/"} className=" flex items-center ">
               <img

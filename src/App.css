@@ -14,13 +14,6 @@ html {
   height: calc(100vh - 92px);
 }
 
-.noScrollBar::-webkit-scrollbar {
-  display: none;
-}
-.noScrollBar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 .box-shadow {
   box-shadow: 0px 2px 12px rgba(176, 176, 176, 0.387234);
 }
@@ -76,6 +69,15 @@ li.slick-active {
   display: none;
 }
 
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .scrollBar::-webkit-scrollbar {
   width: 8px;
 }
@@ -87,12 +89,12 @@ li.slick-active {
 
 /* Handle */
 .scrollBar::-webkit-scrollbar-thumb {
-  background: #175E9566;
+  background: #175e9566;
 }
 
 /* Handle on hover */
 .scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
-  background: #175E9566;
+  background: #175e9566;
 }
 
 .scrollBarHorizontal::-webkit-scrollbar {
@@ -107,12 +109,12 @@ li.slick-active {
 
 /* Handle */
 .scrollBarHorizontal::-webkit-scrollbar-thumb {
-  background: #175E9566;
+  background: #175e9566;
 }
 
 /* Handle on hover */
 .scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
-  background: #175E9566;
+  background: #175e9566;
 }
 @media screen and (max-width: 640px) {
   .bg-small {

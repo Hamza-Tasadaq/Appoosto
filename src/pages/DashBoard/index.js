@@ -23,7 +23,7 @@ const Dashboard = () => {
             <div className="h-2/5">
               <Category />
             </div>
-            <div className="h-3/5 overflow-auto scrollBar">
+            <div className="h-3/5 noScroll noScrollBar overflow-auto hover:scrollBar">
               <Menu />
             </div>
           </div>

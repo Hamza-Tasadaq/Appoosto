@@ -21,3 +21,4 @@ export { default as StatusTab } from "./StatusTab";
 export { default as OrderStatusTab } from "./OrderStatusTab";
 export { default as OrderStatusCard } from "./OrderStatusCard";
 export { default as LanguageModal } from "./LanguageModal";
+export { default as NotificationModal } from "./NotificationModal";
