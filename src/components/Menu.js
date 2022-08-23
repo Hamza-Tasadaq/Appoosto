@@ -33,7 +33,7 @@ const Menu = ({
     }
   };
   return (
-    <div className="mb-20 md:mb-0 relative">
+    <div className="mb-20 md:mb-0">
       <div className="hidden md:block">
         {showProductDetails && (
           <ModalWrapper>
