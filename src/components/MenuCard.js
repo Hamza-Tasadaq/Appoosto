@@ -13,7 +13,7 @@ const MenuCard = ({
     allergen: false,
   });
   return (
-    <div className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex">
+    <div className="bg-White my-2 relative shadow-md rounded-lg py-2 px-3 flex">
       <img
         className="absolute top-0 left-0 w-10"
         src={`./assets/${tagImgSrc}.svg`}
