@@ -20,3 +20,4 @@ export { default as PinModal } from "./PinModal";
 export { default as StatusTab } from "./StatusTab";
 export { default as OrderStatusTab } from "./OrderStatusTab";
 export { default as OrderStatusCard } from "./OrderStatusCard";
+export { default as LanguageModal } from "./LanguageModal";
