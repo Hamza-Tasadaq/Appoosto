@@ -32,7 +32,6 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    console.log(window.innerWidth > 768);
     if (window.innerWidth <= 768) {
       setActiveTab({
         cart: true,
@@ -46,7 +45,6 @@ const Cart = () => {
     }
   }, [setActiveTab]);
 
-  console.log({ cart, activeTab });
   return (
     <div className="mr-2">
       <div>
