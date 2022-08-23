@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const DashboardHeaderPhone = ({
   prevHref = "",
   heading = "",
+  selectedType = "",
   isSamll = false,
 }) => {
   return (
@@ -24,8 +25,10 @@ const DashboardHeaderPhone = ({
       {!isSamll && (
         <div className="bg-White flex flex-col-reverse md:flex-col font-semibold text-xs rounded-lg py-4 px-6">
           <div className="flex font-semibold my-1 justify-between items-center">
-            <p className="opacity-50">Your menu is:</p>
-            <h3 className=" ">ComboBox</h3>
+            <p className="">
+              <span className="opacity-50">Your menu is:</span><span className="opacity-100">ComboBox </span>
+            </p>
+            <h3 className=" ">{selectedType}</h3>
           </div>
 
           <div className="flex font-semibold justify-between items-center">

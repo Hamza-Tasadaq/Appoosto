@@ -11,13 +11,16 @@ import ModalWrapper from "../../components/ModalWrapper";
 
 const Dashboard = () => {
   const [showPinModal, setShowPinModal] = useState(true);
+
+  const [selectedType, setSelectedType] = useState(undefined);
+
   return (
     <div>
       <div className="relative bg-Flash-White h-screen ">
         <DashboardHeaderDesktop />
         <div className="mt-3 px-2 flex max-h-dashboard">
           <div className="w-4/12 lg:w-1/4 h-full overflow-auto  scrollBar mx-2">
-            <Cart />
+            <Cart selectedType={selectedType} />
           </div>
           <div className="w-[46.50%] lg:w-1/2 mx-2 bg-White rounded-t-lg p-4">
             <div className="h-2/5">
@@ -34,7 +37,10 @@ const Dashboard = () => {
       </div>
       {showPinModal && (
         <ModalWrapper>
-          <PinModal setShowPinModal={setShowPinModal} />
+          <PinModal
+            setSelectedType={setSelectedType}
+            setShowPinModal={setShowPinModal}
+          />
         </ModalWrapper>
       )}
     </div>

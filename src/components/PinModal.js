@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import ServicesData from "../data/Services.json";
 
 let currentOtpIndex = 0;
-const PinModal = ({ setShowPinModal = () => {} }) => {
+const PinModal = ({
+  setShowPinModal = () => {},
+  setSelectedType = () => {},
+}) => {
   const [showGrid, setShowGrids] = useState(true);
 
   // Number of entered text for otp
@@ -81,6 +84,7 @@ const PinModal = ({ setShowPinModal = () => {} }) => {
                   to={href}
                   key={index}
                   onClick={() => {
+                    setSelectedType(title);
                     href ? setShowGrids(!showGrid) : setShowPinModal(false);
                   }}
                   className="bg-White rounded-lg cursor-pointer w-36 sm:w-40 h-24 duration-300 border-transparent flex items-center justify-center hover:scale-105 flex-col"
