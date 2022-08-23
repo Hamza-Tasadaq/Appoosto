@@ -1,31 +1,36 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const OrderStatusCard = ({ status }) => {
+const CartCard = ({
+  id = "",
+  imgSrc = "",
+  title = "",
+  desc = "",
+  price = "",
+  count = "",
+  updateCounter = () => {},
+  removeHandler = () => {},
+}) => {
   const [showToolTip, setShowToolTip] = useState({
     frozen: false,
     allergen: false,
   });
   return (
-    <div className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex">
-      <div>
-        <div className="pb-5 mb-5 flex border-opacity-20 border-b border-Spanish-Gray">
+    <div className="bg-White my-2 shadow-xl rounded-lg py-2 px-3 flex">
+      <div className="flex-1 mr-4">
+        <div className="pb-5 mb-5 flex flex-row md:flex-col lg:flex-row  border-opacity-20	 border-b border-Spanish-Gray">
           <img
             className="rounded-lg object-cover w-[76px] h-[76px]"
-            src={`./assets/steak.png`}
+            src={`./assets/${imgSrc}.png`}
             alt="mashroom"
           />
-          <div className="ml-3">
-            <div className="font-bold flex items-center justify-between text-sm md:text-base">
-              <h2>Mushroom Pasta</h2>
-              <h2 className="text-Vivid-Red-Tangelo">€12</h2>
+          <div className="ml-3 md:ml-0 lg:ml-3">
+            <div className="font-bold text-sm md:text-base">
+              <h2>{title}</h2>
             </div>
-            <p className="font-medium text-xs mt-2">
-              Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
-              leo sapien de aries…
-            </p>
+            <p className="font-medium text-xs mt-2">{desc}</p>
           </div>
         </div>
-        <div className="border-opacity-20 border-b pb-2 mb-5 border-Spanish-Gray">
+        <div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img src="./assets/coca-leaves.svg" alt="coca-leaves" />
@@ -39,7 +44,6 @@ const OrderStatusCard = ({ status }) => {
               <img src="./assets/chilli-pepper.svg" alt="chilli-pepper" />
             </div>
           </div>
-
           <div className="flex items-center justify-between my-3">
             <div
               className="flex items-center space-x-1 "
@@ -87,7 +91,7 @@ const OrderStatusCard = ({ status }) => {
               {showToolTip.frozen && (
                 <div className="flex items-center relative ">
                   <div className="bg-Light-Silver mr-2.5 py-1 text-[10px] font-medium text-Very-Light-Azure px-5 rounded-full">
-                    May contain frozen food
+                    contain frozen food
                   </div>
                   <div
                     style={{
@@ -118,27 +122,57 @@ const OrderStatusCard = ({ status }) => {
           </div>
         </div>
 
-        <div className="text-sm flex items-center text-Spanish-Gray pb-2 font-semibold justify-between">
-          <div className="flex items-center  ">
-            <img src="./assets/clock-filled.svg" alt="clock-filled" />
-            <p className="ml-3">Ordered at 12:24</p>
+        <div className="text-Vivid-Red-Tangelo font-semibold text-xs space-y-2">
+          <div className="flex items-center justify-between">
+            <h3 className="opacity-30">Without:</h3>
+            <h3>Tomato</h3>
           </div>
-          <div>
-            <p>
-              Status:{" "}
-              <span
-                className={`${status === "Prepration" && "text-Lust"}  ${
-                  status === "Delivered" && "text-Alien-Armpit"
-                }`}
-              >
-                {status}
-              </span>
-            </p>
+          <div className="flex items-center justify-between">
+            <h3 className="opacity-30">Extra:</h3>
+            <h3>Extra mozzarella</h3>
           </div>
+          <div className="flex items-center justify-between">
+            <h3 className="opacity-30">Variant:</h3>
+            <h3>Small</h3>
+          </div>
+          <div className="flex items-center justify-between">
+            <h3 className="opacity-30">Notes:</h3>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col space-y-2 items-center">
+        <h2 className="text-Vivid-Red-Tangelo font-semibold text-base">
+          €{price}
+        </h2>
+        <div
+          onClick={() => removeHandler(id)}
+          className="bg-Flash-White border border-Chinese-Silver rounded-lg w-10 h-10 flex items-center justify-center"
+        >
+          <img src="./assets/bin.svg" alt="bin" />
+        </div>
+
+        <div className="bg-Vivid-Red-Tangelo flex flex-col text-White w-10 items-center text-base rounded-lg py-3 h-24 justify-between">
+          <img
+            onClick={() => {
+              updateCounter("+", id, count, price);
+            }}
+            className="cursor-pointer"
+            src="./assets/plus.svg"
+            alt="plus"
+          />
+          <span>{count}</span>
+          <img
+            onClick={() => {
+              updateCounter("-", id, count, price);
+            }}
+            className="cursor-pointer"
+            src="./assets/minus.svg"
+            alt="minus"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default OrderStatusCard;
+export default CartCard;
