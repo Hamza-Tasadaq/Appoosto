@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import MenuData from "../data/Menu.json";
+import LanguageModal from "./LanguageModal";
 import ModalWrapper from "./ModalWrapper";
+import NotificationModal from "./NotificationModal";
 import ProductDetails from "./ProductDetails";
 
 const Menu = () => {
   const navigate = useNavigate();
   const [showProductDetails, setShowProductDetails] = useState(false);
+
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState({
+    flagSrc: "italian",
+    text: "Italian",
+  });
 
   const modalHandler = () => {
     setShowProductDetails(!showProductDetails);
@@ -21,6 +30,21 @@ const Menu = () => {
   };
   return (
     <div className="mb-20 md:mb-0">
+      {showLanguageModal && (
+        <ModalWrapper>
+          <LanguageModal
+            setShowLanguageModal={setShowLanguageModal}
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage={setSelectedLanguage}
+          />
+        </ModalWrapper>
+      )}
+
+      {showNotificationModal && (
+        <NotificationModal
+          setShowNotificationModal={setShowNotificationModal}
+        />
+      )}
       <div className="hidden md:block">
         {showProductDetails && (
           <ModalWrapper>
@@ -28,7 +52,7 @@ const Menu = () => {
           </ModalWrapper>
         )}
       </div>
-      <div className="md:hidden sticky top-0 left-0 right-0 z-50">
+      <div className="md:hidden sticky top-0 left-0 right-0 z-40">
         <div className="bg-White md:bg-Flash-White  md:static shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
           <div className="flex px-5 pt-3 items-center justify-between">
             <Link to={"/"} className=" flex items-center ">
@@ -37,7 +61,28 @@ const Menu = () => {
                 alt="headers-logo-gray"
               />
             </Link>
-            <img src="./assets/flag.png" alt="flag" />
+            <div className="flex items-center space-x-3">
+              <div
+                onClick={() => {
+                  setShowNotificationModal(true);
+                }}
+                className="bg-Vivid-Red-Tangelo cursor-pointer rounded-full  w-10 h-10 flex items-center justify-center"
+              >
+                <img src="./assets/bell.svg" alt="bell" />
+              </div>
+              <div
+                onClick={() => {
+                  setShowLanguageModal(true);
+                }}
+                className="cursor-pointer"
+              >
+                <img
+                  className="w-10 h-10"
+                  src={`./assets/${selectedLanguage.flagSrc}.png`}
+                  alt="flag"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="bg-White flex flex-col-reverse md:flex-col font-semibold text-xs rounded-lg py-4 px-6">

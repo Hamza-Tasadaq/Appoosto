@@ -3,7 +3,7 @@ import ModalWrapper from "./ModalWrapper";
 const NotificationModal = ({ setShowNotificationModal = () => {} }) => {
   return (
     <ModalWrapper>
-      <div className="bg-White border border-Medium-Electric-Blue rounded-lg p-5 relative">
+      <div className="bg-White border border-Medium-Electric-Blue w-full md:w-auto rounded-lg p-5 relative">
         <div
           onClick={() => {
             setShowNotificationModal(false);
@@ -29,12 +29,12 @@ const NotificationModal = ({ setShowNotificationModal = () => {} }) => {
           <p className="font-light text-sm mt-2">do you need a waiter?</p>
         </div>
 
-        <div className="flex items-center space-x-3 mt-5">
+        <div className="flex items-center justify-between md:justify-center space-x-3 mt-5">
           <button
             onClick={() => {
               setShowNotificationModal(false);
             }}
-            className="rounded-lg border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+            className="rounded-lg border border-Vivid-Red-Tangelo flex-1 md:flex-auto px-2 md:px-6 py-3 font-bold"
           >
             No, I don’t need
           </button>
@@ -42,7 +42,7 @@ const NotificationModal = ({ setShowNotificationModal = () => {} }) => {
             onClick={() => {
               setShowNotificationModal(false);
             }}
-            className="rounded-lg bg-Vivid-Red-Tangelo text-White border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+            className="rounded-lg bg-Vivid-Red-Tangelo text-White border flex-1 md:flex-auto border-Vivid-Red-Tangelo px-2 md:px-6 py-3 font-bold"
           >
             Yes, I need
           </button>
