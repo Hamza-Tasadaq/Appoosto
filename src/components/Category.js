@@ -32,6 +32,19 @@ const Category = () => {
       cupcake: false,
       [selectedItem]: true,
     });
+
+    setTimeout(() => {
+      setIsSelected({
+        pizza: false,
+        drinks: false,
+        hotdog: false,
+        fries: false,
+        muffins: false,
+        breads: false,
+        icecream: false,
+        cupcake: false,
+      });
+    }, 600);
     if (window.innerWidth > 768) {
       document.getElementById(itemClicked).scrollIntoView({
         behavior: "smooth",
