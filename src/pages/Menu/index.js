@@ -17,7 +17,6 @@ const Menu = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showBackModal, setShowBackModal] = useState(false);
 
-  console.log(state);
   useEffect(() => {
     if (showNotificationModal || showLanguageModal || showBackModal) {
       document.body.style.overflow = "hidden";
