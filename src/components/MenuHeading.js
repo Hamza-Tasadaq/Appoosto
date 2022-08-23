@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import CategoryData from "../data/Category.json";
 
 const hex2rgba = (hex = "", alpha = 1) => {
@@ -19,7 +19,6 @@ const MenuHeading = ({ heading }) => {
     setBackground(res?.background);
   };
 
-  console.log(background);
   return (
     <div
       style={{
@@ -28,7 +27,11 @@ const MenuHeading = ({ heading }) => {
       }}
       className="w-full h-10 flex items-center px-8"
     >
-      <img className=" h-6 mr-5" src={iconSrc && `./assets/${iconSrc}.svg`} alt={iconSrc} />
+      <img
+        className=" h-6 mr-5"
+        src={iconSrc && `./assets/${iconSrc}.svg`}
+        alt={iconSrc}
+      />
       <h1 className="font-semibold pl-3 md:pl-0 md:ml-1 z-40">{heading}</h1>
     </div>
   );

@@ -100,9 +100,9 @@ const Menu = ({
           </div>
         </div>
       </div>
-      <div className="my-5 md:my-0">
+      <div className="my-5 md:my-0 space-y-5">
         {Object.entries(MenuData).map(([key, value]) => (
-          <div key={key}>
+          <div id={key} key={key}>
             <MenuHeading heading={key} />
 
             <div className="mx-2 grid grid-cols-1 lg:grid-cols-2 gap-5">

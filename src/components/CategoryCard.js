@@ -1,19 +1,22 @@
-import { useState } from "react";
-
 const hex2rgba = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-const CategoryCard = ({ name, iconSrc, background }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const CategoryCard = ({
+  name = "",
+  iconSrc = "",
+  background = "",
+  isSelected = "",
+  clickHandler = () => {},
+}) => {
   return (
     <div
       onClick={() => {
-        setIsSelected(!isSelected);
+        clickHandler(iconSrc, name);
       }}
       style={
-        isSelected
+        isSelected[iconSrc]
           ? { backgroundColor: `${hex2rgba(background, 0.5)}` }
           : { backgroundColor: `${hex2rgba(background, 0.2)}` }
       }

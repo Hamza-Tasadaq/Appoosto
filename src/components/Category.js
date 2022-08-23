@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CategoryData from "../data/Category.json";
 import CategoryCard from "./CategoryCard";
 
@@ -5,12 +6,44 @@ const Category = () => {
   const half = Math.ceil(CategoryData.length / 2);
   const firstHalf = CategoryData.slice(0, half);
   const secondHalf = CategoryData.slice(half);
+
+  console.log(CategoryData);
+
+  const [isSelected, setIsSelected] = useState({
+    pizza: false,
+    drinks: false,
+    hotdog: false,
+    fries: false,
+    muffins: false,
+    breads: false,
+    icecream: false,
+    cupcake: false,
+  });
+
+  const clickHandler = (selectedItem, itemClicked) => {
+    setIsSelected({
+      pizza: false,
+      drinks: false,
+      hotdog: false,
+      fries: false,
+      muffins: false,
+      breads: false,
+      icecream: false,
+      cupcake: false,
+      [selectedItem]: true,
+    });
+    document.getElementById(itemClicked).scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="relative px-4 my-4 md:my-0 md:px-0">
       <div className="flex justify-center md:flex-col md:overflow-x-auto hover:overflow-x-scroll scrollBarHorizontal">
         <div className="flex justify-center md:justify-start flex-col mr-2 md:mr-0  md:flex-row items-center my-1 space-y-3 md:space-y-0  md:space-x-3">
           {firstHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard
+              isSelected={isSelected}
+              clickHandler={clickHandler}
               key={index}
               background={background}
               name={name}
@@ -21,6 +54,8 @@ const Category = () => {
         <div className="flex flex-col ml-2 md:ml-0 md:flex-row items-center my-1 space-y-3 md:space-y-0  md:space-x-3">
           {secondHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard
+              isSelected={isSelected}
+              clickHandler={clickHandler}
               key={index}
               background={background}
               name={name}

@@ -69,5 +69,116 @@
       "price": "€12",
       "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
     }
+  ],
+
+  "Breads": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    }
+  ],
+  "Hot Dogs": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "steak",
+      "title": "Organic Steak",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "chef-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    }
+  ],
+  "Ice Cream": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    }
+  ],
+  "Muffins": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    }
+  ],
+  "Fries": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    }
+  ],
+  "Cupcakes": [
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in.",
+      "tagImgSrc": "best-seller-tag"
+    },
+    {
+      "imgSrc": "mashroom",
+      "title": "Mushroom Pasta",
+      "price": "€12",
+      "desc": "Lorem ipsum dolor sit amet, consectet elevaina adipiscing elit. Phasellus leo sapien, gravida scelerisque lacus in."
+    }
   ]
 }
