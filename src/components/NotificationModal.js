@@ -36,7 +36,7 @@ const NotificationModal = ({ setShowNotificationModal = () => {} }) => {
             }}
             className="rounded-lg border border-Vivid-Red-Tangelo flex-1 md:flex-auto px-2 md:px-6 py-3 font-bold"
           >
-            No, I don’t need
+            No, I don’t
           </button>
           <button
             onClick={() => {
