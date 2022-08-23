@@ -77,7 +77,6 @@ function PinScreen() {
         <Link to={"/"} className=" flex items-center ">
           <img src="./assets/headers-logo-gray.png" alt="headers-logo-gray" />
         </Link>
-        <img src="./assets/flag.png" alt="flag" />
       </div>
 
       <div className="flex flex-col items-center mt-5">
