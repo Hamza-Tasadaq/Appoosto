@@ -84,7 +84,7 @@ const CartCard = ({
             <div className="flex items-center">
               {showToolTip.frozen && (
                 <div className="flex items-center relative ">
-                  <div className="bg-Light-Silver mr-2.5 py-1 text-[10px] font-medium text-Very-Light-Azure px-5 rounded-full">
+                  <div className="bg-Light-Silver mr-2.5 py-1 text-[10px] font-medium text-Very-Light-Azure px-4 rounded-full">
                     Frozen food
                   </div>
                   <div
