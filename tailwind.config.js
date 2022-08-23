@@ -15,6 +15,7 @@ module.exports = {
         "Flash-White": "#F3F3F3",
         "Chinese-Silver": "#CDCDCD",
         "Rlovers-Red": "#FF2323",
+        "Light-Silver":"#D9D9D9",
         "Alien-Armpit":"#6DD400",
         Lust: "#E02020",
         Platinum: "#E3E3E3",

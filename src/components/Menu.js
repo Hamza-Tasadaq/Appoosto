@@ -61,7 +61,10 @@ const Menu = () => {
                 alt="headers-logo-gray"
               />
             </Link>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-Light-Silver">
+                <img src="./assets/questionmark.svg" alt="questionmark" />
+              </div>
               <div
                 onClick={() => {
                   setShowNotificationModal(true);
