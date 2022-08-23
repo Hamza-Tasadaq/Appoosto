@@ -13,10 +13,7 @@ const MenuCard = ({
     allergen: false,
   });
   return (
-    <div
-      onClick={productClickHandler}
-      className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex"
-    >
+    <div className="bg-White my-2 cursor-pointer relative shadow-md rounded-lg py-2 px-3 flex">
       <img
         className="absolute top-0 left-0 w-10"
         src={`./assets/${tagImgSrc}.svg`}
@@ -31,7 +28,7 @@ const MenuCard = ({
           />
           <div className="ml-3">
             <div className="font-bold flex items-center justify-between text-sm md:text-base">
-              <h2>{title}</h2>
+              <h2 onClick={productClickHandler}>{title}</h2>
               <h2 className="text-Vivid-Red-Tangelo">{price}</h2>
             </div>
             <p className="font-medium text-xs mt-2">{desc}</p>
@@ -54,16 +51,10 @@ const MenuCard = ({
           <div className="flex items-center justify-between my-3">
             <div
               className="flex items-center space-x-1 "
-              onMouseEnter={() => {
+              onClick={() => {
                 setShowToolTip({
                   frozen: false,
-                  allergen: true,
-                });
-              }}
-              onMouseLeave={() => {
-                setShowToolTip({
-                  frozen: false,
-                  allergen: false,
+                  allergen: !showToolTip.allergen,
                 });
               }}
             >
@@ -98,7 +89,7 @@ const MenuCard = ({
               {showToolTip.frozen && (
                 <div className="flex items-center relative ">
                   <div className="bg-Light-Silver mr-2.5 py-1 text-[10px] font-medium text-Very-Light-Azure px-5 rounded-full">
-                    May contain frozen food
+                    Frozen food
                   </div>
                   <div
                     style={{
@@ -109,16 +100,10 @@ const MenuCard = ({
                 </div>
               )}
               <img
-                onMouseEnter={() => {
+                onClick={() => {
                   setShowToolTip({
                     allergen: false,
-                    frozen: true,
-                  });
-                }}
-                onMouseLeave={() => {
-                  setShowToolTip({
-                    allergen: false,
-                    frozen: false,
+                    frozen: !showToolTip.frozen,
                   });
                 }}
                 className="w-6 h-6"

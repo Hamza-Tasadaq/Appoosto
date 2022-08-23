@@ -47,16 +47,10 @@ const CartCard = ({
           <div className="flex items-center justify-between my-3">
             <div
               className="flex items-center space-x-1 "
-              onMouseEnter={() => {
+              onClick={() => {
                 setShowToolTip({
                   frozen: false,
-                  allergen: true,
-                });
-              }}
-              onMouseLeave={() => {
-                setShowToolTip({
-                  frozen: false,
-                  allergen: false,
+                  allergen: !showToolTip.allergen,
                 });
               }}
             >
@@ -91,7 +85,7 @@ const CartCard = ({
               {showToolTip.frozen && (
                 <div className="flex items-center relative ">
                   <div className="bg-Light-Silver mr-2.5 py-1 text-[10px] font-medium text-Very-Light-Azure px-5 rounded-full">
-                    contain frozen food
+                    Frozen food
                   </div>
                   <div
                     style={{
@@ -102,16 +96,10 @@ const CartCard = ({
                 </div>
               )}
               <img
-                onMouseEnter={() => {
+                onClick={() => {
                   setShowToolTip({
                     allergen: false,
-                    frozen: true,
-                  });
-                }}
-                onMouseLeave={() => {
-                  setShowToolTip({
-                    allergen: false,
-                    frozen: false,
+                    frozen: !showToolTip.frozen,
                   });
                 }}
                 className="w-6 h-6"
