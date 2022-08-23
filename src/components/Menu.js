@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import MenuData from "../data/Menu.json";
+import BackModal from "./BackModal";
 import LanguageModal from "./LanguageModal";
 import ModalWrapper from "./ModalWrapper";
 import NotificationModal from "./NotificationModal";
@@ -12,6 +13,8 @@ const Menu = () => {
 
   const [showNotificationModal, setShowNotificationModal] = useState(false);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showBackModal, setShowBackModal] = useState(false);
+
   const [selectedLanguage, setSelectedLanguage] = useState({
     flagSrc: "italian",
     text: "Italian",
@@ -40,6 +43,8 @@ const Menu = () => {
         </ModalWrapper>
       )}
 
+      {showBackModal && <BackModal setShowBackModal={setShowBackModal} />}
+
       {showNotificationModal && (
         <NotificationModal
           setShowNotificationModal={setShowNotificationModal}
@@ -55,12 +60,17 @@ const Menu = () => {
       <div className="md:hidden sticky top-0 left-0 right-0 z-40">
         <div className="bg-White md:bg-Flash-White  md:static shadow-xl md:shadow-none rounded-b-2xl md:bg-transparent md:rounded-none">
           <div className="flex px-5 pt-3 items-center justify-between">
-            <Link to={"/"} className=" flex items-center ">
+            <div
+              onClick={() => {
+                setShowBackModal(true);
+              }}
+              className=" flex items-center "
+            >
               <img
                 src="./assets/headers-logo-gray.png"
                 alt="headers-logo-gray"
               />
-            </Link>
+            </div>
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 flex items-center justify-center rounded-full bg-Light-Silver">
                 <img src="./assets/questionmark.svg" alt="questionmark" />

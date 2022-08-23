@@ -9,7 +9,7 @@ const BackModal = ({ setShowBackModal = () => {} }) => {
 
   return (
     <ModalWrapper>
-      <div className="bg-White border border-Medium-Electric-Blue rounded-lg p-5 relative">
+      <div className="bg-White border border-Medium-Electric-Blue rounded-lg p-5 w-full md:w-auto relative">
         <div
           onClick={() => {
             setShowBackModal(false);
@@ -27,13 +27,13 @@ const BackModal = ({ setShowBackModal = () => {} }) => {
           </p>
         </div>
 
-        <div className="flex items-center space-x-3 mt-5">
+        <div className="flex items-center justify-between md:justify-center space-x-3 mt-5">
           <button
             onClick={() => {
               navigate("/");
               dispatch(emptyCart());
             }}
-            className="rounded-lg border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+            className="rounded-lg border border-Vivid-Red-Tangelo px-2 flex-1 md:flex-auto md:px-6 py-3 font-bold"
           >
             Yes, go back
           </button>
@@ -41,7 +41,7 @@ const BackModal = ({ setShowBackModal = () => {} }) => {
             onClick={() => {
               setShowBackModal(false);
             }}
-            className="rounded-lg bg-Vivid-Red-Tangelo text-White border border-Vivid-Red-Tangelo px-6 py-3 font-bold"
+            className="rounded-lg bg-Vivid-Red-Tangelo text-White border border-Vivid-Red-Tangelo px-2 flex-1 md:flex-auto md:px-6 py-3 font-bold"
           >
             No, stay here
           </button>
