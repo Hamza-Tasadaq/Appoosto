@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
 import BackModal from "./BackModal";
 import LanguageModal from "./LanguageModal";
