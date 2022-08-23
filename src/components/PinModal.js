@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import ServicesData from "../data/Services.json";
 
 let currentOtpIndex = 0;

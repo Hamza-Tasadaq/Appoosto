@@ -893,30 +893,38 @@ const Filters = ({ closeHandler = () => {} }) => {
           alt="close"
         />
       </div>
-      <div className="md:px-8 md:py-4 md:flex my-5 items-center md:space-x-5 space-y-4 md:space-y-0">
+      <div className="md:px-8 md:py-2 md:flex my-5 md:space-x-5 space-y-4 md:space-y-0">
         <div className=" md:hidden">
           <Type />
         </div>
-        <h3 className="text-center font-semibold text-xs md:hidden">
-          Allergens
-        </h3>
-        <div className="grid grid-cols-2 gap-1.5 flex-1">
-          {ItemsData.map(({ text, Icon, SelectedIcon }, index) => (
-            <Item
-              key={index}
-              text={text}
-              Icon={Icon}
-              SelectedIcon={SelectedIcon}
-            />
-          ))}
-        </div>
-        <div className="hidden md:block w-px h-72	bg-Spanish-Gray opacity-20" />
-        <div className="space-y-3 flex-1">
-          <div className="hidden md:block">
-            <Type />
+        <div className=" flex-1">
+          <div className="mb-4">
+            <h3 className="text-center font-semibold text-xs">Allergens</h3>
+            <p className="font-light mt-2 text-xs text-center">
+              drop allergens by your menu selecting them
+            </p>
           </div>
-          <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
-
+          <div className="grid grid-cols-2 gap-1.5">
+            {ItemsData.map(({ text, Icon, SelectedIcon }, index) => (
+              <Item
+                key={index}
+                text={text}
+                Icon={Icon}
+                SelectedIcon={SelectedIcon}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block self-center w-px h-72	bg-Spanish-Gray opacity-20" />
+        <div className="space-y-3 flex-1">
+          <div className="mb-4">
+            <h3 className="text-center font-semibold text-xs">
+              Food preferences
+            </h3>
+            <p className="font-light mt-2 text-xs text-center">
+              select the max spicy level of your menu
+            </p>
+          </div>
           <div className="rounded-lg p-2 box-shadow flex justify-center items-center">
             <div
               onClick={() => {
@@ -946,6 +954,15 @@ const Filters = ({ closeHandler = () => {} }) => {
             >
               +
             </div>
+          </div>
+
+          <p className="font-light mt-2 text-xs text-center">
+            finally select more food experiences
+          </p>
+          <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
+
+          <div className="hidden md:block">
+            <Type />
           </div>
           <div className="max-w-[278px] mx-auto h-px	bg-Spanish-Gray opacity-20" />
 
