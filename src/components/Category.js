@@ -1,10 +1,10 @@
-import MenuData from "../data/Category.json";
+import CategoryData from "../data/Category.json";
 import CategoryCard from "./CategoryCard";
 
 const Category = () => {
-  const half = Math.ceil(MenuData.length / 2);
-  const firstHalf = MenuData.slice(0, half);
-  const secondHalf = MenuData.slice(half);
+  const half = Math.ceil(CategoryData.length / 2);
+  const firstHalf = CategoryData.slice(0, half);
+  const secondHalf = CategoryData.slice(half);
   return (
     <div className="relative px-4 my-4 md:my-0 md:px-0">
       <div className="flex justify-center md:flex-col md:overflow-x-auto hover:overflow-x-scroll scrollBarHorizontal">

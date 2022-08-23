@@ -23,3 +23,4 @@ export { default as OrderStatusCard } from "./OrderStatusCard";
 export { default as LanguageModal } from "./LanguageModal";
 export { default as NotificationModal } from "./NotificationModal";
 export { default as MenuCard } from "./MenuCard";
+export { default as MenuHeading } from "./MenuHeading";

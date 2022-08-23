@@ -5,6 +5,7 @@ import MenuData from "../data/Menu.json";
 import MenuCard from "./MenuCard";
 import ModalWrapper from "./ModalWrapper";
 import ProductDetails from "./ProductDetails";
+import MenuHeading from "./MenuHeading";
 
 const Menu = ({
   setShowNotificationModal,
@@ -102,9 +103,8 @@ const Menu = ({
       <div className="my-5 md:my-0">
         {Object.entries(MenuData).map(([key, value]) => (
           <div key={key}>
-            {/* <h1 className="font-bold pl-3 md:pl-0 md:ml-1 bg-White z-40 sticky top-0 left-0">
-              {key}
-            </h1> */}
+            <MenuHeading heading={key} />
+
             <div className="mx-2 grid grid-cols-1 lg:grid-cols-2 gap-5">
               {value.map(
                 (
