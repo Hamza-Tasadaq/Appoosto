@@ -32,7 +32,7 @@ const MenuHeading = ({ heading }) => {
         src={iconSrc && `./assets/${iconSrc}.svg`}
         alt={iconSrc}
       />
-      <h1 className="font-semibold pl-3 md:pl-0 md:ml-1 z-40">{heading}</h1>
+      <h1 className="font-semibold pl-3 md:pl-0 md:ml-1 z-30">{heading}</h1>
     </div>
   );
 };

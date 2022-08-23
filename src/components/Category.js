@@ -1,13 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryData from "../data/Category.json";
 import CategoryCard from "./CategoryCard";
 
 const Category = () => {
+  const navigate = useNavigate();
   const half = Math.ceil(CategoryData.length / 2);
   const firstHalf = CategoryData.slice(0, half);
   const secondHalf = CategoryData.slice(half);
-
-  console.log(CategoryData);
 
   const [isSelected, setIsSelected] = useState({
     pizza: false,
@@ -32,9 +32,13 @@ const Category = () => {
       cupcake: false,
       [selectedItem]: true,
     });
-    document.getElementById(itemClicked).scrollIntoView({
-      behavior: "smooth",
-    });
+    if (window.innerWidth > 768) {
+      document.getElementById(itemClicked).scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/menu", { state: itemClicked });
+    }
   };
   return (
     <div className="relative px-4 my-4 md:my-0 md:px-0">
