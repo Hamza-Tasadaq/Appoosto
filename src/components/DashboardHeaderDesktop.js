@@ -2,8 +2,43 @@ import { useState } from "react";
 import Filters from "./Filters";
 import ModalWrapper from "./ModalWrapper";
 
+const Languages = [
+  {
+    flagSrc: "italian",
+    text: "Italian",
+  },
+  {
+    flagSrc: "french",
+    text: "French",
+  },
+  {
+    flagSrc: "spanish",
+    text: "Spanish",
+  },
+  {
+    flagSrc: "german",
+    text: "German",
+  },
+  {
+    flagSrc: "greek",
+    text: "Greek",
+  },
+  {
+    flagSrc: "swedish",
+    text: "Sweidsh",
+  },
+];
+
 function DashboardHeaderDesktop() {
   const [showFiltersModal, setShowFiltersModal] = useState(false);
+
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+
+  const [selectedLanguage, setSelectedLanguage] = useState({
+    flagSrc: "italian",
+    text: "Italian",
+  });
+
   const closeHandler = () => {
     setShowFiltersModal(!showFiltersModal);
   };
@@ -32,11 +67,59 @@ function DashboardHeaderDesktop() {
           <div className="bg-Vivid-Red-Tangelo rounded-full  w-10 h-10 flex items-center justify-center">
             <img src="./assets/bell.svg" alt="bell" />
           </div>
-          <div >
-            <img className="w-10 h-10" src="./assets/flag.png" alt="flag" />
+          <div
+            onClick={() => {
+              setShowLanguageModal(true);
+            }}
+            className="cursor-pointer"
+          >
+            <img
+              className="w-10 h-10"
+              src={`./assets/${selectedLanguage.flagSrc}.png`}
+              alt="flag"
+            />
           </div>
         </div>
       </div>
+
+      {showLanguageModal && (
+        <ModalWrapper>
+          <div className="bg-White border border-Medium-Electric-Blue rounded-lg max-w-[360px] py-4 px-4">
+            <h1 className="text-Vivid-Red-Tangelo font-bold text-lg text-center">
+              Select your language
+            </h1>
+
+            <div className="grid grid-cols-3 mt-2">
+              {Languages.map(({ flagSrc, text }) => (
+                <div
+                  key={text}
+                  onClick={() => {
+                    setSelectedLanguage({
+                      flagSrc,
+                      text,
+                    });
+                    setShowLanguageModal(false);
+                  }}
+                  className="flex flex-col m-5 items-center justify-center cursor-pointer relative"
+                >
+                  <img src={`./assets/${flagSrc}.png`} alt={flagSrc} />
+                  <div className="flex items-center">
+                    <t2 className="font-semibold text-sm mt-1">{text}</t2>
+                    <div
+                      className={`${
+                        selectedLanguage.text === text ? "block " : " hidden "
+                      } bg-[green] w-3 h-3 rounded-full mt-1.5 ml-2`}
+                    >
+                      {" "}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div></div>
+            </div>
+          </div>
+        </ModalWrapper>
+      )}
       {showFiltersModal && (
         <ModalWrapper>
           <Filters closeHandler={closeHandler} />
