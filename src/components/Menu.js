@@ -1,34 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
-import BackModal from "./BackModal";
-import LanguageModal from "./LanguageModal";
 import ModalWrapper from "./ModalWrapper";
-import NotificationModal from "./NotificationModal";
 import ProductDetails from "./ProductDetails";
 
-const Menu = () => {
+const Menu = ({
+  setShowNotificationModal,
+  setShowLanguageModal,
+  setShowBackModal,
+}) => {
   const navigate = useNavigate();
   const [showProductDetails, setShowProductDetails] = useState(false);
-
-  const [showNotificationModal, setShowNotificationModal] = useState(false);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showBackModal, setShowBackModal] = useState(false);
 
   const { selectedLanguage } = useSelector((state) => state.language);
 
   const modalHandler = () => {
     setShowProductDetails(!showProductDetails);
   };
-
-  useEffect(() => {
-    if (showNotificationModal || showLanguageModal || showBackModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [showNotificationModal, showLanguageModal, showBackModal]);
 
   const scrollTop = () => {
     window.scrollTo({
@@ -45,22 +34,6 @@ const Menu = () => {
   };
   return (
     <div className="mb-20 md:mb-0 relative">
-      {showLanguageModal && (
-        <ModalWrapper>
-          <LanguageModal
-            setShowLanguageModal={setShowLanguageModal}
-            selectedLanguage={selectedLanguage}
-          />
-        </ModalWrapper>
-      )}
-
-      {showBackModal && <BackModal setShowBackModal={setShowBackModal} />}
-
-      {showNotificationModal && (
-        <NotificationModal
-          setShowNotificationModal={setShowNotificationModal}
-        />
-      )}
       <div className="hidden md:block">
         {showProductDetails && (
           <ModalWrapper>
