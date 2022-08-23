@@ -169,14 +169,27 @@ const Menu = ({
                         </div>
                         <div className="flex items-center justify-between my-3">
                           <div className="flex items-center space-x-1">
-                            <img src="./assets/peanut.svg" alt="peanut" />
-                            <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
+                            <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                              <img
+                                src="./assets/pine-cone.svg"
+                                alt="pine-cone"
+                              />
+                            </div>
+                            <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                              <img src="./assets/sulphite.svg" alt="sulphite" />
+                            </div>
+                            <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                              <img src="./assets/fish.svg" alt="fish" />
+                            </div>
+                            <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                              <img src="./assets/peanut.svg" alt="peanut" />
+                            </div>
+                          </div>
+                          {/* <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
                             <img src="./assets/grains.svg" alt="grains" />
                             <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
                             <img src="./assets/mollusc.svg" alt="mollusc" />
-                            <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
-                            <img src="./assets/pine-cone.svg" alt="pine-cone" />
-                          </div>
+                            <div className="bg-Spanish-Gray opacity-70 w-px h-2" /> */}
                           <img src="./assets/snowflakes.svg" alt="snowflakes" />
                         </div>
                       </div>

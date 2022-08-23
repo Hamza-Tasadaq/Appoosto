@@ -48,7 +48,11 @@ const Cart = ({ selectedType = "" }) => {
   return (
     <div className="mr-2">
       <div>
-        <DashboardHeaderPhone selectedType={selectedType} prevHref="/menu" heading={"Cart"} />
+        <DashboardHeaderPhone
+          selectedType={selectedType}
+          prevHref="/menu"
+          heading={"Cart"}
+        />
       </div>
 
       <div className="hidden md:flex bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg my-4 items-center p-2">
@@ -134,13 +138,18 @@ const Cart = ({ selectedType = "" }) => {
                       </div>
                       <div className="flex items-center justify-between my-3">
                         <div className="flex items-center space-x-1">
-                          <img src="./assets/peanut.svg" alt="peanut" />
-                          <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
-                          <img src="./assets/grains.svg" alt="grains" />
-                          <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
-                          <img src="./assets/mollusc.svg" alt="mollusc" />
-                          <div className="bg-Spanish-Gray opacity-70 w-px h-2" />
-                          <img src="./assets/pine-cone.svg" alt="pine-cone" />
+                          <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                            <img src="./assets/pine-cone.svg" alt="pine-cone" />
+                          </div>
+                          <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                            <img src="./assets/sulphite.svg" alt="sulphite" />
+                          </div>
+                          <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                            <img src="./assets/fish.svg" alt="fish" />
+                          </div>
+                          <div className="bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg w-6 h-6 flex items-center justify-center">
+                            <img src="./assets/peanut.svg" alt="peanut" />
+                          </div>
                         </div>
                         <img src="./assets/snowflakes.svg" alt="snowflakes" />
                       </div>
