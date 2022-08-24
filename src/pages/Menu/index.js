@@ -25,10 +25,12 @@ const Menu = () => {
     }
 
     if (state) {
+      document.getElementById(state).style.scrollMarginTop = "120px";
       document.getElementById(state).scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
       });
+
     }
   }, [showNotificationModal, showLanguageModal, showBackModal, state]);
 
