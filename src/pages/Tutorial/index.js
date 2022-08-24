@@ -14,7 +14,7 @@ const Tutorial = () => {
         navigate("/menu");
       }
     });
-  }, [step]);
+  }, [step, navigate]);
 
   console.log(step);
   return (
