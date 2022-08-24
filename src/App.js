@@ -16,6 +16,8 @@ import ProductDetails from "./pages/ProductDetails";
 import Filters from "./pages/Filters";
 import OrderStatus from "./pages/OrderStatus";
 import NotForYou from "./pages/NotForYou";
+import Intro from "./pages/Intro";
+import Tutorial from "./pages/Tutorial";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/category" element={<Category />} />
           <Route path="/productdetails" element={<ProductDetails />} />
           <Route path="/filters" element={<Filters />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/orderStatus" element={<OrderStatus />} />
           <Route path="*" element={<NotForYou />} />
         </Routes>

@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 const PhoneFooter = () => {
   return (
     <div
-      className="fixed bottom-0 bg-cover sm:h-28 left-0 right-0 z-50 h-20 flex items-center justify-center "
+      className="fixed bottom-0 bg-cover sm:h-28 left-0 right-0 z-40 h-20 flex items-center justify-center "
       style={{
         backgroundImage: "url('./assets/rounded-phone-footer-bg.png')",
       }}
     >
       <div className="flex items-center justify-around w-full">
         <div className="flex items-center">
-          <Link to={"/category"} className="mx-7">
+          <Link
+            to={"/category"}
+            className="mx-3 w-10 h-10 flex items-center justify-center"
+          >
             <svg
               width="20"
               height="20"
@@ -37,7 +40,10 @@ const PhoneFooter = () => {
             </svg>
           </Link>
 
-          <Link to={"/filters"} className="mx-7">
+          <Link
+            to={"/filters"}
+            className="mx-3 w-10 h-10 flex items-center justify-center"
+          >
             <svg
               width="20"
               height="20"
@@ -70,7 +76,10 @@ const PhoneFooter = () => {
             </svg>
           </Link>
         </div>
-        <Link to={"/"} className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow">
+        <Link
+          to={"/"}
+          className="bg-Vivid-Red-Tangelo absolute bottom-8 w-12 h-12 left-1/2 -translate-x-1/2	 rounded-full p-3 box-shadow"
+        >
           <svg
             width="22"
             height="20"
@@ -90,7 +99,10 @@ const PhoneFooter = () => {
         </Link>
 
         <div className="flex items-center">
-          <Link to={"/orderStatus"} className="mx-7">
+          <Link
+            to={"/orderStatus"}
+            className="mx-3 w-10 h-10 flex items-center justify-center"
+          >
             <svg
               width="20"
               height="20"
@@ -109,7 +121,10 @@ const PhoneFooter = () => {
             </svg>
           </Link>
 
-          <Link to={"/cart"} className="mx-7">
+          <Link
+            to={"/cart"}
+            className="mx-3 w-10 h-10 flex items-center justify-center"
+          >
             <svg
               width="18"
               height="20"
