@@ -4,7 +4,7 @@ import Menu from "../Menu";
 
 const Tutorial = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
     window.addEventListener("click", () => {
