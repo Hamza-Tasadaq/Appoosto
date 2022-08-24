@@ -95,6 +95,7 @@ const Cart = ({ selectedType = "" }) => {
               cart.map(({ id, imgSrc, title, desc, price, count }, index) => (
                 <CartCard
                   id={id}
+                  key={index}
                   imgSrc={imgSrc}
                   title={title}
                   desc={desc}

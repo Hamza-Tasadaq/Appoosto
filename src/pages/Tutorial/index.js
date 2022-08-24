@@ -4,21 +4,25 @@ import Menu from "../Menu";
 
 const Tutorial = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   useEffect(() => {
-    window.addEventListener("click", () => {
-      if (step < 5) {
-        setStep(step + 1);
-      } else {
-        navigate("/menu");
-      }
-    });
+    console.log("tutorial");
   }, [step, navigate]);
 
-  console.log(step);
+  const clickHandler = () => {
+    if (step < 5) {
+      setStep(step + 1);
+    } else {
+      setStep(0);
+      navigate("/menu");
+    }
+  };
   return (
-    <div className="relative h-screen w-screen overflow-hidden ">
+    <div
+      onClick={clickHandler}
+      className="relative h-screen w-screen overflow-hidden "
+    >
       <div className="bg-Black bg-opacity-70 w-full h-full absolute top-0 left-0 z-50">
         <div
           className={`flex flex-col items-center h-full  ${
