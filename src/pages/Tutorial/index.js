@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Menu from "../Menu";
 
 const Tutorial = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
 
   useEffect(() => {
@@ -9,7 +11,7 @@ const Tutorial = () => {
       if (step < 5) {
         setStep(step + 1);
       } else {
-        console.log("al");
+        navigate("/menu");
       }
     });
   }, [step]);

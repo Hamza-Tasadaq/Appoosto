@@ -47,7 +47,7 @@ function PinScreen() {
     if (otp === "0000" && eneteredOtp >= 4) {
       setIsValidOtp(true);
       setTimeout(() => {
-        navigate("/menu");
+        navigate("/intro");
       }, [1000]);
     } else {
       setIsValidOtp(false);

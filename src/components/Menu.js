@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuData from "../data/Menu.json";
 import MenuCard from "./MenuCard";
 import ModalWrapper from "./ModalWrapper";
@@ -59,9 +59,12 @@ const Menu = ({
               />
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-Light-Silver">
+              <Link
+                to="/intro"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-Light-Silver"
+              >
                 <img src="./assets/questionmark.svg" alt="questionmark" />
-              </div>
+              </Link>
               <div
                 onClick={() => {
                   scrollTop();
