@@ -19,6 +19,7 @@ import NotForYou from "./pages/NotForYou";
 import Intro from "./pages/Intro";
 import Tutorial from "./pages/Tutorial";
 import { SrcollToTop } from "./components";
+import OrderSuccessFull from "./pages/OrderSuccessFull";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/intro" element={<Intro />} />
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/orderStatus" element={<OrderStatus />} />
+          <Route path="/orderSuccessFull" element={<OrderSuccessFull />} />
           <Route path="*" element={<NotForYou />} />
         </Routes>
       </BrowserRouter>

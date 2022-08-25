@@ -13,7 +13,7 @@ const Cart = () => {
           <Payment />
         </>
       ) : (
-        <div className="w-screen h-screen bg-black p-10 flex flex-col justify-between items-center">
+        <div className="w-screen h-full bg-black p-10 flex flex-col justify-between items-center">
           <div className="text-White text-center space-y-4">
             <img src="./assets/empty.png" alt="empty" />
             <h1 className="font-bold text-base">Your cart is empty!</h1>
