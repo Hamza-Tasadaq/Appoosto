@@ -119,6 +119,9 @@ li.slick-active {
 .scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
   background: #175e9566;
 }
+
+
+
 @media screen and (max-width: 640px) {
   .bg-small {
     background-image: url("../public/assets/features-bg.png") !important;

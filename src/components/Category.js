@@ -5,6 +5,8 @@ import CategoryCard from "./CategoryCard";
 
 const Category = () => {
   const navigate = useNavigate();
+
+  const [isHovered, setIsHovered] = useState(false);
   const half = Math.ceil(CategoryData.length / 2);
   const firstHalf = CategoryData.slice(0, half);
   const secondHalf = CategoryData.slice(half);
@@ -55,7 +57,17 @@ const Category = () => {
   };
   return (
     <div className="relative px-4 my-4 md:my-0 md:px-0">
-      <div className="flex justify-center md:flex-col md:overflow-x-auto hover:overflow-x-scroll scrollBarHorizontal">
+      <div
+        onMouseEnter={() => {
+          setIsHovered(!isHovered);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(!isHovered);
+        }}
+        className={`flex justify-center md:flex-col md:overflow-x-auto ${
+          isHovered ? " scrollBarHorizontal ": " noScrollBar "
+        } `}
+      >
         <div className="flex justify-center md:justify-start flex-col mr-2 md:mr-0  md:flex-row items-center my-1 space-y-3 md:space-y-0  md:space-x-3">
           {firstHalf.map(({ name, iconSrc, background }, index) => (
             <CategoryCard

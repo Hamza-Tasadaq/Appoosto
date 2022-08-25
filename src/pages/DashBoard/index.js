@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div>
       <div className="relative bg-Flash-White h-screen ">
         <DashboardHeaderDesktop />
-        <div className="mt-3 px-2 flex max-h-dashboard">
+        <div className="mt-3 px-2 flex max-h-dashboard ">
           <div className="w-4/12 lg:w-1/4 h-full overflow-auto  scrollBar mx-2">
             <Cart selectedType={selectedType} />
           </div>
