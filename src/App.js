@@ -41,8 +41,8 @@ function App() {
           <Route path="/filters" element={<Filters />} />
           <Route path="/intro" element={<Intro />} />
           <Route path="/tutorial" element={<Tutorial />} />
-          <Route path="/orderStatus" element={<OrderStatus />} />
-          <Route path="/orderSuccessFull" element={<OrderSuccessFull />} />
+          <Route path="/orderstatus" element={<OrderStatus />} />
+          <Route path="/ordersuccess" element={<OrderSuccessFull />} />
           <Route path="*" element={<NotForYou />} />
         </Routes>
       </BrowserRouter>

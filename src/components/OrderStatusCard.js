@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const OrderStatusCard = ({ status }) => {
+const OrderStatusCard = ({ imgSrc, title, desc, price, status, time }) => {
   const [showToolTip, setShowToolTip] = useState({
     frozen: false,
     allergen: false,
@@ -11,18 +11,15 @@ const OrderStatusCard = ({ status }) => {
         <div className="pb-5 mb-5 flex border-opacity-20 border-b border-Spanish-Gray">
           <img
             className="rounded-lg object-cover w-[76px] h-[76px]"
-            src={`./assets/steak.png`}
+            src={`./assets/${imgSrc}.png`}
             alt="mashroom"
           />
           <div className="ml-3">
             <div className="font-bold flex items-center justify-between text-sm md:text-base">
-              <h2>Mushroom Pasta</h2>
-              <h2 className="text-Vivid-Red-Tangelo">€12</h2>
+              <h2>{title}</h2>
+              <h2 className="text-Vivid-Red-Tangelo">€{price}</h2>
             </div>
-            <p className="font-medium text-xs mt-2">
-              Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
-              leo sapien de aries…
-            </p>
+            <p className="font-medium text-xs mt-2">{desc}</p>
           </div>
         </div>
         <div className="border-opacity-20 border-b pb-2 mb-5 border-Spanish-Gray">
@@ -109,7 +106,7 @@ const OrderStatusCard = ({ status }) => {
         <div className="text-sm flex items-center text-Spanish-Gray pb-2 font-semibold justify-between">
           <div className="flex items-center  ">
             <img src="./assets/clock-filled.svg" alt="clock-filled" />
-            <p className="ml-3">Ordered at 12:24</p>
+            <p className="ml-3">Ordered at ${time}</p>
           </div>
           <div>
             <p>

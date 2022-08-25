@@ -97,7 +97,7 @@ const PhoneFooter = () => {
 
         <div className="flex items-center">
           <Link
-            to={"/orderStatus"}
+            to={"/orderstatus"}
             className="mx-3 w-10 h-10 flex items-center justify-center"
           >
             <svg

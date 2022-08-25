@@ -7,7 +7,6 @@ const Tutorial = () => {
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    console.log("tutorial");
   }, [step, navigate]);
 
   const clickHandler = () => {

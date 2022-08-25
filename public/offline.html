@@ -4,20 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>No Internet</title>
+
+    <style>
+      body {
+        min-height: 100vh;
+        background-color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+      }
+
+      p {
+        max-width: 255px;
+        text-align: center;
+        margin: 8px auto;
+      }
+      button {
+        background-color: #d85c27;
+        border-radius: 8px;
+        padding: 16px 40px;
+      }
+    </style>
   </head>
   <body>
-    <div
-      style="
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <div style="background-color: cyan; padding: 40px 40px">
-        <p>You are offline please connect to internet.</p>
-      </div>
+    <div>
+      <img src="./assets/nointernet.png" alt="nointernet" />
+      <p>Please be relaxed, it seems that your Internet doesn’t work!</p>
     </div>
+    <button onClick="window.location.reload();">Try Again</button>
   </body>
 </html>

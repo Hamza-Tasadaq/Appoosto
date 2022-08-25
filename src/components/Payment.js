@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import WhatsAppBtn from "./WhatsAppBtn";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { emptyCart } from "../app/Slices/Cart";
+import { addOrder } from "../app/Slices/OrdersStatus";
 
 const Payment = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
   const [selectedMethod, setSelectedMethod] = useState({
     cash: true,
@@ -15,6 +19,18 @@ const Payment = () => {
       card: false,
       [method]: true,
     });
+  };
+
+  const handleButtonClick = () => {
+    navigate("/ordersuccess");
+    dispatch(emptyCart());
+    const OrdersStatus = [
+      cart.map((cartItem) => {
+        return { ...cartItem, status: "Prepration", time: "2:30" };
+      }),
+    ]
+
+    dispatch(addOrder(...OrdersStatus));
   };
   return (
     <div>
@@ -120,12 +136,18 @@ const Payment = () => {
           Your booking will be sent to restaurant name with whatsapp and you
           will receive status notifications in chat.
         </p>
-        <button className="bg-Vivid-Red-Tangelo rounded-lg text-White font-semibold px-8 md:hidden text-sm">
+        <button
+          onClick={handleButtonClick}
+          className="bg-Vivid-Red-Tangelo rounded-lg text-White font-semibold px-8 md:hidden text-sm"
+        >
           Order Now
         </button>
       </div>
       <div className="hidden md:block">
-        <WhatsAppBtn text="Order Now" />
+        <button className="flex items-center justify-center bg-Yale-Blue w-full py-3 md:py-4 rounded-lg text-White font-medium text-xs md:text-base my-5 md:my-7 duration-500 hover:scale-x-100">
+          <img className="mr-3" src="./assets/whatsapp.svg" alt="whatsapp" />
+          Order Now
+        </button>
       </div>
     </div>
   );
