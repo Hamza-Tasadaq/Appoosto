@@ -18,11 +18,13 @@ import OrderStatus from "./pages/OrderStatus";
 import NotForYou from "./pages/NotForYou";
 import Intro from "./pages/Intro";
 import Tutorial from "./pages/Tutorial";
+import { SrcollToTop } from "./components";
 
 function App() {
   return (
     <div className="font-Montserrat">
       <BrowserRouter>
+        <SrcollToTop />
         <Routes>
           {/* Route for Desktop */}
           <Route path="/" element={<Home />} />
