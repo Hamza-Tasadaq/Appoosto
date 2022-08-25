@@ -2,6 +2,7 @@ import ModalWrapper from "./ModalWrapper";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../app/Slices/Cart";
+import { clearOrderStatus } from "../app/Slices/OrdersStatus";
 
 const BackModal = ({ setShowBackModal = () => {} }) => {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ const BackModal = ({ setShowBackModal = () => {} }) => {
             onClick={() => {
               navigate("/");
               dispatch(emptyCart());
+              dispatch(clearOrderStatus());
             }}
             className="rounded-lg border border-Vivid-Red-Tangelo px-2 flex-1 md:flex-auto md:px-6 py-3 font-bold"
           >

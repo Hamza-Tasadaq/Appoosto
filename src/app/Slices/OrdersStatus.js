@@ -10,9 +10,12 @@ export const orderStatusSlice = createSlice({
     addOrder: (state, actions) => {
       state.orderStatus = [...state.orderStatus, ...[...actions.payload]];
     },
+    clearOrderStatus: (state) => {
+      state.orderStatus = [];
+    },
   },
 });
 
-export const { addOrder } = orderStatusSlice.actions;
+export const { addOrder, clearOrderStatus } = orderStatusSlice.actions;
 
 export default orderStatusSlice.reducer;
