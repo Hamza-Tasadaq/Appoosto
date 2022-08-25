@@ -20,7 +20,10 @@ const MenuCard = ({
         alt={tagImgSrc}
       />
       <div>
-        <div className="pb-5 mb-5 flex border-opacity-20 border-b border-Spanish-Gray">
+        <div
+          onClick={productClickHandler}
+          className="pb-5 mb-5 flex cursor-pointer border-opacity-20 border-b border-Spanish-Gray"
+        >
           <img
             className="rounded-lg object-cover w-[76px] h-[76px]"
             src={`./assets/${imgSrc}.png`}
@@ -28,7 +31,7 @@ const MenuCard = ({
           />
           <div className="ml-3">
             <div className="font-bold flex items-center justify-between text-sm md:text-base">
-              <h2 onClick={productClickHandler}>{title}</h2>
+              <h2>{title}</h2>
               <h2 className="text-Vivid-Red-Tangelo">{price}</h2>
             </div>
             <p className="font-medium text-xs mt-2">{desc}</p>
