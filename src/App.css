@@ -1,13 +1,9 @@
 html {
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
-}
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 .min-screen {
-  min-height: -webkit-fill-available;
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
 }
 .bannerbg {
   background-image: url("../public/assets/banner-bg.png") !important;
