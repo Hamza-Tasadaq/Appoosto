@@ -1,16 +1,7 @@
 html {
   scroll-behavior: smooth;
-  height: 100vh;
 }
 
-body {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100%;
-}
 .bannerbg {
   background-image: url("../public/assets/banner-bg.png") !important;
 }

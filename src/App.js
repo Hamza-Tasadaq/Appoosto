@@ -23,7 +23,7 @@ import OrderSuccessFull from "./pages/OrderSuccessFull";
 
 function App() {
   return (
-    <div className="font-Montserrat h-full">
+    <div className="font-Montserrat">
       <BrowserRouter>
         <SrcollToTop />
         <Routes>
