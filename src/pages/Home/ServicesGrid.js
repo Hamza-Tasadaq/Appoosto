@@ -9,7 +9,7 @@ const ServicesGrid = () => {
         style={{ backgroundImage: "url('./assets/services-bg.png')" }}
       >
         <div className="grid grid-cols-2 gap-3">
-          {ServicesData.map(({ title, imgSrc, href = "" }, index) => (
+          {ServicesData.map(({ title, imgSrc, href = "/intro" }, index) => (
             <Link
               to={href}
               key={index}
