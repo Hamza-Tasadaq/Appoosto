@@ -21,12 +21,6 @@ const Menu = ({
     setShowProductDetails(!showProductDetails);
   };
 
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   const productClickHandler = () => {
     if (window.innerWidth < 768) {
       navigate("/productdetails");
@@ -48,7 +42,6 @@ const Menu = ({
           <div className="flex px-5 pt-3 items-center justify-between">
             <div
               onClick={() => {
-                // scrollTop();
                 setShowBackModal(true);
               }}
               className=" flex items-center "
@@ -67,7 +60,6 @@ const Menu = ({
               </Link>
               <div
                 onClick={() => {
-                  // scrollTop();
                   setShowNotificationModal(true);
                 }}
                 className="bg-Vivid-Red-Tangelo cursor-pointer rounded-full  w-8 h-8 flex items-center justify-center"
@@ -76,7 +68,6 @@ const Menu = ({
               </div>
               <div
                 onClick={() => {
-                  // scrollTop();
                   setShowLanguageModal(true);
                 }}
                 className="cursor-pointer"

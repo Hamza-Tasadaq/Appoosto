@@ -18,12 +18,6 @@ const Menu = () => {
   const [showBackModal, setShowBackModal] = useState(false);
 
   useEffect(() => {
-    // if (showNotificationModal || showLanguageModal || showBackModal) {
-    //   document.body.style.overflow = "hidden";
-    // } else {
-    //   document.body.style.overflow = "unset";
-    // }
-
     if (state) {
       document.getElementById(state).style.scrollMarginTop = "120px";
       document.getElementById(state).scrollIntoView({
