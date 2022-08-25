@@ -71,34 +71,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-{
-  /* <h2 className="opacity-50 font-semibold text-xs">Pickup time</h2>
-<div>
-  <div
-    onClick={dropDownClickHandle}
-    className="bg-Light-Silver bg-opacity-50 px-5 mt-3 mb-1 py-4 rounded-lg flex items-center justify-between cursor-pointer"
-  >
-    <h3 className="font-semibold text-xs">Time</h3>
-    <img src="./assets/arrow-down.svg" alt="arrow-down" />
-  </div>
-  <div
-    className={`px-5 py-4 shadow-lg	 bg-Light-Silver bg-opacity-50 space-y-2 transition-all	 duration-500 ${
-      showDropDown ? " block	" : " hidden"
-    } `}
-  >
-    <h3
-      onClick={dropDownClickHandle}
-      className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-Chinese-Silver"
-    >
-      11:00 - 12:30
-    </h3>
-    <h3
-      onClick={dropDownClickHandle}
-      className="p-2 cursor-pointer opacity-50 rounded-lg hover:bg-Chinese-Silver"
-    >
-      12:0 - 14:00
-    </h3>
-  </div>
-</div> */
-}
