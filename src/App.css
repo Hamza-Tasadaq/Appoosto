@@ -1,5 +1,10 @@
 html {
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .bannerbg {
@@ -87,12 +92,12 @@ li.slick-active {
 
 /* Track */
 .scrollBarHideCart::-webkit-scrollbar-track {
-  background: #F3F3F3;
+  background: #f3f3f3;
 }
 
 /* Handle */
 .scrollBarHideCart::-webkit-scrollbar-thumb {
-  background: #F3F3F3;
+  background: #f3f3f3;
 }
 
 .scrollBarHide::-webkit-scrollbar {
