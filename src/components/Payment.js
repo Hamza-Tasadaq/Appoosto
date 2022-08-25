@@ -23,13 +23,16 @@ const Payment = () => {
   };
 
   const handleButtonClick = () => {
-    navigate("/ordersuccess");
-    dispatch(emptyCart());
     const OrdersStatus = [
       cart.map((cartItem) => {
         return { ...cartItem, status: "Prepration", time: "2:30" };
       }),
     ];
+
+    if (window.innerWidth < 768) {
+      navigate("/ordersuccess");
+    }
+    dispatch(emptyCart());
 
     dispatch(addOrder(...OrdersStatus));
   };
@@ -150,8 +153,13 @@ const Payment = () => {
         </button>
       </div>
       <div className="hidden md:block">
-        <button className="flex items-center justify-center bg-Yale-Blue w-full py-3 md:py-4 rounded-lg text-White font-medium text-xs md:text-base my-5 md:my-7 duration-500 hover:scale-x-100">
-          <img className="mr-3" src="./assets/whatsapp.svg" alt="whatsapp" />
+        <button
+          onClick={handleButtonClick}
+          className="flex items-center justify-center bg-Yale-Blue w-full py-3 md:py-4 rounded-lg text-White font-medium text-xs md:text-base my-5 md:my-7 duration-500 hover:scale-x-100"
+        >
+          {!selectedOption === "Dine In" && (
+            <img className="mr-3" src="./assets/whatsapp.svg" alt="whatsapp" />
+          )}
           Order Now
         </button>
       </div>
