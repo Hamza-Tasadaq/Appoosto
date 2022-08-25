@@ -11,8 +11,9 @@ import ModalWrapper from "../../components/ModalWrapper";
 
 const Dashboard = () => {
   const [showPinModal, setShowPinModal] = useState(true);
-
   const [selectedType, setSelectedType] = useState(undefined);
+
+  const [isMenuHovered, setIsMenuHovered] = useState(false);
 
   return (
     <div>
@@ -26,7 +27,17 @@ const Dashboard = () => {
             <div className="h-2/5">
               <Category />
             </div>
-            <div className="h-3/5 noScroll noScrollBar overflow-auto hover:scrollBar">
+            <div
+              onMouseEnter={() => {
+                setIsMenuHovered(!isMenuHovered);
+              }}
+              onMouseLeave={() => {
+                setIsMenuHovered(!isMenuHovered);
+              }}
+              className={`h-3/5  overflow-auto ${
+                isMenuHovered ? " scrollBar " : " scrollBarHide "
+              } `}
+            >
               <Menu />
             </div>
           </div>

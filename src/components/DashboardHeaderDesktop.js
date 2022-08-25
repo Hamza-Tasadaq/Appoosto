@@ -22,19 +22,16 @@ function DashboardHeaderDesktop() {
 
   return (
     <div>
-      <div className="shadow-lg bg-White py-3 px-16 flex items-center justify-between">
+      <div className="shadow-lg bg-White py-3 px-10 flex items-center justify-between">
         <div
           onClick={() => {
             setShowBackModal(true);
           }}
           className="flex items-center cursor-pointer"
         >
-          <img src="./assets/pan.png" alt="pan" />
-          <h2 className="ml-2 text-Vivid-Red-Tangelo font-semibold text-sm">
-            Pan Asian Restaurant
-          </h2>
+          <img src="./assets/headers-logo-gray.png" alt="pan" />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-4">
           <div
             onClick={() => {
               setShowFiltersModal(!showFiltersModal);
@@ -45,8 +42,7 @@ function DashboardHeaderDesktop() {
             <span>Filters</span>
           </div>
         </div>
-
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center w-1/5 lg:w-1/4 justify-end space-x-3">
           <div
             onClick={() => {
               setShowNotificationModal(true);

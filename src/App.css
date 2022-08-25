@@ -13,8 +13,8 @@ html {
 .max-h-dashboard {
   height: calc(100vh - 92px);
 }
-.shadow-inside{
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+.shadow-inside {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 }
 
 .box-shadow {
@@ -81,6 +81,19 @@ li.slick-active {
   scrollbar-width: none;
 }
 
+.scrollBarHide::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.scrollBarHide::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+.scrollBarHide::-webkit-scrollbar-thumb {
+  background: #fff;
+}
 .scrollBar::-webkit-scrollbar {
   width: 8px;
 }
@@ -119,8 +132,6 @@ li.slick-active {
 .scrollBarHorizontal::-webkit-scrollbar-thumb:hover {
   background: #175e9566;
 }
-
-
 
 @media screen and (max-width: 640px) {
   .bg-small {
