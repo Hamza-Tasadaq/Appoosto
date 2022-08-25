@@ -5,7 +5,7 @@ import { removeItem, updateCount } from "../app/Slices/Cart";
 import StatusTab from "./StatusTab";
 import CartCard from "./CartCard";
 
-const Cart = ({ selectedType = "" }) => {
+const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
 
   const [activeTab, setActiveTab] = useState({
@@ -49,11 +49,7 @@ const Cart = ({ selectedType = "" }) => {
   return (
     <div className="mr-2">
       <div>
-        <DashboardHeaderPhone
-          selectedType={selectedType}
-          prevHref="/menu"
-          heading={"Cart"}
-        />
+        <DashboardHeaderPhone prevHref="/menu" heading={"Cart"} />
       </div>
 
       <div className="hidden md:flex bg-Vivid-Red-Tangelo bg-opacity-20 rounded-lg my-4 items-center p-2">

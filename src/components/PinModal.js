@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeOption } from "../app/Slices/SelectedGrid";
 import ServicesData from "../data/Services.json";
 
 let currentOtpIndex = 0;
-const PinModal = ({
-  setShowPinModal = () => {},
-  setSelectedType = () => {},
-}) => {
+const PinModal = ({ setShowPinModal = () => {} }) => {
+  const dispatch = useDispatch();
   const [showGrid, setShowGrids] = useState(true);
 
   // Number of entered text for otp
@@ -84,7 +84,7 @@ const PinModal = ({
                   to={href}
                   key={index}
                   onClick={() => {
-                    setSelectedType(title);
+                    dispatch(changeOption(title));
                     href ? setShowGrids(!showGrid) : setShowPinModal(false);
                   }}
                   className="bg-White rounded-lg cursor-pointer w-36 sm:w-40 h-24 duration-300 border-transparent flex items-center justify-center hover:scale-105 flex-col"

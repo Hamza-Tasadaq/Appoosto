@@ -11,7 +11,6 @@ import ModalWrapper from "../../components/ModalWrapper";
 
 const Dashboard = () => {
   const [showPinModal, setShowPinModal] = useState(true);
-  const [selectedType, setSelectedType] = useState(undefined);
 
   const [isMenuHovered, setIsMenuHovered] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
@@ -32,7 +31,7 @@ const Dashboard = () => {
               isCartHovered ? " scrollBar " : " scrollBarHideCart "
             } ml-2`}
           >
-            <Cart selectedType={selectedType} />
+            <Cart />
           </div>
           <div className="w-[46.50%] lg:w-1/2 mx-1  bg-White rounded-t-lg p-4">
             <div className="h-2/5">
@@ -60,7 +59,6 @@ const Dashboard = () => {
       {showPinModal && (
         <ModalWrapper>
           <PinModal
-            setSelectedType={setSelectedType}
             setShowPinModal={setShowPinModal}
           />
         </ModalWrapper>
