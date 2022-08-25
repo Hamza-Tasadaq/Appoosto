@@ -20,7 +20,7 @@ const Tutorial = () => {
   return (
     <div
       onClick={clickHandler}
-      className="relative h-full w-screen overflow-hidden "
+      className="relative h-screen w-screen overflow-hidden "
     >
       <div className="bg-Black bg-opacity-70 w-full h-full absolute top-0 left-0 z-50">
         <div
