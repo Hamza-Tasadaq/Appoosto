@@ -17,6 +17,8 @@ const BookTableForm = () => {
   const [whatsAppMsg, setWhatsAppMsg] = useState(undefined);
   const [isTimeDropDownOpen, setIsTimeDropDownOpen] = useState(false);
 
+  const [showError, setShowError] = useState(false);
+
   const handleTimeDropDownOpen = (time = "") => {
     setFormData({
       ...formData,
@@ -31,6 +33,9 @@ const BookTableForm = () => {
       ...formData,
       [name]: value,
     });
+    if (showError) {
+      setShowError(!showError);
+    }
 
     setWhatsAppMsg(
       `I am mr ${
@@ -40,7 +45,16 @@ const BookTableForm = () => {
       }. We will be ${formData.guests} persons. ${formData.note}`
     );
   };
-  
+
+  const validateMessage = () => {
+    if (formData.name && formData.date && formData.guests && formData.time) {
+      console.log("theek ha");
+      window.location.href = `https://wa.me/+393887951165?text=${whatsAppMsg}`;
+    } else {
+      setShowError(!showError);
+    }
+  };
+
   return (
     <div className="px-3 md:px-10 md:py-14 flex-1">
       <h1 className="text-center my-3 text-sm font-bold md:hidden">
@@ -122,8 +136,13 @@ const BookTableForm = () => {
         Your booking will be sent to(restaurant name) with WhatsApp and you will
         receive status notifications in chat.
       </p>
+      {showError && (
+        <p className="rounded-lg mt-6 duration-300 text-[#D8000C] bg-[#FFBABA] bg-opacity-50 p-2">
+          Please Fill All The Fields
+        </p>
+      )}
       <WhatsAppBtn
-        whatsAppMsg={whatsAppMsg}
+        validateMessage={validateMessage}
         type="submit"
         text="Send Booking with Whatsapp"
       />
