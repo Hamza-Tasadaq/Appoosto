@@ -6,7 +6,9 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
-
+.min-screen {
+  min-height: -webkit-fill-available;
+}
 .bannerbg {
   background-image: url("../public/assets/banner-bg.png") !important;
 }

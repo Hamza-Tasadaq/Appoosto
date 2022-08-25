@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Intro = () => {
   return (
-    <div className="bg-Black h-screen w-screen text-White p-5 flex flex-col items-center justify-between">
+    <div className="bg-Black min-screen w-screen text-White p-5 flex flex-col items-center justify-between">
       <div>
         <img src="./assets/computer.png" alt="computer" />
         <h1 className="max-w-[255px] text-center mx-auto my-4 text-base leading-6">
