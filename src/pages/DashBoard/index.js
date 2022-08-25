@@ -14,16 +14,27 @@ const Dashboard = () => {
   const [selectedType, setSelectedType] = useState(undefined);
 
   const [isMenuHovered, setIsMenuHovered] = useState(false);
+  const [isCartHovered, setIsCartHovered] = useState(false);
 
   return (
     <div>
       <div className="relative bg-Flash-White h-screen ">
         <DashboardHeaderDesktop />
         <div className="mt-3 px-2 flex max-h-dashboard ">
-          <div className="w-4/12 lg:w-1/4 h-full overflow-auto  scrollBar mx-2">
+          <div
+            onMouseEnter={() => {
+              setIsCartHovered(!isCartHovered);
+            }}
+            onMouseLeave={() => {
+              setIsCartHovered(!isCartHovered);
+            }}
+            className={`w-4/12 lg:w-1/4 h-full overflow-auto  ${
+              isCartHovered ? " scrollBar " : " scrollBarHideCart "
+            } ml-2`}
+          >
             <Cart selectedType={selectedType} />
           </div>
-          <div className="w-[46.50%] lg:w-1/2 mx-2 bg-White rounded-t-lg p-4">
+          <div className="w-[46.50%] lg:w-1/2 mx-1  bg-White rounded-t-lg p-4">
             <div className="h-2/5">
               <Category />
             </div>

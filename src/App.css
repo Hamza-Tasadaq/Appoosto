@@ -81,6 +81,20 @@ li.slick-active {
   scrollbar-width: none;
 }
 
+.scrollBarHideCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.scrollBarHideCart::-webkit-scrollbar-track {
+  background: #F3F3F3;
+}
+
+/* Handle */
+.scrollBarHideCart::-webkit-scrollbar-thumb {
+  background: #F3F3F3;
+}
+
 .scrollBarHide::-webkit-scrollbar {
   width: 8px;
 }
