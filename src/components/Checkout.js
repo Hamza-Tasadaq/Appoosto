@@ -19,7 +19,7 @@ const Checkout = () => {
       </h1>
 
       {selectedOption === "Delivery" || selectedOption === "Take Away" ? (
-        <div className="bg-White my-4 shadow-xl mx-4 p-4 rounded-md ">
+        <div className="bg-White md:bg-transparent my-4 shadow-xl md:shadow-none mx-4 md:mx-0 md:p-0 p-4 rounded-md ">
           <div className="my-2">
             <h3 className="font-semibold text-xs">Name</h3>
             <input className="bg-Light-Silver bg-opacity-50 my-1 rounded-lg w-full p-2 outline-none" />

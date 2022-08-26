@@ -19,7 +19,7 @@ const Dashboard = () => {
     <div>
       <div className="relative bg-Flash-White h-screen ">
         <DashboardHeaderDesktop />
-        <div className="mt-3 px-2 flex max-h-dashboard ">
+        <div className="mt-3 px-2 flex max-h-dashboard max-w-[1536px] mx-auto">
           <div
             onMouseEnter={() => {
               setIsCartHovered(!isCartHovered);

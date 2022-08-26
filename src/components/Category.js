@@ -65,7 +65,7 @@ const Category = () => {
           setIsHovered(!isHovered);
         }}
         className={`flex justify-center md:flex-col md:overflow-x-auto ${
-          isHovered ? " scrollBarHorizontal ": " noScrollBar "
+          isHovered ? " noScrollBar  " : " scrollBarHorizontal "
         } `}
       >
         <div className="flex justify-center md:justify-start flex-col mr-2 md:mr-0  md:flex-row items-center my-1 space-y-3 md:space-y-0  md:space-x-3">
