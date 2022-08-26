@@ -106,7 +106,7 @@ const OrderStatusCard = ({ imgSrc, title, desc, price, status, time }) => {
         <div className="text-sm flex items-center text-Spanish-Gray pb-2 font-semibold justify-between">
           <div className="flex items-center  ">
             <img src="./assets/clock-filled.svg" alt="clock-filled" />
-            <p className="ml-3">Ordered at ${time}</p>
+            <p className="ml-3">Ordered at {time}</p>
           </div>
           <div>
             <p>
