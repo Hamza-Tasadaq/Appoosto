@@ -13,11 +13,13 @@ const Checkout = () => {
     setSelectedTime(time);
   };
   return (
-    <div className="bg-White min-h-full rounded-lg p-2">
-      <h1 className="text-center font-bold text-lg">Checkout</h1>
+    <div className="md:bg-White min-h-full rounded-lg p-2">
+      <h1 className="text-center font-bold hidden md:block text-lg">
+        Checkout
+      </h1>
 
       {selectedOption === "Delivery" || selectedOption === "Take Away" ? (
-        <div className="my-4">
+        <div className="bg-White my-4 shadow-xl mx-4 p-4 rounded-md ">
           <div className="my-2">
             <h3 className="font-semibold text-xs">Name</h3>
             <input className="bg-Light-Silver bg-opacity-50 my-1 rounded-lg w-full p-2 outline-none" />

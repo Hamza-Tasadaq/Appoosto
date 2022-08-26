@@ -39,7 +39,7 @@ const Payment = () => {
   return (
     <div>
       {selectedOption === "Delivery" || selectedOption === "Take Away" ? (
-        <div className="mx-4  p-4 md:p-0 md-p-0 md:mx-0 mb-16 md:my-3 bg-White md:bg-transparent rounded-lg shadow-lg md:shadow-none">
+        <div className="mx-4  p-4 md:p-0 md-p-0 md:mx-0 mb-24 md:my-3 bg-White md:bg-transparent rounded-lg shadow-lg md:shadow-none">
           <div className="md:hidden">
             <h2 className="opacity-30 py-2 border-b border-Spanish-Gray">
               Payment

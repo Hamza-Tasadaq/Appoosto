@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Cart as ProductCart, Payment } from "../../components";
+import { Cart as ProductCart, Checkout, Payment } from "../../components";
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
@@ -10,7 +10,8 @@ const Cart = () => {
       {cart.length > 0 ? (
         <>
           <ProductCart />
-          <Payment />
+          {/* <Payment /> */}
+          <Checkout />
         </>
       ) : (
         <div className="w-screen h-screen max-h-full bg-black p-10 flex flex-col justify-between items-center">
